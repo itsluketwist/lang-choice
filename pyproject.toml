@@ -1,0 +1,42 @@
+# Package specification, as defined here:
+# https://packaging.python.org/en/latest/specifications/pyproject-toml/#pyproject-toml-spec
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["src", "src.runners", "src.reporting", "src.utils"]
+
+[project]
+name = "src"
+readme = "README.md"
+version = "0.dev0"
+dynamic = ["dependencies"]
+authors = [{ name = "Lukas Twist", email = "itsluketwist@gmail.com" }]
+license-files = ["LICENSE"]
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.11"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "pytest",
+    "uv",
+]
+
+[project.scripts]
+run = "src.cli:main"
+
+[tool.pytest.ini_options]
+# add benchmark/ to sys.path so codechoicebench is importable without a full install
+pythonpath = [".", "benchmark"]
+
+[tool.uv]
+exclude-newer = "7 days"

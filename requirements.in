@@ -1,0 +1,9 @@
+-e ./benchmark
+Jupyter
+tqdm
+pyyaml
+thinkpack
+llm-codegen-research
+vllm
+transformers
+torch
