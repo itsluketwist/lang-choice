@@ -1,0 +1,68 @@
+name: benchmark release to pypi and hf
+on:
+  workflow_dispatch:
+
+jobs:
+
+  pypi:
+    name: Publish to PyPI
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: benchmark
+
+    environment:
+      name: release
+      url: https://pypi.org/p/codechoicebench
+
+    permissions:
+      id-token: write
+
+    steps:
+
+      - name: 1. Checkout the code...
+        uses: actions/checkout@v4
+
+      - name: 2. Configure uv...
+        uses: astral-sh/setup-uv@v6
+
+      - name: 3. Build the package...
+        run: uv build
+
+      - name: 4. Publish package to PyPI
+        run: uv publish --trusted-publishing always
+
+  huggingface:
+    name: Upload to Hugging Face
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: benchmark
+
+    environment:
+      name: release
+      url: https://huggingface.co/datasets/itsluketwist/CodeChoiceBench
+
+    steps:
+
+      - name: 1. Checkout the code...
+        uses: actions/checkout@v4
+
+      - name: 2. Configure uv...
+        uses: astral-sh/setup-uv@v6
+
+      - name: 3. Generate VERSION file from pyproject.toml...
+        run: python3 -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['version'])" > VERSION
+
+      - name: 4. Upload dataset to Hugging Face Hub
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          uvx --from huggingface_hub hf upload itsluketwist/CodeChoiceBench HF_README.md README.md --repo-type dataset
+          uvx --from huggingface_hub hf upload itsluketwist/CodeChoiceBench VERSION VERSION --repo-type dataset
+          uvx --from huggingface_hub hf upload itsluketwist/CodeChoiceBench codechoicebench/data/implementation.jsonl data/implementation.jsonl --repo-type dataset
+          uvx --from huggingface_hub hf upload itsluketwist/CodeChoiceBench codechoicebench/data/recommendation.jsonl data/recommendation.jsonl --repo-type dataset
