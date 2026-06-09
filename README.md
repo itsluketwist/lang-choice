@@ -60,19 +60,34 @@ The experiment layer handles everything that is specific to this research run. I
 
 This separation means `codechoicebench` can be used by anyone to evaluate their own models on the benchmark, regardless of how they run inference.
 
+
 ## *installation*
 
-The code requires Python 3.11 or later.
+The code requires Python 3.11 or later, ensure you have it installed with the command below, otherwise download and install it from
+[here](https://www.python.org/downloads/).
+
+```shell
+python --version
+```
+
+Now clone the repository code:
 
 ```shell
 git clone https://github.com/itsluketwist/code-choice
-cd code-choice
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+```
+
+Once cloned, install the requirements locally in a virtual environment:
+
+```shell
+python3.11 -m venv .venv
+
+source .venv/bin/activate
+
+pip install -r requirements.frozen
+
 pip install -e .
 ```
 
-This installs the benchmark library from `./benchmark` and all inference dependencies (vLLM, thinkpack, etc.).
 
 ## *usage*
 
@@ -128,7 +143,7 @@ pytest tests/
 pre-commit run --all-files
 
 # update dependency lockfiles
-uv pip compile requirements.in --output-file requirements.txt
+uv pip compile requirements.txt --output-file requirements.frozen
 ```
 
 ## *citation*

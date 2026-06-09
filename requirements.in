@@ -1,6 +1,0 @@
--e ./benchmark
-jupyter
-pyyaml
-pydantic
-openai
-rich
