@@ -1,9 +1,6 @@
 -e ./benchmark
-Jupyter
-tqdm
+jupyter
 pyyaml
-thinkpack
-llm-codegen-research
-vllm
-transformers
-torch
+pydantic
+openai
+rich
