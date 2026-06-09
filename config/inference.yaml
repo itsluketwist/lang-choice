@@ -1,0 +1,23 @@
+# Inference configuration presets.
+# Select a preset with --inference <name> --inference-config config/inference.yaml.
+#
+# temperature/top_p may be set to null to fall through to per-model defaults in models.yaml.
+# samples sets the number of responses generated per prompt, by task type.
+
+greedy:
+  name: greedy
+  temperature: 0.0
+  top_p: 1.0
+  samples:
+    implementation: 5
+    recommendation: 1
+  seed: 42
+
+default:
+  name: default
+  temperature: null
+  top_p: null
+  samples:
+    implementation: 20
+    recommendation: 5
+  seed: 42
