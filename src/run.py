@@ -22,7 +22,7 @@ from src.analysis.hallucination import AnalysisResults, analyse_responses
 from src.generation.generate import generate_responses
 from src.generation.schemas import GenerationResult, InferenceConfig, ModelConfig
 from src.utils.config import load_full_yaml
-from src.utils.io import load_json, load_jsonl, save_json, save_jsonl
+from src.utils.io import load_jsonl, save_json, save_jsonl
 from src.utils.log import log, log_header, log_timer
 
 
@@ -43,7 +43,8 @@ def run_experiment(
     inference_config:  path to the inference config YAML.
     context_condition: prior-context condition injected into implementation prompts.
                        recommendation prompts never receive prior context.
-    update:            if True, overwrite existing output files.
+    update:            if True, regenerate responses even if output files exist.
+                       evaluation and analysis always re-run regardless.
     debug:             if True, limit to 2 prompts per split and write to output/debug/.
     """
     # load configs
@@ -59,8 +60,10 @@ def run_experiment(
         )
     inference_cfg = InferenceConfig(**inference_presets[inference])
 
-    # build output directory
+    # build output directory and file prefix
+    # inference prefix is the first 3 chars of the preset name (e.g. "greedy" → "gre")
     base_dir = "output/debug" if debug else "output"
+    inference_prefix = inference_cfg.name[:3]
     model_dir = Path(base_dir) / model_cfg.name
     output_dir = (
         model_dir / context_condition if context_condition != "none" else model_dir
@@ -88,7 +91,7 @@ def run_experiment(
     log(f"  inference: {inference_cfg.name}")
 
     # --- step 1: generate implementation responses (with context) ---
-    impl_path = output_dir / "implementation.jsonl"
+    impl_path = output_dir / f"{inference_prefix}-implementation.jsonl"
     impl_results = _load_or_generate(
         path=impl_path,
         prompts=impl_prompts,
@@ -101,7 +104,7 @@ def run_experiment(
     )
 
     # --- step 2: generate recommendation responses (never use context) ---
-    rec_path = output_dir / "recommendation.jsonl"
+    rec_path = output_dir / f"{inference_prefix}-recommendation.jsonl"
     rec_results = _load_or_generate(
         path=rec_path,
         prompts=rec_prompts,
@@ -114,21 +117,21 @@ def run_experiment(
     )
 
     # --- step 3: evaluate both together with evaluate_benchmark ---
-    eval_path = output_dir / "evaluation.json"
-    _load_or_evaluate(
+    # always re-run — evaluation is fast and logic may have changed
+    eval_path = output_dir / f"{inference_prefix}-evaluation.json"
+    _evaluate(
         path=eval_path,
         impl_results=impl_results,
         rec_results=rec_results,
-        update=update,
     )
 
     # --- step 4: hallucination and reasoning analysis ---
-    analysis_path = output_dir / "analysis.json"
-    analysis = _load_or_analyse(
+    # always re-run — analysis is fast and logic may have changed
+    analysis_path = output_dir / f"{inference_prefix}-analysis.json"
+    analysis = _analyse(
         path=analysis_path,
         impl_results=impl_results,
         rec_results=rec_results,
-        update=update,
     )
 
     log()
@@ -178,20 +181,15 @@ def _load_or_generate(
     return results
 
 
-def _load_or_evaluate(
+def _evaluate(
     path: Path,
     impl_results: list[GenerationResult],
     rec_results: list[GenerationResult],
-    update: bool,
 ) -> BenchmarkResults:
-    """Load evaluation results from disk or run evaluate_benchmark if not present.
+    """Run evaluate_benchmark and save results to disk.
 
     Returns a BenchmarkResults object with a summary and per-response results.
     """
-    if path.exists() and not update:
-        log(f"  Loading existing evaluation: {path}")
-        return BenchmarkResults(**load_json(path))
-
     log(f"  Evaluating: {path}")
     with log_timer("evaluation"):
         # model_dump() includes id + responses (what evaluate_benchmark needs)
@@ -206,20 +204,15 @@ def _load_or_evaluate(
     return benchmark_results
 
 
-def _load_or_analyse(
+def _analyse(
     path: Path,
     impl_results: list[GenerationResult],
     rec_results: list[GenerationResult],
-    update: bool,
 ) -> AnalysisResults:
-    """Load analysis results from disk or run hallucination analysis if not present.
+    """Run hallucination analysis and save results to disk.
 
     Returns an AnalysisResults with a summary and per-response anchor labels.
     """
-    if path.exists() and not update:
-        log(f"  Loading existing analysis: {path}")
-        return AnalysisResults(**load_json(path))
-
     log(f"  Analysing: {path}")
     with log_timer("analysis"):
         analysis = analyse_responses(impl_results + rec_results)

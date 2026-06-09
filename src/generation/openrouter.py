@@ -70,6 +70,15 @@ class OpenRouterRunner:
 
         api_response = self._client.chat.completions.create(**call_kwargs)
 
+        # openrouter can return a 200 with choices=null when the model rejects the
+        # request (e.g. unsupported extra_body param); surface the inline error if present
+        if not api_response.choices:
+            error = getattr(api_response, "error", None)
+            raise RuntimeError(
+                f"OpenRouter returned no choices for {model_config.model_path}"
+                + (f": {error}" if error else "")
+            )
+
         choice = api_response.choices[0]
         # openrouter normalises reasoning into choice.message.reasoning for all
         # models that expose it — no need to handle provider-specific formats

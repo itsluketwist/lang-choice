@@ -128,6 +128,33 @@ class TestExtractCodeBlocks:
         assert blocks[0]["language"] == "rust"
         assert blocks[0]["source"] == "filename"
 
+    def test_truncated_block_with_tag(self) -> None:
+        """A code block cut off before the closing fence should still extract the language."""
+        text = "```python\ndef foo():\n    return 1"  # no closing ```
+        blocks = extract_code_blocks(text)
+        assert len(blocks) == 1
+        assert blocks[0]["language"] == "python"
+        assert blocks[0]["source"] == "tag"
+
+    def test_truncated_block_without_tag(self) -> None:
+        """A truncated untagged block should still use import inference."""
+        text = "```\nimport Foundation\nlet x = 42"  # no closing ```
+        blocks = extract_code_blocks(text)
+        assert len(blocks) == 1
+        assert blocks[0]["language"] == "swift"
+        assert blocks[0]["source"] == "import"
+
+    def test_truncated_last_block_in_multi_block_response(self) -> None:
+        """A complete block followed by a truncated block should extract both languages."""
+        text = (
+            "```python\nprint('hi')\n```\n```rust\nfn main() {"  # rust block truncated
+        )
+        blocks = extract_code_blocks(text)
+        assert len(blocks) == 2
+        langs = {b["language"] for b in blocks}
+        assert "python" in langs
+        assert "rust" in langs
+
 
 class TestExtractImplementationLanguage:
     """Test primary implementation language selection."""
