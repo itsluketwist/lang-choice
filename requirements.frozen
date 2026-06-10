@@ -226,7 +226,7 @@ pycparser==2.23
 pydantic==2.13.4
     # via
     #   -r requirements.in
-    #   codechoicebench
+    #   langchoicebench
     #   openai
 pydantic-core==2.46.4
     # via pydantic
@@ -273,7 +273,7 @@ rfc3987-syntax==1.1.0
 rich==15.0.0
     # via
     #   -r requirements.in
-    #   codechoicebench
+    #   langchoicebench
 rpds-py==0.29.0
     # via
     #   jsonschema

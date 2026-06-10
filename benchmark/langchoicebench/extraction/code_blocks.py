@@ -127,7 +127,7 @@ def _infer_language(
 
     Priority: explicit fence tag > filename hints > import/syntax patterns.
     """
-    from codechoicebench.extraction.languages import normalise_language
+    from langchoicebench.extraction.languages import normalise_language
 
     # 1. explicit fence tag — highest confidence
     if tag:

@@ -35,5 +35,5 @@ dev = [
 run = "src.cli:main"
 
 [tool.pytest.ini_options]
-# add benchmark/ to sys.path so codechoicebench is importable without a full install
+# add benchmark/ to sys.path so langchoicebench is importable without a full install
 pythonpath = [".", "benchmark"]

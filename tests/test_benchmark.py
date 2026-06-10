@@ -4,7 +4,7 @@ import json
 import tempfile
 
 import pytest
-from codechoicebench import (
+from langchoicebench import (
     AreaStats,
     BenchmarkPrompt,
     BenchmarkResults,

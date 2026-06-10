@@ -2,7 +2,7 @@
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from codechoicebench.schema import BenchmarkPrompt
+from langchoicebench.schema import BenchmarkPrompt
 from tqdm import tqdm
 
 from src.generation.context import build_context_messages
