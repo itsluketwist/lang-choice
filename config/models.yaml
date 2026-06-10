@@ -1,7 +1,9 @@
-# Model configurations for OpenRouter-accessed models.
+# Model configurations for direct provider API access via llm_cgr.
 # Select a model with --model <name> --model-config config/models.yaml.
 #
-# extra_params are passed as extra_body to the API call (e.g. reasoning for Qwen3/Nemotron).
+# provider maps to a key in llm_cgr's PROVIDER_MAP (e.g. "anthropic", "deepseek").
+# model_path is the native API model identifier for that provider.
+# enable_reasoning: true captures the chain-of-thought trace where supported.
 # defaults hold per-model sampling params used when inference config sets null values.
 
 # =============================================================================
@@ -10,14 +12,18 @@
 # =============================================================================
 
 deepseek-flash:
-  model_path: "deepseek/deepseek-v4-flash"
+  provider: "deepseek"
+  model_path: "deepseek-chat"
+  enable_reasoning: true
   defaults:
     temperature: 1.0
     top_p: 1.0
     max_tokens: 16384
 
 deepseek-pro:
-  model_path: "deepseek/deepseek-v4-pro"
+  provider: "deepseek"
+  model_path: "deepseek-chat"
+  enable_reasoning: true
   defaults:
     temperature: 1.0
     top_p: 1.0
@@ -29,14 +35,17 @@ deepseek-pro:
 # =============================================================================
 
 kimi-thinking:
-  model_path: "moonshotai/kimi-k2-thinking"
+  provider: "moonshot"
+  model_path: "kimi-k2-thinking"
+  enable_reasoning: true
   defaults:
     temperature: 1.0
     top_p: 0.95
     max_tokens: 16384
 
 kimi-k26:
-  model_path: "moonshotai/kimi-k2.6"
+  provider: "moonshot"
+  model_path: "kimi-k2.6"
   defaults:
     temperature: 1.0
     top_p: 0.95
@@ -44,25 +53,21 @@ kimi-k26:
 
 # =============================================================================
 # Mistral — Medium 3.5 (large) + Small 4 (cost); both support reasoning
-# reasoning effort must be set explicitly; small only accepts "high" or "none"
-# trace is returned in choice.message.reasoning via OpenRouter normalisation
 # =============================================================================
 
 mistral-medium:
-  model_path: "mistralai/mistral-medium-3-5"
-  extra_params:
-    reasoning:
-      effort: "high"
+  provider: "mistral"
+  model_path: "mistral-medium-3.5-latest"
+  enable_reasoning: true
   defaults:
     temperature: 0.7
     top_p: 0.95
     max_tokens: 16384
 
 mistral-small:
-  model_path: "mistralai/mistral-small-2603"
-  extra_params:
-    reasoning:
-      effort: "high"
+  provider: "mistral"
+  model_path: "mistral-small-2603"
+  enable_reasoning: true
   defaults:
     temperature: 0.7
     top_p: 0.95
@@ -70,18 +75,20 @@ mistral-small:
 
 # =============================================================================
 # OpenAI — GPT-5.4 (large, general) + o4-mini (cost, reasoning)
-# reasoning on o4-mini is internal; token count visible but trace not exposed
+# reasoning on o4-mini is internal; trace not exposed via API
 # =============================================================================
 
 gpt-54:
-  model_path: "openai/gpt-5.4"
+  provider: "openai"
+  model_path: "gpt-5.4"
   defaults:
     temperature: 1.0
     top_p: 1.0
     max_tokens: 16384
 
 o4-mini:
-  model_path: "openai/o4-mini"
+  provider: "openai"
+  model_path: "o4-mini"
   defaults:
     temperature: 1.0
     top_p: 1.0
@@ -90,24 +97,20 @@ o4-mini:
 # =============================================================================
 # Anthropic — Claude Sonnet 4.6 (large, adaptive thinking) +
 # Haiku 4.5 (cost, extended thinking)
-# adaptive thinking on Sonnet 4.6 is always on; no extra_params required
-# extended thinking on Haiku must be explicitly enabled via extra_params
 # =============================================================================
 
 claude-sonnet:
-  model_path: "anthropic/claude-sonnet-4.6"
+  provider: "anthropic"
+  model_path: "claude-sonnet-4-6"
   defaults:
     temperature: 1.0
     top_p: 1.0
     max_tokens: 16384
 
 claude-haiku:
-  model_path: "anthropic/claude-haiku-4.5"
-  extra_params:
-    # max_tokens here is the thinking budget (internal reasoning tokens), not the response length
-    reasoning:
-      enabled: true
-      max_tokens: 8192
+  provider: "anthropic"
+  model_path: "claude-haiku-4-5-20251001"
+  enable_reasoning: true
   defaults:
     temperature: 1.0
     top_p: 1.0
@@ -119,14 +122,17 @@ claude-haiku:
 # =============================================================================
 
 gemini-flash:
-  model_path: "google/gemini-3.5-flash"
+  provider: "google"
+  model_path: "gemini-3.5-flash"
+  enable_reasoning: true
   defaults:
     temperature: 1.0
     top_p: 0.95
     max_tokens: 16384
 
 gemma-31b:
-  model_path: "google/gemma-4-31b-it"
+  provider: "google"
+  model_path: "gemma-4-31b-it"
   defaults:
     temperature: 1.0
     top_p: 0.95
@@ -134,24 +140,21 @@ gemma-31b:
 
 # =============================================================================
 # Qwen (Alibaba) — Qwen3.7 Max (large MoE) + Qwen3.6 27B (cost, dense)
-# thinking must be enabled explicitly via the unified OpenRouter reasoning param
 # =============================================================================
 
 qwen37-max:
-  model_path: "qwen/qwen3.7-max"
-  extra_params:
-    reasoning:
-      enabled: true
+  provider: "qwen"
+  model_path: "qwen3.7-max"
+  enable_reasoning: true
   defaults:
     temperature: 0.6
     top_p: 0.95
     max_tokens: 16384
 
 qwen3-6-27b:
-  model_path: "qwen/qwen3.6-27b"
-  extra_params:
-    reasoning:
-      enabled: true
+  provider: "qwen"
+  model_path: "qwen3.6-27b"
+  enable_reasoning: true
   defaults:
     temperature: 0.6
     top_p: 0.95
@@ -159,25 +162,22 @@ qwen3-6-27b:
 
 # =============================================================================
 # NVIDIA — Nemotron 3 Ultra (550B MoE / 55B active) +
-# Nano (30B MoE / 3B active); both free tier, reasoning trace exposed
-# reasoning must be enabled explicitly via the unified OpenRouter reasoning param
+# Nano (30B MoE / 3B active); both expose reasoning trace
 # =============================================================================
 
 nemotron-ultra:
-  model_path: "nvidia/nemotron-3-ultra-550b-a55b"
-  extra_params:
-    reasoning:
-      enabled: true
+  provider: "nvidia"
+  model_path: "nemotron-3-ultra-550b-a55b"
+  enable_reasoning: true
   defaults:
     temperature: 1.0
     top_p: 0.95
     max_tokens: 16384
 
 nemotron-nano:
-  model_path: "nvidia/nemotron-3-nano-30b-a3b"
-  extra_params:
-    reasoning:
-      enabled: true
+  provider: "nvidia"
+  model_path: "nemotron-3-nano-30b-a3b"
+  enable_reasoning: true
   defaults:
     temperature: 1.0
     top_p: 0.95

@@ -12,12 +12,14 @@ greedy:
     implementation: 5
     recommendation: 1
   seed: 42
+  max_workers: 10
 
 default:
   name: default
   temperature: null
   top_p: null
   samples:
-    implementation: 20
-    recommendation: 5
+    implementation: 10
+    recommendation: 3
   seed: 42
+  max_workers: 10
