@@ -1,8 +1,17 @@
 """Data schemas for the generation pipeline."""
 
-from typing import Any
+from typing import Any, Literal
 
 from pydantic import BaseModel
+
+
+# run modes for the experiment pipeline:
+#   default:   generate only if the output file does not exist (else load it as-is)
+#   overwrite: ignore any existing results and regenerate everything from scratch
+#   update:    top up existing results until each prompt has the required number
+#              of valid (non-empty) responses
+#   evaluate:  skip generation entirely and run evaluation/analysis on existing files
+Mode = Literal["default", "overwrite", "update", "evaluate"]
 
 
 class ModelConfig(BaseModel):

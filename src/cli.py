@@ -6,7 +6,7 @@ Usage:
         --inference greedy \\
         --inference-config config/inference.yaml \\
         [--context none] \\
-        [--update] \\
+        [--mode default] \\
         [--debug]
 
 The run command is wired in pyproject.toml as run = "src.cli:main".
@@ -53,9 +53,16 @@ def _parse_args() -> argparse.Namespace:
         help="Prior-context condition for implementation prompts (default: none).",
     )
     parser.add_argument(
-        "--update",
-        action="store_true",
-        help="Overwrite existing output files (by default, existing files are skipped).",
+        "--mode",
+        choices=["default", "overwrite", "update", "evaluate"],
+        default="default",
+        help=(
+            "default: generate only if the output file doesn't exist (default). "
+            "overwrite: ignore existing results and regenerate everything. "
+            "update: top up existing results until each prompt has the required "
+            "number of valid responses. "
+            "evaluate: skip generation, run evaluation/analysis on existing files only."
+        ),
     )
     parser.add_argument(
         "--debug",
@@ -74,7 +81,7 @@ def main() -> None:
         inference=args.inference,
         inference_config=args.inference_config,
         context_condition=args.context,
-        update=args.update,
+        mode=args.mode,
         debug=args.debug,
     )
 
