@@ -3,6 +3,7 @@
 from src.analysis.hallucination import (
     AnalysisResults,
     AnalysisSummary,
+    AnchorExample,
     AnchorResult,
     analyse_responses,
     detect_context_anchor,
@@ -13,6 +14,7 @@ from src.analysis.hallucination import (
 __all__ = [
     "AnalysisResults",
     "AnalysisSummary",
+    "AnchorExample",
     "AnchorResult",
     "analyse_responses",
     "detect_context_anchor",
