@@ -167,11 +167,13 @@ cython_debug/
 
 # project
 todo.txt
-output/archive
+output/archive/*
+output/debug/*
+output/initial/*
 data/raw
 initial-plan.pdf
 CLAUDE.md
 
-# temporary ignore
-output/*
-data/*
+# temporary
+notebooks/*
+config/context/*

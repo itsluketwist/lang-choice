@@ -59,8 +59,10 @@ class GenerationResult(BaseModel):
     id: str  # BenchmarkPrompt.id — "{project_id}__{prompt_variant}"
     project_id: str  # for joining with analysis results
     task_type: str  # "implementation" | "recommendation"
-    context_condition: str
-    prompt_messages: list[dict[str, str]]  # stored once — same for all samples
+
     responses: list[str]  # one per sample
     reasoning: list[str | None]  # one per sample (None if model has no reasoning)
+
+    context_condition: str = "none"
+    prompt_messages: list[dict[str, str]] = []  # stored once — same for all samples
     warnings: list[list[str]] = []
