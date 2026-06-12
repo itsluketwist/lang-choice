@@ -19,7 +19,7 @@ default:
   temperature: null
   top_p: null
   samples:
-    implementation: 10
-    recommendation: 3
+    implementation: 20
+    recommendation: 5
   seed: 42
   max_workers: 10

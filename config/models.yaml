@@ -13,43 +13,21 @@
 
 deepseek-flash:
   provider: "deepseek"
-  model_path: "deepseek-chat"
+  model_path: "deepseek-v4-flash"
   enable_reasoning: true
   defaults:
     temperature: 1.0
     top_p: 1.0
-    max_tokens: 16384
+    max_tokens: 8192
 
 deepseek-pro:
   provider: "deepseek"
-  model_path: "deepseek-chat"
+  model_path: "deepseek-v4-pro"
   enable_reasoning: true
   defaults:
     temperature: 1.0
     top_p: 1.0
-    max_tokens: 16384
-
-# =============================================================================
-# Moonshot AI — Kimi K2 Thinking (reasoning, 1T MoE / 32B active) +
-# Kimi K2.6 (free tier, general instruction model)
-# =============================================================================
-
-kimi-thinking:
-  provider: "moonshot"
-  model_path: "kimi-k2-thinking"
-  enable_reasoning: true
-  defaults:
-    temperature: 1.0
-    top_p: 0.95
-    max_tokens: 16384
-
-kimi-k26:
-  provider: "moonshot"
-  model_path: "kimi-k2.6"
-  defaults:
-    temperature: 1.0
-    top_p: 0.95
-    max_tokens: 16384
+    max_tokens: 8192
 
 # =============================================================================
 # Mistral — Medium 3.5 (large) + Small 4 (cost); both support reasoning
@@ -57,12 +35,12 @@ kimi-k26:
 
 mistral-medium:
   provider: "mistral"
-  model_path: "mistral-medium-3.5-latest"
+  model_path: "mistral-medium-3-5"
   enable_reasoning: true
   defaults:
     temperature: 0.7
     top_p: 0.95
-    max_tokens: 16384
+    max_tokens: 8192
 
 mistral-small:
   provider: "mistral"
@@ -71,28 +49,28 @@ mistral-small:
   defaults:
     temperature: 0.7
     top_p: 0.95
-    max_tokens: 16384
+    max_tokens: 8192
 
 # =============================================================================
 # OpenAI — GPT-5.4 (large, general) + o4-mini (cost, reasoning)
 # reasoning on o4-mini is internal; trace not exposed via API
 # =============================================================================
 
-gpt-54:
+gpt-5-4-mini:
+  provider: "openai"
+  model_path: "gpt-5.4-mini"
+  defaults:
+    temperature: 1.0
+    top_p: 1.0
+    max_tokens: 8192
+
+gpt-5-4:
   provider: "openai"
   model_path: "gpt-5.4"
   defaults:
     temperature: 1.0
     top_p: 1.0
-    max_tokens: 16384
-
-o4-mini:
-  provider: "openai"
-  model_path: "o4-mini"
-  defaults:
-    temperature: 1.0
-    top_p: 1.0
-    max_tokens: 16384
+    max_tokens: 8192
 
 # =============================================================================
 # Anthropic — Claude Sonnet 4.6 (large, adaptive thinking) +
@@ -102,10 +80,11 @@ o4-mini:
 claude-sonnet:
   provider: "anthropic"
   model_path: "claude-sonnet-4-6"
+  enable_reasoning: true
   defaults:
     temperature: 1.0
     top_p: 1.0
-    max_tokens: 16384
+    max_tokens: 8192
 
 claude-haiku:
   provider: "anthropic"
@@ -114,51 +93,7 @@ claude-haiku:
   defaults:
     temperature: 1.0
     top_p: 1.0
-    max_tokens: 16384
-
-# =============================================================================
-# Google — Gemini 3.5 Flash (cost, thinking on by default) +
-# Gemma 4 31B IT (open-weight, instruction-tuned, no reasoning trace)
-# =============================================================================
-
-gemini-flash:
-  provider: "google"
-  model_path: "gemini-3.5-flash"
-  enable_reasoning: true
-  defaults:
-    temperature: 1.0
-    top_p: 0.95
-    max_tokens: 16384
-
-gemma-31b:
-  provider: "google"
-  model_path: "gemma-4-31b-it"
-  defaults:
-    temperature: 1.0
-    top_p: 0.95
-    max_tokens: 16384
-
-# =============================================================================
-# Qwen (Alibaba) — Qwen3.7 Max (large MoE) + Qwen3.6 27B (cost, dense)
-# =============================================================================
-
-qwen37-max:
-  provider: "qwen"
-  model_path: "qwen3.7-max"
-  enable_reasoning: true
-  defaults:
-    temperature: 0.6
-    top_p: 0.95
-    max_tokens: 16384
-
-qwen3-6-27b:
-  provider: "qwen"
-  model_path: "qwen3.6-27b"
-  enable_reasoning: true
-  defaults:
-    temperature: 0.6
-    top_p: 0.95
-    max_tokens: 16384
+    max_tokens: 8192
 
 # =============================================================================
 # NVIDIA — Nemotron 3 Ultra (550B MoE / 55B active) +
@@ -166,19 +101,59 @@ qwen3-6-27b:
 # =============================================================================
 
 nemotron-ultra:
-  provider: "nvidia"
-  model_path: "nemotron-3-ultra-550b-a55b"
+  provider: "together"
+  model_path: "nvidia/nemotron-3-ultra-550b-a55b"
   enable_reasoning: true
   defaults:
     temperature: 1.0
     top_p: 0.95
-    max_tokens: 16384
+    max_tokens: 8192
 
-nemotron-nano:
-  provider: "nvidia"
-  model_path: "nemotron-3-nano-30b-a3b"
+# =============================================================================
+# Moonshot AI — Kimi K2 Thinking (reasoning, 1T MoE / 32B active) +
+# Kimi K2.6 (free tier, general instruction model)
+# =============================================================================
+
+kimi-k26:
+  provider: "together"
+  model_path: "moonshotai/Kimi-K2.6"
   enable_reasoning: true
   defaults:
     temperature: 1.0
     top_p: 0.95
-    max_tokens: 16384
+    max_tokens: 8192
+
+# =============================================================================
+# Qwen (Alibaba) — Qwen3.7 Max (large MoE) + Qwen3.6 27B (cost, dense)
+# =============================================================================
+
+qwen3-235b:
+  provider: "together"
+  model_path: "Qwen/Qwen3-235B-A22B-Instruct-2507-tput"
+  enable_reasoning: false
+  defaults:
+    temperature: 0.6
+    top_p: 0.95
+    max_tokens: 8192
+
+qwen3-32b:
+  provider: "huggingface"
+  model_path: "Qwen/Qwen3-32B"
+  enable_reasoning: true
+  defaults:
+    temperature: 0.6
+    top_p: 0.95
+    max_tokens: 8192
+
+
+# ==============================================================================
+# Olmo - 32B dense, open-weight model from AllenAI; reasoning trace exposed natively
+# ==============================================================================
+olmo-32b:
+  provider: "huggingface"
+  model_path: "allenai/Olmo-3.1-32B-Think"
+  enable_reasoning: true
+  defaults:
+    temperature: 0.6
+    top_p: 0.95
+    max_tokens: 8192

@@ -1,6 +1,6 @@
 -e ./benchmark
 jupyter
-openai
+llm-codegen-research[api]
 pydantic
 pyyaml
 rich
