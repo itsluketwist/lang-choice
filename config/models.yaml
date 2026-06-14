@@ -95,6 +95,28 @@ claude-haiku:
     top_p: 1.0
     max_tokens: 8192
 
+# ==============================================================================
+# Google Gemini - Flash (cost) + Flash-Lite (low-cost); both expose reasoning
+# trace via the thinking summary
+# ==============================================================================
+gemini-3.5-flash:
+  provider: "google"
+  model_path: "gemini-3.5-flash"
+  enable_reasoning: true
+  defaults:
+    temperature: 1.0
+    top_p: 0.95
+    max_tokens: 8192
+
+gemini-3.1-flash-lite:
+  provider: "google"
+  model_path: "gemini-3.1-flash-lite"
+  enable_reasoning: true
+  defaults:
+    temperature: 1.0
+    top_p: 0.95
+    max_tokens: 8192
+
 # =============================================================================
 # NVIDIA — Nemotron 3 Ultra (550B MoE / 55B active) +
 # Nano (30B MoE / 3B active); both expose reasoning trace
@@ -123,18 +145,45 @@ kimi-k26:
     top_p: 0.95
     max_tokens: 8192
 
-# =============================================================================
-# Qwen (Alibaba) — Qwen3.7 Max (large MoE) + Qwen3.6 27B (cost, dense)
-# =============================================================================
 
-qwen3-235b:
-  provider: "together"
-  model_path: "Qwen/Qwen3-235B-A22B-Instruct-2507-tput"
-  enable_reasoning: false
+# ==============================================================================
+# Olmo - 32B dense, open-weight model from AllenAI; reasoning trace exposed natively
+# ==============================================================================
+olmo-32b:
+  provider: "huggingface"
+  model_path: "allenai/Olmo-3.1-32B-Think"
+  lora_path: null
+  enable_reasoning: true
   defaults:
     temperature: 0.6
     top_p: 0.95
     max_tokens: 8192
+
+# ==============================================================================
+# NVIDIA Nemotron - 32B dense, open-weight reasoning models from NVIDIA
+# ==============================================================================
+nemotron-32b:
+  provider: "huggingface"
+  model_path: "nvidia/OpenReasoning-Nemotron-32B"
+  enable_reasoning: true
+  defaults:
+    temperature: 0.6
+    top_p: 0.95
+    max_tokens: 8192
+
+code-nemotron-32b:
+  provider: "huggingface"
+  model_path: "nvidia/OpenCodeReasoning-Nemotron-1.1-32B"
+  enable_reasoning: true
+  defaults:
+    temperature: 0.6
+    top_p: 0.95
+    max_tokens: 8192
+
+# ==============================================================================
+# Qwen (Alibaba Cloud API) - Qwen3.5 open-weight (dense + MoE) and
+# Qwen3.5 Flash/Plus (closed, dated snapshots); all support thinking mode
+# ==============================================================================
 
 qwen3-32b:
   provider: "huggingface"
@@ -145,13 +194,36 @@ qwen3-32b:
     top_p: 0.95
     max_tokens: 8192
 
+qwen3.5-27b:
+  provider: "qwen"
+  model_path: "qwen3.5-27b"
+  enable_reasoning: true
+  defaults:
+    temperature: 0.6
+    top_p: 0.95
+    max_tokens: 8192
 
-# ==============================================================================
-# Olmo - 32B dense, open-weight model from AllenAI; reasoning trace exposed natively
-# ==============================================================================
-olmo-32b:
-  provider: "huggingface"
-  model_path: "allenai/Olmo-3.1-32B-Think"
+qwen3.5-35b-a3b:
+  provider: "qwen"
+  model_path: "qwen3.5-35b-a3b"
+  enable_reasoning: true
+  defaults:
+    temperature: 0.6
+    top_p: 0.95
+    max_tokens: 8192
+
+qwen3.5-flash-2026-02-23:
+  provider: "qwen"
+  model_path: "qwen3.5-flash-2026-02-23"
+  enable_reasoning: true
+  defaults:
+    temperature: 0.6
+    top_p: 0.95
+    max_tokens: 8192
+
+qwen3.5-plus-2026-04-20:
+  provider: "qwen"
+  model_path: "qwen3.5-plus-2026-04-20"
   enable_reasoning: true
   defaults:
     temperature: 0.6

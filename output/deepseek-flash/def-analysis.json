@@ -9,8 +9,8 @@
     "ambiguous_anchor": 0,
     "phantom_rate": 0.0,
     "phantom_python_anchor_uses_python": 0,
-    "with_response": 1660,
-    "with_reasoning": 1660
+    "with_response": 1680,
+    "with_reasoning": 1680
   },
   "examples": {
     "phantom_python": [],

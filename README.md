@@ -143,7 +143,7 @@ pytest tests/
 pre-commit run --all-files
 
 # update dependency lockfiles
-uv pip compile requirements.txt --output-file requirements.frozen
+uv pip compile requirements.txt --output-file requirements.frozen --upgrade
 ```
 
 ## *citation*

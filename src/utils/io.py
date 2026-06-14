@@ -14,6 +14,7 @@ def save_json(
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+        f.write("\n")  # ensure trailing newline
 
 
 def load_json(path: str | Path) -> Any:

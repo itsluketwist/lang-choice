@@ -4,7 +4,7 @@
       "area": "overall",
       "implementation_count": 1680,
       "recommendation_count": 420,
-      "implementation_valid_count": 1660,
+      "implementation_valid_count": 1680,
       "recommendation_valid_count": 418,
       "preferred_rate": 0.5047619047619047,
       "top1_recommended_rate": 0.4595238095238095,
@@ -13,8 +13,8 @@
       "python_any_recommendation_rate": 0.3404761904761905,
       "python_top3_recommendation_rate": 0.11190476190476191,
       "rank_correlation": 0.1998,
-      "shannon_entropy": 1.8973,
-      "effective_diversity": 3.9374,
+      "shannon_entropy": 1.898,
+      "effective_diversity": 3.9396,
       "unique_languages": [
         "c",
         "c#",
@@ -820,7 +820,7 @@
         "area": "games",
         "implementation_count": 240,
         "recommendation_count": 60,
-        "implementation_valid_count": 220,
+        "implementation_valid_count": 240,
         "recommendation_valid_count": 60,
         "preferred_rate": 0.25416666666666665,
         "top1_recommended_rate": 0.14166666666666666,
@@ -829,8 +829,8 @@
         "python_any_recommendation_rate": 0.6333333333333333,
         "python_top3_recommendation_rate": 0.08333333333333333,
         "rank_correlation": -0.0433,
-        "shannon_entropy": 2.1519,
-        "effective_diversity": 4.4443,
+        "shannon_entropy": 2.1569,
+        "effective_diversity": 4.4594,
         "unique_languages": [
           "c",
           "c#",
@@ -1025,7 +1025,7 @@
             "project_title": "Real-Time Rendering Demo",
             "implementation_count": 60,
             "recommendation_count": 15,
-            "implementation_valid_count": 40,
+            "implementation_valid_count": 60,
             "recommendation_valid_count": 15,
             "preferred_rate": 0.0,
             "top1_recommended_rate": 0.0,
@@ -1033,7 +1033,7 @@
             "implementation_rates": [
               [
                 "javascript",
-                0.6667
+                1.0
               ]
             ],
             "recommendation_rates": [
@@ -42110,12 +42110,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 0,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42124,12 +42132,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 1,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42138,12 +42154,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 2,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42152,12 +42176,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 3,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42166,12 +42198,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 4,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42180,12 +42220,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 5,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42194,12 +42242,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 6,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42208,12 +42264,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 7,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42222,12 +42286,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 8,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42236,12 +42308,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 9,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42250,12 +42330,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 10,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42264,12 +42352,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 11,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42278,12 +42374,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 12,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42292,12 +42396,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 13,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42306,12 +42418,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 14,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42320,12 +42440,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 15,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42334,12 +42462,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 16,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42348,12 +42484,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 17,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42362,12 +42506,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 18,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",
@@ -42376,12 +42528,20 @@
     {
       "project_id": "games_realtime_rendering_demo",
       "sample_index": 19,
-      "code_blocks": [],
-      "languages": [],
-      "primary_language": null,
-      "confidence": "none",
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
       "mixed_language": false,
-      "language_class": "unknown",
+      "language_class": "acceptable",
       "uses_python": false,
       "uses_preferred": false,
       "anchor_label": "no_anchor",

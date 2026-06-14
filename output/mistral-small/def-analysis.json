@@ -1,22 +1,22 @@
 {
   "summary": {
     "total": 1680,
-    "no_anchor": 1631,
+    "no_anchor": 1620,
     "phantom_python_anchor": 1,
     "phantom_non_python_anchor": 0,
     "real_python_anchor": 0,
     "real_non_python_anchor": 0,
-    "ambiguous_anchor": 48,
+    "ambiguous_anchor": 59,
     "phantom_rate": 0.0005952380952380953,
-    "phantom_python_anchor_uses_python": 0,
-    "with_response": 1357,
-    "with_reasoning": 1400
+    "phantom_python_anchor_uses_python": 1,
+    "with_response": 1680,
+    "with_reasoning": 1680
   },
   "examples": {
     "phantom_python": [
       {
         "id": "systems_highthroughput_parser__write",
-        "sample_index": 13,
+        "sample_index": 12,
         "source": "reasoning",
         "sentence": "But the example above is already using a loop which is as efficient as it gets in Python."
       }
@@ -24,33 +24,27 @@
     "ambiguous_anchor": [
       {
         "id": "mobile_native_android_app__write",
-        "sample_index": 7,
+        "sample_index": 6,
         "source": "reasoning",
         "sentence": "existing code"
       },
       {
         "id": "mobile_native_android_app__write",
-        "sample_index": 11,
+        "sample_index": 10,
         "source": "reasoning",
         "sentence": "existing code ..."
+      },
+      {
+        "id": "mobile_native_android_app__write",
+        "sample_index": 18,
+        "source": "reasoning",
+        "sentence": "existing code"
       },
       {
         "id": "mobile_native_android_app__write",
         "sample_index": 19,
         "source": "reasoning",
         "sentence": "existing code"
-      },
-      {
-        "id": "mobile_native_android_app__create",
-        "sample_index": 8,
-        "source": "reasoning",
-        "sentence": "existing code ..."
-      },
-      {
-        "id": "mobile_native_android_app__create",
-        "sample_index": 14,
-        "source": "reasoning",
-        "sentence": "existing code ..."
       },
       {
         "id": "mobile_native_android_app__generate",
@@ -65,14 +59,20 @@
         "sentence": "existing code ..."
       },
       {
+        "id": "mobile_offline_first_mobile_app__create",
+        "sample_index": 10,
+        "source": "reasoning",
+        "sentence": "existing code ..."
+      },
+      {
         "id": "mobile_app_store_consumer_app__write",
-        "sample_index": 7,
+        "sample_index": 6,
         "source": "reasoning",
         "sentence": "// Load previous messages with this user"
       },
       {
         "id": "mobile_app_store_consumer_app__write",
-        "sample_index": 18,
+        "sample_index": 17,
         "source": "reasoning",
         "sentence": "#### Real-time Notifications\nFor real-time notifications, we can use Socket.io as shown earlier."
       },
@@ -89,6 +89,42 @@
         "sentence": "// Load previous messages"
       },
       {
+        "id": "mobile_app_store_consumer_app__create",
+        "sample_index": 18,
+        "source": "reasoning",
+        "sentence": "// Clear previous messages"
+      },
+      {
+        "id": "mobile_app_store_consumer_app__generate",
+        "sample_index": 3,
+        "source": "reasoning",
+        "sentence": "existing code ..."
+      },
+      {
+        "id": "mobile_app_store_consumer_app__generate",
+        "sample_index": 5,
+        "source": "reasoning",
+        "sentence": "Also, we need to add the /api/auth/me and /api/auth/users routes to the authRoutes file as shown above."
+      },
+      {
+        "id": "mobile_app_store_consumer_app__generate",
+        "sample_index": 6,
+        "source": "reasoning",
+        "sentence": "// Load previous messages (simplified)"
+      },
+      {
+        "id": "mobile_app_store_consumer_app__generate",
+        "sample_index": 9,
+        "source": "reasoning",
+        "sentence": "The example above simulates a premium feature without actual payment processing."
+      },
+      {
+        "id": "mobile_app_store_consumer_app__generate",
+        "sample_index": 16,
+        "source": "reasoning",
+        "sentence": "Also, we need to set up Firebase Cloud Messaging for real browser notifications, but for minimal version, we can skip the actual browser notifications and just show UI notifications as shown above."
+      },
+      {
         "id": "frontend_browser_web_application__create",
         "sample_index": 8,
         "source": "reasoning",
@@ -96,19 +132,19 @@
       },
       {
         "id": "frontend_interactive_client_visualization__write",
-        "sample_index": 6,
+        "sample_index": 8,
         "source": "reasoning",
-        "sentence": "Now, the redrawHeatmap function as discussed."
+        "sentence": "So for the example above, adding a new column with values [7,8], the update would be:"
       },
       {
         "id": "frontend_single_page_application__create",
-        "sample_index": 3,
+        "sample_index": 2,
         "source": "reasoning",
         "sentence": "Create the directory structure as shown above."
       },
       {
         "id": "frontend_single_page_application__create",
-        "sample_index": 16,
+        "sample_index": 15,
         "source": "reasoning",
         "sentence": "Create the files as shown above."
       },
@@ -120,25 +156,19 @@
       },
       {
         "id": "low_latency_realtime_market_data_processor__write",
-        "sample_index": 12,
-        "source": "reasoning",
-        "sentence": "Then the classes as discussed."
-      },
-      {
-        "id": "low_latency_realtime_market_data_processor__write",
-        "sample_index": 15,
+        "sample_index": 14,
         "source": "reasoning",
         "sentence": "existing code ..."
       },
       {
         "id": "low_latency_highfreq_messaging_system__write",
-        "sample_index": 19,
+        "sample_index": 18,
         "source": "reasoning",
         "sentence": "First, define the LatencyHistogram as discussed."
       },
       {
         "id": "low_latency_ultra_lowlatency_networking__write",
-        "sample_index": 18,
+        "sample_index": 17,
         "source": "reasoning",
         "sentence": "- No error handling in fast path (as discussed)\n- Assumes IPv4 only\n- No VLAN support\n- No checksum validation\n- Filter rules are simple"
       },
@@ -156,7 +186,7 @@
       },
       {
         "id": "systems_systems_daemon__generate",
-        "sample_index": 11,
+        "sample_index": 10,
         "source": "reasoning",
         "sentence": "Also, the get_memory_usage function as discussed."
       },
@@ -173,6 +203,12 @@
         "sentence": "As mentioned earlier, the accelerometer can give us roll and pitch, but not yaw (unless we're on a flat surface and use arctan2 of x and y accelerations, but that's actually roll and pitch)."
       },
       {
+        "id": "embedded_robotics_control_loop__generate",
+        "sample_index": 19,
+        "source": "reasoning",
+        "sentence": "existing code ..."
+      },
+      {
         "id": "embedded_sensor_processing_pipeline__generate",
         "sample_index": 13,
         "source": "reasoning",
@@ -180,13 +216,13 @@
       },
       {
         "id": "games_2d_game__write",
-        "sample_index": 14,
+        "sample_index": 13,
         "source": "reasoning",
         "sentence": "existing code ..."
       },
       {
         "id": "games_2d_game__write",
-        "sample_index": 18,
+        "sample_index": 17,
         "source": "reasoning",
         "sentence": "As discussed earlier, perhaps check the y-position relative to ground_y."
       },
@@ -198,7 +234,7 @@
       },
       {
         "id": "games_realtime_rendering_demo__generate",
-        "sample_index": 17,
+        "sample_index": 14,
         "source": "reasoning",
         "sentence": "existing code ..."
       },
@@ -215,14 +251,38 @@
         "sentence": "However, in the example above, we're passing float arrays, which in C# are fixed-size and can be pinned."
       },
       {
-        "id": "enterprise_strongly_typed_service__write",
+        "id": "games_physics_simulation__write",
         "sample_index": 4,
         "source": "reasoning",
-        "sentence": "existing code ..."
+        "sentence": "As discussed earlier."
+      },
+      {
+        "id": "games_physics_simulation__write",
+        "sample_index": 11,
+        "source": "reasoning",
+        "sentence": "As mentioned earlier, using a fixed timestep accumulator."
+      },
+      {
+        "id": "games_physics_simulation__create",
+        "sample_index": 2,
+        "source": "reasoning",
+        "sentence": "As discussed earlier, use a fixed timestep with accumulator."
+      },
+      {
+        "id": "games_physics_simulation__create",
+        "sample_index": 5,
+        "source": "reasoning",
+        "sentence": "As discussed earlier, for two spheres:"
+      },
+      {
+        "id": "games_physics_simulation__create",
+        "sample_index": 19,
+        "source": "reasoning",
+        "sentence": "- No rotation in collision response (but as discussed, for spheres it's okay)."
       },
       {
         "id": "enterprise_strongly_typed_service__write",
-        "sample_index": 6,
+        "sample_index": 5,
         "source": "reasoning",
         "sentence": "existing code ..."
       },
@@ -240,15 +300,21 @@
       },
       {
         "id": "enterprise_strongly_typed_service__create",
-        "sample_index": 14,
+        "sample_index": 13,
         "source": "reasoning",
         "sentence": "existing code ..."
       },
       {
         "id": "enterprise_strongly_typed_service__create",
-        "sample_index": 18,
+        "sample_index": 17,
         "source": "reasoning",
         "sentence": "existing code ..."
+      },
+      {
+        "id": "enterprise_jvm_ecosystem_service__generate",
+        "sample_index": 1,
+        "source": "reasoning",
+        "sentence": "Alternatively, use records for DTOs (as shown earlier) which are immutable and type-safe."
       },
       {
         "id": "enterprise_dotnet_ecosystem_service__write",
@@ -979,6 +1045,16 @@
       "task_type": "implementation",
       "sample_index": 6,
       "context_condition": "none",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"existing code\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "uses_python": false
+    },
+    {
+      "id": "mobile_native_android_app__write",
+      "project_id": "mobile_native_android_app",
+      "task_type": "implementation",
+      "sample_index": 7,
+      "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": false
@@ -987,7 +1063,107 @@
       "id": "mobile_native_android_app__write",
       "project_id": "mobile_native_android_app",
       "task_type": "implementation",
-      "sample_index": 7,
+      "sample_index": 8,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "mobile_native_android_app__write",
+      "project_id": "mobile_native_android_app",
+      "task_type": "implementation",
+      "sample_index": 9,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "mobile_native_android_app__write",
+      "project_id": "mobile_native_android_app",
+      "task_type": "implementation",
+      "sample_index": 10,
+      "context_condition": "none",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "uses_python": false
+    },
+    {
+      "id": "mobile_native_android_app__write",
+      "project_id": "mobile_native_android_app",
+      "task_type": "implementation",
+      "sample_index": 11,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "mobile_native_android_app__write",
+      "project_id": "mobile_native_android_app",
+      "task_type": "implementation",
+      "sample_index": 12,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "mobile_native_android_app__write",
+      "project_id": "mobile_native_android_app",
+      "task_type": "implementation",
+      "sample_index": 13,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "mobile_native_android_app__write",
+      "project_id": "mobile_native_android_app",
+      "task_type": "implementation",
+      "sample_index": 14,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "mobile_native_android_app__write",
+      "project_id": "mobile_native_android_app",
+      "task_type": "implementation",
+      "sample_index": 15,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "mobile_native_android_app__write",
+      "project_id": "mobile_native_android_app",
+      "task_type": "implementation",
+      "sample_index": 16,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "mobile_native_android_app__write",
+      "project_id": "mobile_native_android_app",
+      "task_type": "implementation",
+      "sample_index": 17,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "mobile_native_android_app__write",
+      "project_id": "mobile_native_android_app",
+      "task_type": "implementation",
+      "sample_index": 18,
       "context_condition": "none",
       "anchor_label": "ambiguous_anchor",
       "anchor_rationale": "[reasoning] \"existing code\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
@@ -997,116 +1173,6 @@
       "id": "mobile_native_android_app__write",
       "project_id": "mobile_native_android_app",
       "task_type": "implementation",
-      "sample_index": 8,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "mobile_native_android_app__write",
-      "project_id": "mobile_native_android_app",
-      "task_type": "implementation",
-      "sample_index": 9,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "mobile_native_android_app__write",
-      "project_id": "mobile_native_android_app",
-      "task_type": "implementation",
-      "sample_index": 10,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "mobile_native_android_app__write",
-      "project_id": "mobile_native_android_app",
-      "task_type": "implementation",
-      "sample_index": 11,
-      "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
-      "uses_python": false
-    },
-    {
-      "id": "mobile_native_android_app__write",
-      "project_id": "mobile_native_android_app",
-      "task_type": "implementation",
-      "sample_index": 12,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "mobile_native_android_app__write",
-      "project_id": "mobile_native_android_app",
-      "task_type": "implementation",
-      "sample_index": 13,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "mobile_native_android_app__write",
-      "project_id": "mobile_native_android_app",
-      "task_type": "implementation",
-      "sample_index": 14,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "mobile_native_android_app__write",
-      "project_id": "mobile_native_android_app",
-      "task_type": "implementation",
-      "sample_index": 15,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "mobile_native_android_app__write",
-      "project_id": "mobile_native_android_app",
-      "task_type": "implementation",
-      "sample_index": 16,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "mobile_native_android_app__write",
-      "project_id": "mobile_native_android_app",
-      "task_type": "implementation",
-      "sample_index": 17,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "mobile_native_android_app__write",
-      "project_id": "mobile_native_android_app",
-      "task_type": "implementation",
-      "sample_index": 18,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "mobile_native_android_app__write",
-      "project_id": "mobile_native_android_app",
-      "task_type": "implementation",
       "sample_index": 19,
       "context_condition": "none",
       "anchor_label": "ambiguous_anchor",
@@ -1199,8 +1265,8 @@
       "task_type": "implementation",
       "sample_index": 8,
       "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": false
     },
     {
@@ -1259,8 +1325,8 @@
       "task_type": "implementation",
       "sample_index": 14,
       "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": false
     },
     {
@@ -1819,8 +1885,8 @@
       "task_type": "implementation",
       "sample_index": 10,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -2178,16 +2244,6 @@
       "project_id": "mobile_app_store_consumer_app",
       "task_type": "implementation",
       "sample_index": 6,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "mobile_app_store_consumer_app__write",
-      "project_id": "mobile_app_store_consumer_app",
-      "task_type": "implementation",
-      "sample_index": 7,
       "context_condition": "none",
       "anchor_label": "ambiguous_anchor",
       "anchor_rationale": "[reasoning] \"// Load previous messages with this user\" references prior context (terms: ['previous message']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
@@ -2197,6 +2253,16 @@
       "id": "mobile_app_store_consumer_app__write",
       "project_id": "mobile_app_store_consumer_app",
       "task_type": "implementation",
+      "sample_index": 7,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "mobile_app_store_consumer_app__write",
+      "project_id": "mobile_app_store_consumer_app",
+      "task_type": "implementation",
       "sample_index": 8,
       "context_condition": "none",
       "anchor_label": "no_anchor",
@@ -2289,8 +2355,8 @@
       "task_type": "implementation",
       "sample_index": 17,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"#### Real-time Notifications\nFor real-time notifications, we can use Socket.io as shown earlier.\" references prior context (terms: ['as shown earlier']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -2299,8 +2365,8 @@
       "task_type": "implementation",
       "sample_index": 18,
       "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"#### Real-time Notifications\nFor real-time notifications, we can use Socket.io as shown earlier.\" references prior context (terms: ['as shown earlier']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": false
     },
     {
@@ -2499,8 +2565,8 @@
       "task_type": "implementation",
       "sample_index": 18,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"// Clear previous messages\" references prior context (terms: ['previous message']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -2549,8 +2615,8 @@
       "task_type": "implementation",
       "sample_index": 3,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -2569,8 +2635,8 @@
       "task_type": "implementation",
       "sample_index": 5,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"Also, we need to add the /api/auth/me and /api/auth/users routes to the authRoutes file as shown above.\" references prior context (terms: ['as shown above']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -2579,8 +2645,8 @@
       "task_type": "implementation",
       "sample_index": 6,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"// Load previous messages (simplified)\" references prior context (terms: ['previous message']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -2609,8 +2675,8 @@
       "task_type": "implementation",
       "sample_index": 9,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"The example above simulates a premium feature without actual payment processing.\" references prior context (terms: ['the example above']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -2679,8 +2745,8 @@
       "task_type": "implementation",
       "sample_index": 16,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"Also, we need to set up Firebase Cloud Messaging for real browser notifications, but for minimal version, we can skip the actual browser notifications and just show UI notifications as shown above.\" references prior context (terms: ['as shown above']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -3979,28 +4045,28 @@
       "task_type": "implementation",
       "sample_index": 6,
       "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "frontend_interactive_client_visualization__write",
+      "project_id": "frontend_interactive_client_visualization",
+      "task_type": "implementation",
+      "sample_index": 7,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "frontend_interactive_client_visualization__write",
+      "project_id": "frontend_interactive_client_visualization",
+      "task_type": "implementation",
+      "sample_index": 8,
+      "context_condition": "none",
       "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"Now, the redrawHeatmap function as discussed.\" references prior context (terms: ['as discussed']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
-      "uses_python": false
-    },
-    {
-      "id": "frontend_interactive_client_visualization__write",
-      "project_id": "frontend_interactive_client_visualization",
-      "task_type": "implementation",
-      "sample_index": 7,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "frontend_interactive_client_visualization__write",
-      "project_id": "frontend_interactive_client_visualization",
-      "task_type": "implementation",
-      "sample_index": 8,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_rationale": "[reasoning] \"So for the example above, adding a new column with values [7,8], the update would be:\" references prior context (terms: ['the example above']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -4738,16 +4804,6 @@
       "project_id": "frontend_single_page_application",
       "task_type": "implementation",
       "sample_index": 2,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "frontend_single_page_application__create",
-      "project_id": "frontend_single_page_application",
-      "task_type": "implementation",
-      "sample_index": 3,
       "context_condition": "none",
       "anchor_label": "ambiguous_anchor",
       "anchor_rationale": "[reasoning] \"Create the directory structure as shown above.\" references prior context (terms: ['as shown above']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
@@ -4757,6 +4813,16 @@
       "id": "frontend_single_page_application__create",
       "project_id": "frontend_single_page_application",
       "task_type": "implementation",
+      "sample_index": 3,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "frontend_single_page_application__create",
+      "project_id": "frontend_single_page_application",
+      "task_type": "implementation",
       "sample_index": 4,
       "context_condition": "none",
       "anchor_label": "no_anchor",
@@ -4869,8 +4935,8 @@
       "task_type": "implementation",
       "sample_index": 15,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"Create the files as shown above.\" references prior context (terms: ['as shown above']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -4879,8 +4945,8 @@
       "task_type": "implementation",
       "sample_index": 16,
       "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"Create the files as shown above.\" references prior context (terms: ['as shown above']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": false
     },
     {
@@ -5839,8 +5905,8 @@
       "task_type": "implementation",
       "sample_index": 12,
       "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"Then the classes as discussed.\" references prior context (terms: ['as discussed']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": true
     },
     {
@@ -5858,16 +5924,6 @@
       "project_id": "low_latency_realtime_market_data_processor",
       "task_type": "implementation",
       "sample_index": 14,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
-    },
-    {
-      "id": "low_latency_realtime_market_data_processor__write",
-      "project_id": "low_latency_realtime_market_data_processor",
-      "task_type": "implementation",
-      "sample_index": 15,
       "context_condition": "none",
       "anchor_label": "ambiguous_anchor",
       "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
@@ -5877,6 +5933,16 @@
       "id": "low_latency_realtime_market_data_processor__write",
       "project_id": "low_latency_realtime_market_data_processor",
       "task_type": "implementation",
+      "sample_index": 15,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": true
+    },
+    {
+      "id": "low_latency_realtime_market_data_processor__write",
+      "project_id": "low_latency_realtime_market_data_processor",
+      "task_type": "implementation",
       "sample_index": 16,
       "context_condition": "none",
       "anchor_label": "no_anchor",
@@ -6498,22 +6564,22 @@
       "project_id": "low_latency_highfreq_messaging_system",
       "task_type": "implementation",
       "sample_index": 18,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
-    },
-    {
-      "id": "low_latency_highfreq_messaging_system__write",
-      "project_id": "low_latency_highfreq_messaging_system",
-      "task_type": "implementation",
-      "sample_index": 19,
       "context_condition": "none",
       "anchor_label": "ambiguous_anchor",
       "anchor_rationale": "[reasoning] \"First, define the LatencyHistogram as discussed.\" references prior context (terms: ['as discussed']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": true
     },
     {
+      "id": "low_latency_highfreq_messaging_system__write",
+      "project_id": "low_latency_highfreq_messaging_system",
+      "task_type": "implementation",
+      "sample_index": 19,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": true
+    },
+    {
       "id": "low_latency_highfreq_messaging_system__create",
       "project_id": "low_latency_highfreq_messaging_system",
       "task_type": "implementation",
@@ -7088,19 +7154,19 @@
       "project_id": "low_latency_ultra_lowlatency_networking",
       "task_type": "implementation",
       "sample_index": 17,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "low_latency_ultra_lowlatency_networking__write",
-      "project_id": "low_latency_ultra_lowlatency_networking",
-      "task_type": "implementation",
-      "sample_index": 18,
       "context_condition": "none",
       "anchor_label": "ambiguous_anchor",
       "anchor_rationale": "[reasoning] \"- No error handling in fast path (as discussed)\n- Assumes IPv4 only\n- No VLAN support\n- No checksum validation\n- Filter rules are simple\" references prior context (terms: ['as discussed']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "uses_python": false
+    },
+    {
+      "id": "low_latency_ultra_lowlatency_networking__write",
+      "project_id": "low_latency_ultra_lowlatency_networking",
+      "task_type": "implementation",
+      "sample_index": 18,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": false
     },
     {
@@ -7639,8 +7705,8 @@
       "task_type": "implementation",
       "sample_index": 12,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "phantom_python_anchor",
+      "anchor_rationale": "[reasoning] \"But the example above is already using a loop which is as efficient as it gets in Python.\" references prior context (terms: ['the example above']) with Python cues (terms: ['python']), but Python is NOT present in prior messages (prior assistant turns exist: False).",
       "uses_python": true
     },
     {
@@ -7649,8 +7715,8 @@
       "task_type": "implementation",
       "sample_index": 13,
       "context_condition": "none",
-      "anchor_label": "phantom_python_anchor",
-      "anchor_rationale": "[reasoning] \"But the example above is already using a loop which is as efficient as it gets in Python.\" references prior context (terms: ['the example above']) with Python cues (terms: ['python']), but Python is NOT present in prior messages (prior assistant turns exist: False).",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": false
     },
     {
@@ -9219,8 +9285,8 @@
       "task_type": "implementation",
       "sample_index": 10,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"Also, the get_memory_usage function as discussed.\" references prior context (terms: ['as discussed']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -9229,8 +9295,8 @@
       "task_type": "implementation",
       "sample_index": 11,
       "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"Also, the get_memory_usage function as discussed.\" references prior context (terms: ['as discussed']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": false
     },
     {
@@ -10641,7 +10707,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "embedded_robotics_control_loop__write",
@@ -10711,7 +10777,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "embedded_robotics_control_loop__create",
@@ -10841,7 +10907,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "embedded_robotics_control_loop__create",
@@ -10911,7 +10977,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "embedded_robotics_control_loop__generate",
@@ -11041,7 +11107,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "embedded_robotics_control_loop__generate",
@@ -11109,9 +11175,9 @@
       "task_type": "implementation",
       "sample_index": 19,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "uses_python": false
     },
     {
       "id": "embedded_sensor_processing_pipeline__write",
@@ -12449,8 +12515,8 @@
       "task_type": "implementation",
       "sample_index": 13,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": true
     },
     {
@@ -12459,8 +12525,8 @@
       "task_type": "implementation",
       "sample_index": 14,
       "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": true
     },
     {
@@ -12489,8 +12555,8 @@
       "task_type": "implementation",
       "sample_index": 17,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"As discussed earlier, perhaps check the y-position relative to ground_y.\" references prior context (terms: ['as discussed']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": true
     },
     {
@@ -12499,8 +12565,8 @@
       "task_type": "implementation",
       "sample_index": 18,
       "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"As discussed earlier, perhaps check the y-position relative to ground_y.\" references prior context (terms: ['as discussed']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": true
     },
     {
@@ -13459,8 +13525,8 @@
       "task_type": "implementation",
       "sample_index": 14,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -13489,8 +13555,8 @@
       "task_type": "implementation",
       "sample_index": 17,
       "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": false
     },
     {
@@ -14159,8 +14225,8 @@
       "task_type": "implementation",
       "sample_index": 4,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"As discussed earlier.\" references prior context (terms: ['as discussed']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": true
     },
     {
@@ -14229,8 +14295,8 @@
       "task_type": "implementation",
       "sample_index": 11,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"As mentioned earlier, using a fixed timestep accumulator.\" references prior context (terms: ['as mentioned earlier']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -14339,8 +14405,8 @@
       "task_type": "implementation",
       "sample_index": 2,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"As discussed earlier, use a fixed timestep with accumulator.\" references prior context (terms: ['as discussed']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
@@ -14369,8 +14435,8 @@
       "task_type": "implementation",
       "sample_index": 5,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"As discussed earlier, for two spheres:\" references prior context (terms: ['as discussed']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": true
     },
     {
@@ -14509,8 +14575,8 @@
       "task_type": "implementation",
       "sample_index": 19,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"- No rotation in collision response (but as discussed, for spheres it's okay).\" references prior context (terms: ['as discussed']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": true
     },
     {
@@ -14758,6 +14824,16 @@
       "project_id": "enterprise_strongly_typed_service",
       "task_type": "implementation",
       "sample_index": 4,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": true
+    },
+    {
+      "id": "enterprise_strongly_typed_service__write",
+      "project_id": "enterprise_strongly_typed_service",
+      "task_type": "implementation",
+      "sample_index": 5,
       "context_condition": "none",
       "anchor_label": "ambiguous_anchor",
       "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
@@ -14767,20 +14843,10 @@
       "id": "enterprise_strongly_typed_service__write",
       "project_id": "enterprise_strongly_typed_service",
       "task_type": "implementation",
-      "sample_index": 5,
+      "sample_index": 6,
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
-    },
-    {
-      "id": "enterprise_strongly_typed_service__write",
-      "project_id": "enterprise_strongly_typed_service",
-      "task_type": "implementation",
-      "sample_index": 6,
-      "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": true
     },
     {
@@ -15049,8 +15115,8 @@
       "task_type": "implementation",
       "sample_index": 13,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": true
     },
     {
@@ -15059,8 +15125,8 @@
       "task_type": "implementation",
       "sample_index": 14,
       "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": true
     },
     {
@@ -15089,8 +15155,8 @@
       "task_type": "implementation",
       "sample_index": 17,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": true
     },
     {
@@ -15099,8 +15165,8 @@
       "task_type": "implementation",
       "sample_index": 18,
       "context_condition": "none",
-      "anchor_label": "ambiguous_anchor",
-      "anchor_rationale": "[reasoning] \"existing code ...\" references prior context (terms: ['existing code']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": true
     },
     {
@@ -15729,8 +15795,8 @@
       "task_type": "implementation",
       "sample_index": 1,
       "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "anchor_label": "ambiguous_anchor",
+      "anchor_rationale": "[reasoning] \"Alternatively, use records for DTOs (as shown earlier) which are immutable and type-safe.\" references prior context (terms: ['as shown earlier']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
       "uses_python": false
     },
     {
