@@ -4,9 +4,9 @@
     # via -r requirements.txt
 annotated-types==0.7.0
     # via pydantic
-anthropic==0.109.1
+anthropic==0.109.2
     # via llm-codegen-research
-anyio==4.13.0
+anyio==4.14.0
     # via
     #   anthropic
     #   google-genai
@@ -52,7 +52,7 @@ comm==0.2.3
     # via
     #   ipykernel
     #   ipywidgets
-cryptography==48.0.1
+cryptography==49.0.0
     # via google-auth
 cyclopts==4.18.0
     # via together
@@ -82,11 +82,11 @@ executing==2.2.1
     # via stack-data
 fastjsonschema==2.21.2
     # via nbformat
-filelock==3.29.3
+filelock==3.29.4
     # via together
 fqdn==1.5.1
     # via jsonschema
-google-auth==2.54.0
+google-auth==2.55.0
     # via google-genai
 google-genai==2.8.0
     # via llm-codegen-research
@@ -198,7 +198,7 @@ jupyterlab-widgets==3.0.16
     # via ipywidgets
 lark==1.3.1
     # via rfc3987-syntax
-llm-codegen-research==2.17
+llm-codegen-research==2.18
     # via -r requirements.txt
 markdown-it-py==4.2.0
     # via rich
@@ -380,7 +380,7 @@ terminado==0.18.1
     #   jupyter-server-terminals
 tinycss2==1.5.1
     # via bleach
-together==2.16.0
+together==2.16.1
     # via llm-codegen-research
 tornado==6.5.7
     # via

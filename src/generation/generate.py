@@ -1,15 +1,62 @@
 """Generate model responses for a list of benchmark prompts."""
 
+import time
 from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import cast
 
 from langchoicebench.schema import BenchmarkPrompt
-from llm_cgr import get_llm
+from llm_cgr import GenerationProtocol, get_llm
 from tqdm import tqdm
 
 from src.generation.schemas import GenerationResult, InferenceConfig, ModelConfig
 from src.utils.log import log
+
+
+# transient API errors (e.g. "model overloaded") are retried with this backoff,
+# in seconds, before the sample is given up on
+RETRY_DELAYS = [1, 5, 15]
+
+
+def _generate_sample(
+    llm: GenerationProtocol,
+    prompt: str,
+    temperature: float,
+    top_p: float,
+    max_tokens: int,
+    enable_reasoning: bool,
+) -> tuple[str, str | None]:
+    """Generate a single sample, retrying transient failures with backoff.
+
+    Generating one sample at a time (rather than the whole batch via
+    llm.generate(samples=n)) means a single failure only loses that one
+    sample, instead of discarding every sample already generated for the
+    prompt.
+
+    Returns an empty response if all attempts fail.
+    """
+    for attempt, delay in enumerate([0, *RETRY_DELAYS]):
+        if delay:
+            time.sleep(delay)
+        try:
+            [generation] = llm.generate(
+                user=prompt,
+                samples=1,
+                temperature=temperature,
+                top_p=top_p,
+                max_tokens=max_tokens,
+            )
+        except Exception as e:
+            if attempt == len(RETRY_DELAYS):
+                log(f"\n    [WARNING] sample failed after {attempt + 1} attempts: {e}")
+                return "", None
+            continue
+
+        if enable_reasoning:
+            return cast(tuple[str, str | None], generation)
+        return cast(str, generation), None
+
+    return "", None  # unreachable, satisfies type checking
 
 
 def generate_responses(
@@ -22,9 +69,9 @@ def generate_responses(
 ) -> None:
     """Generate model responses for a set of (prompt, n_samples) tasks.
 
-    Each task is dispatched separately; llm_cgr's generate() handles all samples
-    for that prompt internally. Up to inference_config.max_workers tasks run
-    concurrently.
+    Each task is dispatched separately, and each sample within a task is
+    generated one at a time via _generate_sample. Up to inference_config.max_workers
+    tasks run concurrently.
 
     As each task completes, on_result is called with its GenerationResult — this
     lets the caller persist results to disk incrementally, so a crash partway
@@ -60,33 +107,24 @@ def generate_responses(
         prompt: BenchmarkPrompt,
         n_samples: int,
     ) -> GenerationResult:
-        """Generate n_samples for a single prompt and return a GenerationResult."""
-        try:
-            generations = llm.generate(
-                user=prompt.prompt,
-                samples=n_samples,
+        """Generate n_samples for a single prompt and return a GenerationResult.
+
+        Each sample is generated (and retried) individually, so a failure on
+        one sample does not discard the others already generated for this prompt.
+        """
+        pairs = [
+            _generate_sample(
+                llm=llm,
+                prompt=prompt.prompt,
                 temperature=temperature,
                 top_p=top_p,
                 max_tokens=max_tokens,
+                enable_reasoning=model_config.enable_reasoning,
             )
-        except Exception as e:
-            log(f"\n    [WARNING] {prompt.id} failed: {e}")
-            # fill with blanks so the result slot is preserved
-            generations = (
-                [("", None)] * n_samples
-                if model_config.enable_reasoning
-                else [""] * n_samples
-            )
-
-        if model_config.enable_reasoning:
-            # generate() returns list[tuple[str, str | None]] when enable_reasoning=True
-            pairs = cast(list[tuple[str, str | None]], generations)
-            responses = [r for r, _ in pairs]
-            reasoning: list[str | None] = [r for _, r in pairs]
-        else:
-            # generate() returns list[str] when enable_reasoning=False
-            responses = cast(list[str], generations)
-            reasoning = [None] * n_samples
+            for _ in range(n_samples)
+        ]
+        responses = [r for r, _ in pairs]
+        reasoning: list[str | None] = [r for _, r in pairs]
 
         return GenerationResult(
             id=prompt.id,
