@@ -117,21 +117,6 @@ gemini-3.1-flash-lite:
     top_p: 0.95
     max_tokens: 8192
 
-# =============================================================================
-# NVIDIA — Nemotron 3 Ultra (550B MoE / 55B active) +
-# Nano (30B MoE / 3B active); both expose reasoning trace
-# =============================================================================
-
-nemotron-ultra:
-  provider: "together"
-  model_path: "nvidia/nemotron-3-ultra-550b-a55b"
-  enable_reasoning: true
-  defaults:
-    temperature: 1.0
-    top_p: 0.95
-    max_tokens: 8192
-
-
 # ==============================================================================
 # Olmo - open-weight dense reasoning models from AllenAI; reasoning trace exposed natively
 # ==============================================================================

@@ -173,7 +173,9 @@ output/initial/*
 data/raw
 initial-plan.pdf
 CLAUDE.md
+logs/*
 
 # temporary
 notebooks/*
 config/context/*
+figures/*
