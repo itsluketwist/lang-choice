@@ -53,8 +53,12 @@ def _generate_sample(
             continue
 
         if enable_reasoning:
-            return cast(tuple[str, str | None], generation)
-        return cast(str, generation), None
+            # some providers return None for the response text on empty output —
+            # coerce to "" so _valid_samples treats it as a failed sample to retry
+            response, reasoning = cast(tuple[str | None, str | None], generation)
+            return response or "", reasoning
+        response = cast(str | None, generation)
+        return response or "", None
 
     return "", None  # unreachable, satisfies type checking
 
