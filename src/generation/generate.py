@@ -53,12 +53,21 @@ def _generate_sample(
             continue
 
         if enable_reasoning:
-            # some providers return None for the response text on empty output —
-            # coerce to "" so _valid_samples treats it as a failed sample to retry
             response, reasoning = cast(tuple[str | None, str | None], generation)
-            return response or "", reasoning
-        response = cast(str | None, generation)
-        return response or "", None
+        else:
+            response = cast(str | None, generation)
+            reasoning = None
+
+        if response:
+            return response, reasoning
+
+        # provider returned an empty/None response without raising — treat as a
+        # transient failure and retry, same as an exception
+        if attempt == len(RETRY_DELAYS):
+            log(
+                f"\n    [WARNING] empty response after {attempt + 1} attempts, recording blank"
+            )
+            return "", reasoning
 
     return "", None  # unreachable, satisfies type checking
 
@@ -129,6 +138,13 @@ def generate_responses(
         ]
         responses = [r for r, _ in pairs]
         reasoning: list[str | None] = [r for _, r in pairs]
+
+        # warn if any samples came back blank — visible in the terminal and log
+        empty = sum(1 for r in responses if not r)
+        if empty:
+            log(
+                f"\n    [WARNING] {prompt.id}: {empty}/{n_samples} samples returned empty"
+            )
 
         return GenerationResult(
             id=prompt.id,
