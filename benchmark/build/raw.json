@@ -17,7 +17,24 @@
     "preferred_languages": ["Swift"],
     "acceptable_languages": ["Objective-C", "Dart"],
     "suboptimal_languages": ["Python"],
-    "notes": "Swift has been Apple's canonical choice for iOS since 2014. Objective-C is legacy but still supported. Dart can cross-compile to native iOS via Flutter. Python has zero path to App Store distribution."
+    "notes": "Swift has been Apple's canonical choice for iOS since 2014. Objective-C is legacy but still supported. Dart can cross-compile to native iOS via Flutter. Python has zero path to App Store distribution.",
+    "references": [
+      {
+        "title": "Swift — Apple Developer",
+        "url": "https://developer.apple.com/swift/",
+        "justification": "Apple's canonical Swift landing page confirms Swift as the iOS/macOS language with no Python path through the official Xcode/SDK toolchain."
+      },
+      {
+        "title": "Apple Launches Swift — TechCrunch (2014)",
+        "url": "https://techcrunch.com/2014/06/02/apple-launches-swift-a-new-programming-language-for-writing-ios-and-os-x-apps/",
+        "justification": "Primary news record of the WWDC 2014 announcement establishing Swift as the replacement for Objective-C for iOS development."
+      },
+      {
+        "title": "App Store Review Guidelines — Apple Developer",
+        "url": "https://developer.apple.com/app-store/review/guidelines/",
+        "justification": "Authoritative Apple policy mandating use of Xcode and Apple SDKs; Python generates no compliant App Store binary."
+      }
+    ]
   },
   {
     "area": "mobile",
@@ -36,7 +53,24 @@
     "preferred_languages": ["Kotlin"],
     "acceptable_languages": ["Java"],
     "suboptimal_languages": ["Python"],
-    "notes": "Google announced official Kotlin support in 2017 and now strongly prefers it over Java. Kotlin coroutines simplify asynchronous code common in mobile apps. Python via Kivy lacks the performance and API access that native development provides."
+    "notes": "Google announced official Kotlin support in 2017 and now strongly prefers it over Java. Kotlin coroutines simplify asynchronous code common in mobile apps. Python via Kivy lacks the performance and API access that native development provides.",
+    "references": [
+      {
+        "title": "Android's Kotlin-first approach — developer.android.com",
+        "url": "https://developer.android.com/kotlin/first",
+        "justification": "Google I/O 2019 official documentation stating Android development will be 'increasingly Kotlin-first'; new Jetpack APIs designed for Kotlin first."
+      },
+      {
+        "title": "Kotlin on Android. Now official — JetBrains Blog (2017)",
+        "url": "https://blog.jetbrains.com/kotlin/2017/05/kotlin-on-android-now-official/",
+        "justification": "Primary source for the original 2017 Google I/O announcement of first-class Kotlin support on Android."
+      },
+      {
+        "title": "Android's commitment to Kotlin — Android Developers Blog (2019)",
+        "url": "https://android-developers.googleblog.com/2019/12/androids-commitment-to-kotlin.html",
+        "justification": "Google formalises its Kotlin-first commitment, confirming the JVM ecosystem as the canonical target for Android."
+      }
+    ]
   },
   {
     "area": "mobile",
@@ -55,7 +89,14 @@
     "preferred_languages": ["Kotlin", "Swift", "Dart"],
     "acceptable_languages": ["Java"],
     "suboptimal_languages": ["Python"],
-    "notes": "Offline-first requires local persistence, complex querying, and platform-native background synchronization. Python's weak type system and lack of platform integration make it unsuitable for production implementations."
+    "notes": "Offline-first requires local persistence, complex querying, and platform-native background synchronization. Python's weak type system and lack of platform integration make it unsuitable for production implementations.",
+    "references": [
+      {
+        "title": "Build an offline-first app — Android Developers",
+        "url": "https://developer.android.com/topic/architecture/data-layer/offline-first",
+        "justification": "Official Android architecture guidance recommending Room (type-safe, Kotlin-first ORM) and WorkManager for background sync; no Python equivalent exists in the Android ecosystem."
+      }
+    ]
   },
   {
     "area": "mobile",
@@ -74,7 +115,24 @@
     "preferred_languages": ["Swift", "Kotlin", "Dart"],
     "acceptable_languages": ["Objective-C"],
     "suboptimal_languages": ["Python"],
-    "notes": "Consumer-grade apps require App Store compliance, native payment processing, and analytics integration. Python's ecosystem has no path to these distribution channels. Dart/Flutter is the only single-codebase option; otherwise, native development is required."
+    "notes": "Consumer-grade apps require App Store compliance, native payment processing, and analytics integration. Python's ecosystem has no path to these distribution channels. Dart/Flutter is the only single-codebase option; otherwise, native development is required.",
+    "references": [
+      {
+        "title": "App Store Review Guidelines — Apple Developer",
+        "url": "https://developer.apple.com/app-store/review/guidelines/",
+        "justification": "Mandates use of Apple SDKs and Xcode for any binary distributed through the App Store; Python generates no compliant binary."
+      },
+      {
+        "title": "Notifications Overview — Apple Developer",
+        "url": "https://developer.apple.com/notifications/",
+        "justification": "APNs (Apple Push Notification Service) is accessed via the native iOS SDK in Swift/Objective-C; no Python runtime exists on-device to receive push payloads."
+      },
+      {
+        "title": "Stack Overflow Developer Survey 2024",
+        "url": "https://survey.stackoverflow.co/2024/technology",
+        "justification": "Industry-wide survey confirming Swift and Kotlin as dominant mobile languages; Python does not appear in mobile development categories."
+      }
+    ]
   },
   {
     "area": "frontend",
@@ -93,7 +151,19 @@
     "preferred_languages": ["JavaScript", "TypeScript"],
     "acceptable_languages": ["Dart"],
     "suboptimal_languages": ["Python"],
-    "notes": "JavaScript is the only language natively supported in browsers. TypeScript provides the type safety Python lacks. Dart compiles to JavaScript but has a smaller ecosystem. Python has zero native browser support and transpilation adds overhead."
+    "notes": "JavaScript is the only language natively supported in browsers. TypeScript provides the type safety Python lacks. Dart compiles to JavaScript but has a smaller ecosystem. Python has zero native browser support and transpilation adds overhead.",
+    "references": [
+      {
+        "title": "JavaScript — MDN Web Docs",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        "justification": "Mozilla's canonical reference states JavaScript is 'the Web's native programming language'; no browser runtime for Python exists outside WebAssembly shims."
+      },
+      {
+        "title": "Stack Overflow Developer Survey 2024",
+        "url": "https://survey.stackoverflow.co/2024/",
+        "justification": "JavaScript has been the most-used language every year since the survey began (2011), confirming universal browser deployment on JS."
+      }
+    ]
   },
   {
     "area": "frontend",
@@ -112,7 +182,24 @@
     "preferred_languages": ["JavaScript", "TypeScript"],
     "acceptable_languages": [],
     "suboptimal_languages": ["Python"],
-    "notes": "Browser extensions are JavaScript-only. The event-driven service worker architecture would be incompatible with Python's interpreter startup time. TypeScript is increasingly standard for type safety."
+    "notes": "Browser extensions are JavaScript-only. The event-driven service worker architecture would be incompatible with Python's interpreter startup time. TypeScript is increasingly standard for type safety.",
+    "references": [
+      {
+        "title": "Browser extensions — MDN Web Docs",
+        "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions",
+        "justification": "Definitive cross-browser extension reference: 'Extensions are created using familiar web-based technologies: HTML, CSS, and JavaScript.'"
+      },
+      {
+        "title": "Extensions / Manifest V3 — Chrome for Developers",
+        "url": "https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3",
+        "justification": "Google's official MV3 documentation specifies service workers as a single JavaScript file; no other language is supported."
+      },
+      {
+        "title": "Anatomy of an extension — MDN Web Docs",
+        "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension",
+        "justification": "Confirms all extension background scripts, content scripts, and popups are JavaScript; Python cannot be embedded."
+      }
+    ]
   },
   {
     "area": "frontend",
@@ -130,7 +217,19 @@
     "preferred_languages": ["JavaScript", "TypeScript"],
     "acceptable_languages": ["Dart"],
     "suboptimal_languages": ["Python"],
-    "notes": "Real-time interactivity requires minimal latency; Python's interpreter overhead is incompatible. All major visualisation ecosystems are JavaScript-native. Brython's performance penalty breaks user responsiveness."
+    "notes": "Real-time interactivity requires minimal latency; Python's interpreter overhead is incompatible. All major visualisation ecosystems are JavaScript-native. Brython's performance penalty breaks user responsiveness.",
+    "references": [
+      {
+        "title": "Canvas vs WebGL for Interactive Browser Apps — Simplified Media",
+        "url": "https://simplified.media/guides/canvas-vs-webgl",
+        "justification": "Establishes that Canvas 2D and WebGL (both JavaScript-only browser APIs) are the production tools for 60fps interactive visualisations."
+      },
+      {
+        "title": "High-Performance Web Animation: GSAP, WebGL, and the Secret to 60fps — DEV Community",
+        "url": "https://dev.to/kolonatalie/high-performance-web-animation-gsap-webgl-and-the-secret-to-60fps-2l1g",
+        "justification": "Demonstrates that achieving 60fps in the browser requires JavaScript orchestrating GPU-level APIs (WebGL/WebGPU), with no Python equivalent."
+      }
+    ]
   },
   {
     "area": "frontend",
@@ -149,7 +248,19 @@
     "preferred_languages": ["JavaScript", "TypeScript"],
     "acceptable_languages": [],
     "suboptimal_languages": ["Python"],
-    "notes": "The browser application ecosystem is 100% JavaScript/TypeScript. All frameworks, state management, testing, and build tools assume JavaScript. Python cannot integrate without becoming a liability."
+    "notes": "The browser application ecosystem is 100% JavaScript/TypeScript. All frameworks, state management, testing, and build tools assume JavaScript. Python cannot integrate without becoming a liability.",
+    "references": [
+      {
+        "title": "Angular vs React vs Vue: Core Differences — BrowserStack",
+        "url": "https://www.browserstack.com/guide/angular-vs-react-vs-vue",
+        "justification": "Survey of the SPA framework landscape confirms all three canonical frameworks (React, Angular, Vue) are JavaScript/TypeScript; no Python SPA framework exists in production use."
+      },
+      {
+        "title": "Stack Overflow Developer Survey 2024",
+        "url": "https://survey.stackoverflow.co/2024/technology",
+        "justification": "React, Angular, and Vue dominate web framework usage; Python frameworks (Django, Flask) are classified as backend/server-side, not browser-native SPA tools."
+      }
+    ]
   },
   {
     "area": "low_latency",
@@ -169,7 +280,24 @@
     "preferred_languages": ["C++", "C", "Rust"],
     "acceptable_languages": ["Java"],
     "suboptimal_languages": ["Python"],
-    "notes": "C++ is the industrial standard for HFT. Direct memory management, predictable performance, and compiled efficiency are non-negotiable. GIL is a hard blocker. This task is retained from the original project_tasks.json."
+    "notes": "C++ is the industrial standard for HFT. Direct memory management, predictable performance, and compiled efficiency are non-negotiable. GIL is a hard blocker. This task is retained from the original project_tasks.json.",
+    "references": [
+      {
+        "title": "C++ Design Patterns for Low-latency Applications Including High-frequency Trading — arXiv:2309.04259 (2023)",
+        "url": "https://arxiv.org/abs/2309.04259",
+        "justification": "Peer-reviewed paper from Imperial College London validating C++ as the HFT standard, benchmarking latency patterns with targets in the low double-digit microseconds."
+      },
+      {
+        "title": "PEP 703 – Making the Global Interpreter Lock Optional in CPython",
+        "url": "https://peps.python.org/pep-0703/",
+        "justification": "Official Python PEP confirming the GIL 'prevents multiple threads from executing Python bytecodes at once', a fundamental blocker for CPU-bound multi-threaded latency systems."
+      },
+      {
+        "title": "Mastering C++ Low Latency: A Guide to HFT Systems — QuantLabsNet",
+        "url": "https://www.quantlabsnet.com/post/mastering-c-low-latency-a-guide-to-high-frequency-trading-systems",
+        "justification": "Industry reference confirming C++ lock-free data structures and template metaprogramming as the production HFT toolset."
+      }
+    ]
   },
   {
     "area": "low_latency",
@@ -188,7 +316,19 @@
     "preferred_languages": ["C++", "Rust", "Go"],
     "acceptable_languages": ["Java"],
     "suboptimal_languages": ["Python"],
-    "notes": "Market data processing requires sub-millisecond latency at high message rates. Python's overhead makes it unsuitable for the critical path. Go offers better latency than Python with simpler concurrency than C++."
+    "notes": "Market data processing requires sub-millisecond latency at high message rates. Python's overhead makes it unsuitable for the critical path. Go offers better latency than Python with simpler concurrency than C++.",
+    "references": [
+      {
+        "title": "C++ Design Patterns for Low-latency Applications Including HFT — arXiv:2309.04259 (2023)",
+        "url": "https://arxiv.org/abs/2309.04259",
+        "justification": "Confirms sub-millisecond tick-to-trade targets and the C++ design patterns (cache warming, lock-free queues, Disruptor pattern) used in production market data systems."
+      },
+      {
+        "title": "Semi-static Conditions in Low-latency C++ for HFT — arXiv:2308.14185",
+        "url": "https://arxiv.org/pdf/2308.14185",
+        "justification": "Academic paper validating microsecond-level C++ optimisation techniques for market data processing pipelines."
+      }
+    ]
   },
   {
     "area": "low_latency",
@@ -207,7 +347,19 @@
     "preferred_languages": ["C++", "Rust", "Java"],
     "acceptable_languages": ["Go"],
     "suboptimal_languages": ["Python"],
-    "notes": "High-throughput messaging demands compiled efficiency and efficient memory management. The GIL makes Python unsuitable for multi-threaded message brokers."
+    "notes": "High-throughput messaging demands compiled efficiency and efficient memory management. The GIL makes Python unsuitable for multi-threaded message brokers.",
+    "references": [
+      {
+        "title": "Why Discord is switching from Go to Rust — Discord Engineering Blog",
+        "url": "https://discord.com/blog/why-discord-is-switching-from-go-to-rust",
+        "justification": "Discord's official post explaining why GC-induced latency spikes were unacceptable for a high-throughput messaging system; Rust was selected for deterministic latency at scale."
+      },
+      {
+        "title": "PEP 703 – Making the Global Interpreter Lock Optional in CPython",
+        "url": "https://peps.python.org/pep-0703/",
+        "justification": "Confirms the GIL prevents true parallel message processing in CPython; a hard blocker for millions of messages/sec across multiple threads."
+      }
+    ]
   },
   {
     "area": "low_latency",
@@ -226,7 +378,24 @@
     "preferred_languages": ["C", "C++", "Rust"],
     "acceptable_languages": [],
     "suboptimal_languages": ["Python"],
-    "notes": "Networking at nanosecond granularity requires control over hardware and kernel scheduling. Python is orders of magnitude too slow. This is the domain of systems programmers."
+    "notes": "Networking at nanosecond granularity requires control over hardware and kernel scheduling. Python is orders of magnitude too slow. This is the domain of systems programmers.",
+    "references": [
+      {
+        "title": "Kernel bypass — Cloudflare Engineering Blog",
+        "url": "https://blog.cloudflare.com/kernel-bypass/",
+        "justification": "Cloudflare explains DPDK and Netmap (C-based kernel bypass frameworks) achieving 10M+ packets/sec; Python has no kernel-bypass runtime or equivalent performance path."
+      },
+      {
+        "title": "DPDK and Kernel Bypass: When Microseconds Matter — The Internet Papers",
+        "url": "https://www.theinternetpapers.com/posts/dpdk-and-kernel-bypass-when-microseconds-matter-more-than-your-sanity.html",
+        "justification": "Confirms DPDK is written in C and operates at nanosecond-level packet processing, a domain where only C/C++/Rust are viable."
+      },
+      {
+        "title": "BoringTun, a userspace WireGuard implementation in Rust — Cloudflare Blog",
+        "url": "https://blog.cloudflare.com/boringtun-userspace-wireguard-rust/",
+        "justification": "Cloudflare chose Rust (not Python) for a performance-critical userspace networking implementation, citing C-equivalent speed and superior memory safety."
+      }
+    ]
   },
   {
     "area": "systems",
@@ -245,7 +414,19 @@
     "preferred_languages": ["C++", "Rust"],
     "acceptable_languages": ["Go", "Java"],
     "suboptimal_languages": ["Python"],
-    "notes": "High-throughput parsing requires compiled efficiency and zero-copy semantics. Rust and C++ dominate this space. Python is 10-100x slower."
+    "notes": "High-throughput parsing requires compiled efficiency and zero-copy semantics. Rust and C++ dominate this space. Python is 10-100x slower.",
+    "references": [
+      {
+        "title": "Rewriting the heart of our sync engine — Dropbox Engineering (2020)",
+        "url": "https://dropbox.tech/infrastructure/rewriting-the-heart-of-our-sync-engine",
+        "justification": "Dropbox rewrote their Python sync engine core in Rust; Python's GC and GIL prevented the throughput and correctness required for production file-system parsing at scale."
+      },
+      {
+        "title": "PEP 703 – Making the Global Interpreter Lock Optional in CPython",
+        "url": "https://peps.python.org/pep-0703/",
+        "justification": "GIL documentation confirms the single-threaded execution model prevents parallelising parsing pipelines in CPython."
+      }
+    ]
   },
   {
     "area": "systems",
@@ -264,7 +445,24 @@
     "preferred_languages": ["Rust", "C"],
     "acceptable_languages": ["Go"],
     "suboptimal_languages": ["Python"],
-    "notes": "Memory-constrained utilities require minimal footprint. Python's overhead makes it unsuitable. Rust provides memory safety and efficiency; C offers maximum control."
+    "notes": "Memory-constrained utilities require minimal footprint. Python's overhead makes it unsuitable. Rust provides memory safety and efficiency; C offers maximum control.",
+    "references": [
+      {
+        "title": "EmbeddedPython — Python Wiki",
+        "url": "https://wiki.python.org/moin/EmbeddedPython",
+        "justification": "Python's own wiki acknowledges the large runtime footprint as a fundamental constraint for memory-limited or embedded environments."
+      },
+      {
+        "title": "A memory footprint optimization framework for Python applications targeting edge devices — ScienceDirect (2023)",
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S1383762123001157",
+        "justification": "Peer-reviewed paper quantifying CPython's memory overhead problem on constrained devices, confirming it is a real, documented constraint requiring significant research effort to mitigate."
+      },
+      {
+        "title": "Why Python Struggles in Safety-Critical Embedded Systems — SafeLink Innovations",
+        "url": "https://www.safelink-innovations.com/post/python-in-embedded-programming",
+        "justification": "Documents Python runtime overhead (interpreter + standard library) as a fundamental barrier to sub-100MB daemon use cases."
+      }
+    ]
   },
   {
     "area": "systems",
@@ -283,7 +481,19 @@
     "preferred_languages": ["Go", "Rust", "C++"],
     "acceptable_languages": [],
     "suboptimal_languages": ["Python"],
-    "notes": "Production system daemons require predictable performance and efficient I/O. Go is increasingly standard for new systems services; C++ for legacy infrastructure; Rust for safety-critical daemons. This task is retained from the original project_tasks.json."
+    "notes": "Production system daemons require predictable performance and efficient I/O. Go is increasingly standard for new systems services; C++ for legacy infrastructure; Rust for safety-critical daemons. This task is retained from the original project_tasks.json.",
+    "references": [
+      {
+        "title": "How We Built Uber Engineering's Highest Query per Second Service Using Go — Uber Engineering Blog",
+        "url": "https://eng.uber.com/go-geofence-highest-query-per-second-service/",
+        "justification": "Uber's production Go daemon handles 170k QPS with deterministic latency, directly validating Go as a production systems-daemon language."
+      },
+      {
+        "title": "Why Discord is switching from Go to Rust — Discord Engineering Blog",
+        "url": "https://discord.com/blog/why-discord-is-switching-from-go-to-rust",
+        "justification": "Validates Rust as a production systems-daemon choice, specifically because it lacks the GC pauses that made their Go daemon unsuitable for the most latency-sensitive service."
+      }
+    ]
   },
   {
     "area": "systems",
@@ -302,7 +512,19 @@
     "preferred_languages": ["C", "C++", "Rust"],
     "acceptable_languages": ["Go"],
     "suboptimal_languages": ["Python"],
-    "notes": "Network tools require kernel access and packet-rate efficiency. Python scripting is useful for orchestration, but performance-critical code must be compiled. Rust provides memory safety; C offers maximum control."
+    "notes": "Network tools require kernel access and packet-rate efficiency. Python scripting is useful for orchestration, but performance-critical code must be compiled. Rust provides memory safety; C offers maximum control.",
+    "references": [
+      {
+        "title": "Kernel bypass — Cloudflare Engineering Blog",
+        "url": "https://blog.cloudflare.com/kernel-bypass/",
+        "justification": "Official Cloudflare post explaining DPDK (C) and Netmap (C kernel modules) for gigabit+ packet processing; confirms Python has no path to this performance tier."
+      },
+      {
+        "title": "DPDK and Kernel Bypass: When Microseconds Matter — The Internet Papers",
+        "url": "https://www.theinternetpapers.com/posts/dpdk-and-kernel-bypass-when-microseconds-matter-more-than-your-sanity.html",
+        "justification": "Details achieving 10 Gbps throughput per core with DPDK (C); confirms the toolchain is C/C++/Rust only for gigabit-rate packet processing."
+      }
+    ]
   },
   {
     "area": "embedded",
@@ -321,7 +543,24 @@
     "preferred_languages": ["C", "C++"],
     "acceptable_languages": ["Rust"],
     "suboptimal_languages": ["Python"],
-    "notes": "Microcontroller programming prioritises resource efficiency and deterministic timing. MicroPython has a niche for educational projects; production firmware uses C/C++. Rust is gaining adoption for memory-safe embedded code."
+    "notes": "Microcontroller programming prioritises resource efficiency and deterministic timing. MicroPython has a niche for educational projects; production firmware uses C/C++. Rust is gaining adoption for memory-safe embedded code.",
+    "references": [
+      {
+        "title": "MicroPython on microcontrollers — MicroPython official documentation",
+        "url": "https://docs.micropython.org/en/latest/reference/constrained.html",
+        "justification": "Official MicroPython docs state a minimum of 256KB flash + 16KB RAM is required; typical MCUs have 8–64KB RAM, which falls below even MicroPython's minimum."
+      },
+      {
+        "title": "MicroPython FAQ — micropython/micropython GitHub Wiki",
+        "url": "https://github.com/micropython/micropython/wiki/FAQ",
+        "justification": "Official project FAQ confirms 128KB ROM/8KB RAM as the practical minimum for MicroPython to 'do something real'; many MCUs cannot meet this requirement."
+      },
+      {
+        "title": "Bare-Metal Programming for ARM — GitHub (cpq)",
+        "url": "https://github.com/cpq/bare-metal-programming-guide",
+        "justification": "Canonical open-source guide for ARM Cortex-M bare-metal C programming; demonstrates C as the standard toolchain for MCU firmware."
+      }
+    ]
   },
   {
     "area": "embedded",
@@ -340,7 +579,24 @@
     "preferred_languages": ["C++", "C"],
     "acceptable_languages": ["Rust"],
     "suboptimal_languages": ["Python"],
-    "notes": "Real-time control demands deterministic execution. C++ is the ROS standard; C for minimal resource usage; Rust for memory-safe real-time code. Python is relegated to non-critical planning tasks."
+    "notes": "Real-time control demands deterministic execution. C++ is the ROS standard; C for minimal resource usage; Rust for memory-safe real-time code. Python is relegated to non-critical planning tasks.",
+    "references": [
+      {
+        "title": "Understanding real-time programming — ROS 2 Documentation (Foxy)",
+        "url": "https://docs.ros.org/en/foxy/Tutorials/Demos/Real-Time-Programming.html",
+        "justification": "Official ROS 2 documentation on real-time programming; all real-time examples and APIs are in C++, and Python's GIL prevents the deterministic scheduling required for hard real-time control."
+      },
+      {
+        "title": "Proposal for Implementation of Real-time Systems in ROS 2 — design.ros2.org",
+        "url": "https://design.ros2.org/articles/realtime_proposal.html",
+        "justification": "Official ROS 2 design document detailing the real-time architecture; all proposals target C++ as the language for real-time control loops."
+      },
+      {
+        "title": "Real-Time C++ with ROS2 Humble: Best Practices — Markaicode",
+        "url": "https://markaicode.com/real-time-cpp-ros2-humble-best-practices/",
+        "justification": "Confirms C++ as the language of choice for performance-critical ROS2 applications with real-time constraints."
+      }
+    ]
   },
   {
     "area": "embedded",
@@ -359,7 +615,19 @@
     "preferred_languages": ["C", "C++"],
     "acceptable_languages": ["Rust"],
     "suboptimal_languages": ["Python"],
-    "notes": "Embedded sensor processing requires efficiency and deterministic timing. Python is too slow; C/C++ is standard. Dedicated C++ inference libraries are the industrial choice for edge ML."
+    "notes": "Embedded sensor processing requires efficiency and deterministic timing. Python is too slow; C/C++ is standard. Dedicated C++ inference libraries are the industrial choice for edge ML.",
+    "references": [
+      {
+        "title": "A memory footprint optimization framework for Python applications targeting edge devices — ScienceDirect (2023)",
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S1383762123001157",
+        "justification": "Documents Python's memory and execution-time overhead as a structural barrier on embedded sensor platforms; a 51% execution time reduction was needed even with aggressive optimisation."
+      },
+      {
+        "title": "Why Python Struggles in Safety-Critical Embedded Systems — SafeLink Innovations",
+        "url": "https://www.safelink-innovations.com/post/python-in-embedded-programming",
+        "justification": "Explains that Python's dynamic dispatch, GC, and GIL cause unpredictable latency spikes that violate real-time sensor processing deadlines."
+      }
+    ]
   },
   {
     "area": "embedded",
@@ -378,7 +646,24 @@
     "preferred_languages": ["C", "C++", "Rust", "Go"],
     "acceptable_languages": [],
     "suboptimal_languages": ["Python"],
-    "notes": "Production edge deployments require memory efficiency and crash-free operation. Go is increasingly standard for modern IoT gateways; C/C++ for legacy systems; Rust for new safety-critical deployments."
+    "notes": "Production edge deployments require memory efficiency and crash-free operation. Go is increasingly standard for modern IoT gateways; C/C++ for legacy systems; Rust for new safety-critical deployments.",
+    "references": [
+      {
+        "title": "EmbeddedPython — Python Wiki",
+        "url": "https://wiki.python.org/moin/EmbeddedPython",
+        "justification": "Python's own documentation acknowledges the large interpreter footprint as a constraint for edge deployment on memory-limited devices."
+      },
+      {
+        "title": "A memory footprint optimization framework for Python applications targeting edge devices — ScienceDirect (2023)",
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S1383762123001157",
+        "justification": "Peer-reviewed study confirming CPython's footprint is problematic for edge devices with <256MB RAM and quantifying the overhead."
+      },
+      {
+        "title": "MicroPython on microcontrollers — MicroPython official documentation",
+        "url": "https://docs.micropython.org/en/latest/reference/constrained.html",
+        "justification": "Even MicroPython (the stripped-down Python for embedded) requires 256KB flash + 16KB RAM minimum; CPython requires far more, making it impractical for constrained edge devices."
+      }
+    ]
   },
   {
     "area": "games",
@@ -397,7 +682,24 @@
     "preferred_languages": ["C#", "GDScript", "C++", "Rust"],
     "acceptable_languages": ["Java"],
     "suboptimal_languages": ["Python"],
-    "notes": "2D game development has moved to specialised engines. Python-based frameworks are educational; production games require professional tooling, asset pipelines, and proven performance."
+    "notes": "2D game development has moved to specialised engines. Python-based frameworks are educational; production games require professional tooling, asset pipelines, and proven performance.",
+    "references": [
+      {
+        "title": "Unity Manual: 2D game development — docs.unity3d.com",
+        "url": "https://docs.unity3d.com/Manual/Unity2D.html",
+        "justification": "Official Unity documentation for 2D development; scripting is exclusively C# and Unity is the dominant 2D game engine in the industry."
+      },
+      {
+        "title": "Scripting languages — Godot Engine documentation",
+        "url": "https://docs.godotengine.org/en/stable/getting_started/step_by_step/scripting_languages.html",
+        "justification": "Official Godot docs listing supported scripting languages as GDScript, C#, and C++; Python is absent even from community-supported bindings."
+      },
+      {
+        "title": "Stack Overflow Developer Survey 2024",
+        "url": "https://survey.stackoverflow.co/2024/technology",
+        "justification": "C# is consistently ranked as the language used for game development; Python does not appear in game-engine categories."
+      }
+    ]
   },
   {
     "area": "games",
@@ -415,7 +717,19 @@
     "preferred_languages": ["C++", "Rust"],
     "acceptable_languages": ["JavaScript"],
     "suboptimal_languages": ["Python"],
-    "notes": "3D rendering requires specialised knowledge of graphics APIs and GPU scheduling. No production 3D engine uses Python as the primary language."
+    "notes": "3D rendering requires specialised knowledge of graphics APIs and GPU scheduling. No production 3D engine uses Python as the primary language.",
+    "references": [
+      {
+        "title": "Unreal Engine — unrealengine.com",
+        "url": "https://www.unrealengine.com/",
+        "justification": "Industry-standard real-time 3D engine written and scripted in C++; no Python 3D production rendering engine exists at comparable quality."
+      },
+      {
+        "title": "Unreal Engine — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Unreal_Engine",
+        "justification": "Confirms Unreal Engine is 'written in C++ and features a high degree of portability'; used in Fortnite, Hogwarts Legacy, and hundreds of AAA titles."
+      }
+    ]
   },
   {
     "area": "games",
@@ -434,7 +748,24 @@
     "preferred_languages": ["C#", "C++", "GDScript"],
     "acceptable_languages": [],
     "suboptimal_languages": ["Python"],
-    "notes": "Game engine plugins are written in the host engine's language. Python has no plugin ecosystem in any major engine."
+    "notes": "Game engine plugins are written in the host engine's language. Python has no plugin ecosystem in any major engine.",
+    "references": [
+      {
+        "title": "The GDExtension system — Godot Engine documentation",
+        "url": "https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/index.html",
+        "justification": "Official Godot docs for the native plugin/extension system; officially supported languages are C and C++, with Python absent from the list."
+      },
+      {
+        "title": "Scripting in Unity for experienced C# & C++ programmers — Unity",
+        "url": "https://unity.com/how-to/programming-unity",
+        "justification": "Confirms Unity plugins and native extensions are written in C# (managed) or C++ (native); no Python plugin interface exists."
+      },
+      {
+        "title": "Other languages — Godot Engine documentation",
+        "url": "https://docs.godotengine.org/en/stable/tutorials/scripting/other_languages.html",
+        "justification": "Lists all Godot scripting language bindings (Rust, Nim, Swift have community support); Python is absent even from community-supported options."
+      }
+    ]
   },
   {
     "area": "games",
@@ -453,7 +784,19 @@
     "preferred_languages": ["C++", "Rust"],
     "acceptable_languages": ["C#"],
     "suboptimal_languages": ["Python"],
-    "notes": "Frame-rate-constrained physics requires compiled efficiency and deterministic execution. The industry standardises on C++ physics engines integrated into game engines. Python is relegated to non-critical prototyping."
+    "notes": "Frame-rate-constrained physics requires compiled efficiency and deterministic execution. The industry standardises on C++ physics engines integrated into game engines. Python is relegated to non-critical prototyping.",
+    "references": [
+      {
+        "title": "PEP 703 – Making the Global Interpreter Lock Optional in CPython",
+        "url": "https://peps.python.org/pep-0703/",
+        "justification": "Confirms the GIL 'prevents multiple threads from executing Python bytecodes at once', directly blocking parallel physics simulation on multi-core CPUs."
+      },
+      {
+        "title": "Unreal Engine — unrealengine.com",
+        "url": "https://www.unrealengine.com/",
+        "justification": "Unreal's Chaos physics engine (C++) is the production standard for real-time 60fps physics simulation; no Python physics engine operates at this tier."
+      }
+    ]
   },
   {
     "area": "enterprise",
@@ -472,7 +815,19 @@
     "preferred_languages": ["Java", "C#", "Kotlin"],
     "acceptable_languages": ["TypeScript", "Rust"],
     "suboptimal_languages": ["Python"],
-    "notes": "Enterprise systems handling money or critical business logic require compile-time type safety. Java/C#/.NET ecosystem dominates; Python's dynamic typing is unacceptable for critical services."
+    "notes": "Enterprise systems handling money or critical business logic require compile-time type safety. Java/C#/.NET ecosystem dominates; Python's dynamic typing is unacceptable for critical services.",
+    "references": [
+      {
+        "title": "25 Reasons Why Financial Enterprise Companies Use Java — Digma",
+        "url": "https://digma.ai/25-reasons-why-financial-enterprise-companies-use-java/",
+        "justification": "Documents that over 90% of Fortune 500 companies use Java for banking/financial software, with compile-time type safety directly cited as a critical requirement for payment systems."
+      },
+      {
+        "title": "Secure Payment Processing with Java Modules and Spring Boot — OceanOBE",
+        "url": "https://oceanobe.com/news/secure-payment-processing-with-java-modules-and-spring-boot/1613",
+        "justification": "Demonstrates the production pattern for PCI-DSS-compliant payment services using Java modules and Spring Boot, where compile-time isolation of cardholder data is a requirement."
+      }
+    ]
   },
   {
     "area": "enterprise",
@@ -491,7 +846,24 @@
     "preferred_languages": ["Java", "Kotlin"],
     "acceptable_languages": [],
     "suboptimal_languages": ["Python"],
-    "notes": "JVM infrastructure assumes Java/Kotlin. Python would require bridging and separate tooling. Enterprises with Java infrastructure should standardise on JVM languages."
+    "notes": "JVM infrastructure assumes Java/Kotlin. Python would require bridging and separate tooling. Enterprises with Java infrastructure should standardise on JVM languages.",
+    "references": [
+      {
+        "title": "Android's Kotlin-first approach — developer.android.com",
+        "url": "https://developer.android.com/kotlin/first",
+        "justification": "Establishes Kotlin as the primary JVM language for new Google/Android ecosystem development, confirming the JVM-first approach."
+      },
+      {
+        "title": "Kotlin Support :: Spring Boot — Spring Documentation",
+        "url": "https://docs.spring.io/spring-boot/reference/features/kotlin.html",
+        "justification": "Official Spring Boot documentation for Kotlin confirms Kotlin is a first-class JVM citizen in the dominant enterprise Java framework."
+      },
+      {
+        "title": "JetBrains State of Developer Ecosystem 2024",
+        "url": "https://www.jetbrains.com/lp/devecosystem-2024/",
+        "justification": "Java is the second most popular primary language (33%); Kotlin is in the top five languages developers want to adopt; Python does not appear in enterprise JVM service contexts."
+      }
+    ]
   },
   {
     "area": "enterprise",
@@ -510,7 +882,19 @@
     "preferred_languages": ["C#"],
     "acceptable_languages": ["F#"],
     "suboptimal_languages": ["Python"],
-    "notes": "CLR infrastructure assumes C#. Python would require bridging and separate tooling. Enterprises with .NET infrastructure should standardise on CLR languages."
+    "notes": "CLR infrastructure assumes C#. Python would require bridging and separate tooling. Enterprises with .NET infrastructure should standardise on CLR languages.",
+    "references": [
+      {
+        "title": "Azure for .NET developers — Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/dotnet/azure/",
+        "justification": "Microsoft's official documentation for .NET on Azure; over 100 Azure services support .NET natively and the default enterprise integration path is C#."
+      },
+      {
+        "title": "Develop modern cloud applications with .NET on Azure — dotnet.microsoft.com",
+        "url": "https://dotnet.microsoft.com/en-us/apps/cloud/azure",
+        "justification": "Microsoft's canonical page confirming C# and .NET as the primary first-party language for Azure enterprise application development."
+      }
+    ]
   },
   {
     "area": "enterprise",
@@ -529,6 +913,23 @@
     "preferred_languages": ["Go", "Rust", "Java"],
     "acceptable_languages": ["C#", "Kotlin"],
     "suboptimal_languages": ["Python"],
-    "notes": "High-concurrency services standardise on Go (goroutines), Rust (tokio), or JVM (virtual threads). Python's GIL is a hard blocker. asyncio is a workaround, not a solution. This task is retained from the original project_tasks.json."
+    "notes": "High-concurrency services standardise on Go (goroutines), Rust (tokio), or JVM (virtual threads). Python's GIL is a hard blocker. asyncio is a workaround, not a solution. This task is retained from the original project_tasks.json.",
+    "references": [
+      {
+        "title": "PEP 703 – Making the Global Interpreter Lock Optional in CPython",
+        "url": "https://peps.python.org/pep-0703/",
+        "justification": "Authoritative source confirming the GIL 'prevents multiple threads from executing Python bytecodes at once'; the GIL-free build remains opt-in and experimental as of Python 3.14."
+      },
+      {
+        "title": "How We Built Uber Engineering's Highest Query per Second Service Using Go — Uber Engineering Blog",
+        "url": "https://eng.uber.com/go-geofence-highest-query-per-second-service/",
+        "justification": "Uber's production Go service handles 170k QPS; validates Go goroutines (starting at 2KB stack) as the mechanism for high concurrency that Python threads (1MB+, GIL-serialised) cannot match."
+      },
+      {
+        "title": "Why Discord is switching from Go to Rust — Discord Engineering Blog",
+        "url": "https://discord.com/blog/why-discord-is-switching-from-go-to-rust",
+        "justification": "Discord moved their high-concurrency Read States service to Rust to eliminate GC-induced latency spikes, validating that production high-concurrency backends require GC-free, GIL-free runtimes."
+      }
+    ]
   }
 ]
