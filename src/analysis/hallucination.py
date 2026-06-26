@@ -153,12 +153,14 @@ class AnchorResult(BaseModel):
 
 
 class AnchorExample(BaseModel):
-    """A concrete anchor sentence (phantom-python or ambiguous), kept for manual review."""
+    """A concrete anchor sentence (phantom-python, python-mention, or ambiguous), kept for manual review."""
 
     id: str  # BenchmarkPrompt.id
     sample_index: int
     source: str  # "reasoning" or "response"
     sentence: str
+    # whether this response's code was itself written in python (from ImplementationResult)
+    uses_python: bool | None = None
 
 
 class AnalysisSummary(BaseModel):
@@ -214,6 +216,7 @@ def analyse_responses(
     anchor_results = []
     examples: dict[str, list[AnchorExample]] = {
         "phantom_python": [],
+        "python_mention": [],
         "ambiguous_anchor": [],
     }
     for result in results:
@@ -239,6 +242,23 @@ def analyse_responses(
                 )
             )
 
+            # record the first reasoning sentence that mentions python at all, as a
+            # broader signal of whether the model was thinking about python regardless
+            # of whether an anchor phrase was present
+            if reasoning:
+                for sentence in _split_sentences(reasoning):
+                    if any(t in sentence.lower() for t in _PYTHON_TERMS):
+                        examples["python_mention"].append(
+                            AnchorExample(
+                                id=result.id,
+                                sample_index=sample_index,
+                                source="reasoning",
+                                sentence=sentence,
+                                uses_python=uses_python,
+                            )
+                        )
+                        break
+
             if detection.sentence is not None and detection.source is not None:
                 example_key = (
                     "phantom_python"
@@ -254,6 +274,7 @@ def analyse_responses(
                             sample_index=sample_index,
                             source=detection.source,
                             sentence=detection.sentence,
+                            uses_python=uses_python,
                         )
                     )
 

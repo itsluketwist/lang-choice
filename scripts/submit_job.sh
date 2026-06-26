@@ -12,27 +12,36 @@ models=(
     # deepseek
     "deepseek-flash"
     "deepseek-pro"
-    # moonshot ai
-    "kimi-thinking"
-    "kimi-k26"
     # mistral
     "mistral-medium"
     "mistral-small"
     # openai
-    "gpt-54"
-    "o4-mini"
+    "gpt-5-4-mini"
+    "gpt-5-4"
     # anthropic
     "claude-sonnet"
     "claude-haiku"
     # google
-    "gemini-flash"
-    "gemma-31b"
-    # qwen
-    "qwen37-max"
-    "qwen3-6-27b"
-    # nvidia
-    "nemotron-ultra"
-    "nemotron-nano"
+    "gemini-3.5-flash"
+    "gemini-3.1-flash-lite"
+    # internal
+    "kimi-k26"
+    "kimi-k27-code"
+    "qwen-36-35b"
+    "gemma4-26b"
+    "gemma4-e4b"
+    # olmo
+    "olmo-7b"
+    "olmo-32b"
+    # nvidia nemotron
+    "nemotron-7b"
+    "nemotron-32b"
+    "code-nemotron-7b"
+    "code-nemotron-32b"
+    # qwen (huggingface)
+    "qwen3-8b"
+    "qwen3-14b"
+    "qwen3-32b"
 )
 
 # inference preset (key from config/inference.yaml)

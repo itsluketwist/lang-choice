@@ -58,7 +58,7 @@ mistral-small:
 
 gpt-5-4-mini:
   provider: "openai"
-  model_path: "gpt-5.4-mini"
+  model_path: "gpt-5.4-mini-2026-03-05"
   defaults:
     temperature: 1.0
     top_p: 1.0
@@ -66,7 +66,7 @@ gpt-5-4-mini:
 
 gpt-5-4:
   provider: "openai"
-  model_path: "gpt-5.4"
+  model_path: "gpt-5.4-2026-03-05"
   defaults:
     temperature: 1.0
     top_p: 1.0
@@ -212,50 +212,49 @@ qwen3-32b:
     top_p: 0.95
     max_tokens: 8192
 
-qwen3.5-27b:
-  provider: "qwen"
-  model_path: "qwen3.5-27b"
-  enable_reasoning: true
-  defaults:
-    temperature: 0.6
-    top_p: 0.95
-    max_tokens: 8192
-
-qwen3.5-35b-a3b:
-  provider: "qwen"
-  model_path: "qwen3.5-35b-a3b"
-  enable_reasoning: true
-  defaults:
-    temperature: 0.6
-    top_p: 0.95
-    max_tokens: 8192
-
-qwen3.5-flash-2026-02-23:
-  provider: "qwen"
-  model_path: "qwen3.5-flash-2026-02-23"
-  enable_reasoning: true
-  defaults:
-    temperature: 0.6
-    top_p: 0.95
-    max_tokens: 8192
-
-qwen3.5-plus-2026-04-20:
-  provider: "qwen"
-  model_path: "qwen3.5-plus-2026-04-20"
-  enable_reasoning: true
-  defaults:
-    temperature: 0.6
-    top_p: 0.95
-    max_tokens: 8192
-
 # =============================================================================
-# Moonshot AI — Kimi K2 Thinking (reasoning, 1T MoE / 32B active) +
-# Kimi K2.6 (free tier, general instruction model)
+# Models from internal university deployments
 # =============================================================================
 
-kimi-k26:
+kimi-k26:  # Kimi-K2.6
   provider: "custom"
   model_path: "arc:apex"
+  enable_reasoning: true
+  defaults:
+    temperature: 1.0
+    top_p: 0.95
+    max_tokens: 8192
+
+kimi-k27-code:  # Kimi-K2.7-Code
+  provider: "custom"
+  model_path: "arc:apex"
+  enable_reasoning: true
+  defaults:
+    temperature: 1.0
+    top_p: 0.95
+    max_tokens: 8192
+
+qwen-36-35b:  # Qwen3.6-35B-A3B
+  provider: "custom"
+  model_path: "arc:nexus"
+  enable_reasoning: true
+  defaults:
+    temperature: 0.6
+    top_p: 0.95
+    max_tokens: 8192
+
+gemma4-26b:  # Gemma4:26B-A4B
+  provider: "custom"
+  model_path: "arc:lite"
+  enable_reasoning: true
+  defaults:
+    temperature: 1.0
+    top_p: 0.95
+    max_tokens: 8192
+
+gemma4-e4b:  # Gemma4:e4b
+  provider: "custom"
+  model_path: "arc:nano"
   enable_reasoning: true
   defaults:
     temperature: 1.0
