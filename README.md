@@ -98,10 +98,12 @@ Experiments are run via scripts or the `run` command:
 jupyter notebook benchmark/build/build.ipynb
 
 # run an experiment
-run --model qwen3-8b \
-    --model-config configs/models/vllm_models.yaml \
-    --decoding configs/decoding/greedy.yaml \
-    --experiment configs/experiments/default.yaml
+run --model deepseek-r1 \
+    --model-config config/models.yaml \
+    --inference greedy \
+    --inference-config config/inference.yaml \
+    --context none \
+    --mode default
 ```
 
 One-off analysis code is in Jupyter notebooks under [`notebooks/`](notebooks/).
@@ -122,13 +124,12 @@ benchmark/           — standalone benchmark library (langchoicebench on PyPI)
 src/                 — experiment infrastructure (not published)
   run.py             — experiment pipeline
   cli.py             — CLI entry point
-  runners/           — vLLM and API model runners (uses thinkpack)
+  generation/        — model prompting and response collection
   analysis/          — anchor/hallucination detection (uses reasoning traces)
-  reporting/         — CSV/JSONL report generation
   utils/             — config, logging, I/O
-configs/             — model, decoding, and experiment configs
+config/              — model and inference configs
 notebooks/           — analysis notebooks
-results/             — generated outputs
+output/              — generated results (by model)
 ```
 
 ## *development*

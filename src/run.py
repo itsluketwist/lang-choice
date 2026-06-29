@@ -1,12 +1,7 @@
 """Experiment pipeline: generation, evaluation, and analysis for one model run.
 
-Each call to run_experiment is a single experiment:
-  1. Generate implementation responses (with optional prior context).
-  2. Generate recommendation responses (no context — always "none").
-  3. Evaluate both together using evaluate_benchmark().
-  4. Run hallucination analysis on all generation results.
-
-All pipeline logic lives here; CLI argument parsing lives in src/cli.py.
+Steps: generate implementation responses, generate recommendation responses,
+evaluate both with evaluate_benchmark(), run hallucination analysis.
 """
 
 from pathlib import Path
@@ -39,23 +34,7 @@ def run_experiment(
     mode: Mode = "default",
     debug: bool = False,
 ) -> None:
-    """Run the full generation, evaluation, and analysis pipeline.
-
-    model:             model key from the model config YAML.
-    model_config:      path to the model config YAML.
-    inference:         inference preset key from the inference config YAML.
-    inference_config:  path to the inference config YAML.
-    context_condition: prior-context condition injected into implementation prompts.
-                       recommendation prompts never receive prior context.
-    mode:              "default" generates only if the output file does not exist.
-                       "overwrite" ignores existing results and regenerates everything.
-                       "update" tops up existing results until each prompt has the
-                       required number of valid (non-empty) responses.
-                       "evaluate" skips generation and runs evaluation/analysis on
-                       existing files only — these must already exist.
-                       evaluation and analysis always re-run regardless of mode.
-    debug:             if True, limit to 2 prompts per split and write to output/debug/.
-    """
+    """Run the full generation, evaluation, and analysis pipeline for one model run."""
     # load configs
     models = load_full_yaml(model_config)
     if model not in models:
@@ -166,10 +145,8 @@ def run_experiment(
 def _valid_samples(
     result: GenerationResult,
 ) -> list[tuple[str, str | None, list[str]]]:
-    """Return the (response, reasoning, warnings) for samples with a non-empty response.
+    """Filter out empty (failed) samples and return (response, reasoning, warnings) tuples.
 
-    An empty response means a previous generation attempt failed — "update" mode
-    treats these samples as not done yet and will retry them.
     Returns a list of (response, reasoning, warnings) tuples.
     """
     # warnings is one list per sample — fall back to empty lists if missing/mismatched
@@ -199,17 +176,9 @@ def _generate_or_load(
     context_condition: str,
     mode: Mode,
 ) -> list[GenerationResult]:
-    """Load generation results from disk, or generate them according to mode.
+    """Load generation results from disk or generate them according to mode.
 
-    "default":   if path exists, load it as-is; otherwise generate everything.
-    "overwrite": ignore any existing file and generate everything from scratch.
-    "update":    load any existing results and top up each prompt with extra
-                 samples until it has n_samples valid (non-empty) responses.
-    "evaluate":  load path, which the caller has already checked exists.
-
-    Whenever generation runs, each completed prompt is merged in and the whole
-    file is rewritten immediately — a crash partway through leaves path with all
-    progress made so far, ready to be topped up by a later "update" run.
+    Writes results incrementally so a crash mid-run leaves the file resumable.
     Returns a list of GenerationResults ordered by prompt.
     """
     if mode == "evaluate" or (mode == "default" and path.exists()):
@@ -241,7 +210,7 @@ def _generate_or_load(
         log(f"  Generating: {path} ({len(tasks)} of {len(prompts)} prompts)")
 
         def _on_result(new_result: GenerationResult) -> None:
-            """Merge a freshly generated result with any prior samples and save."""
+            """Merge fresh result with any prior samples and save to disk."""
             merged = (valid_by_id[new_result.id] + _valid_samples(new_result))[
                 :n_samples
             ]
@@ -283,7 +252,7 @@ def _evaluate(
 ) -> BenchmarkResults:
     """Run evaluate_benchmark and save results to disk.
 
-    Returns a BenchmarkResults object with a summary and per-response results.
+    Returns a BenchmarkResults with a summary and per-response results.
     """
     log(f"  Evaluating: {path}")
     with log_timer("evaluation"):
@@ -308,6 +277,7 @@ def _analyse(
 
     Returns an AnalysisResults with a summary and per-response anchor labels.
     """
+
     log(f"  Analysing: {path}")
     with log_timer("analysis"):
         analysis = analyse_responses(impl_results, implementation_results)

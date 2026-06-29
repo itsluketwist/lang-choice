@@ -33,10 +33,6 @@ def build_context_messages(
 ) -> list[dict[str, str]]:
     """Build the prior-context message list for a given condition.
 
-    condition must be one of: "none", "neutral", "python", "non_python", "contradictory".
-    preferred_language is the area's canonical preferred language, substituted into
-    the "non_python" template.
-
     Returns an empty list for "none", otherwise a [user, assistant] pair.
     """
     if condition == "none":

@@ -15,12 +15,7 @@ Mode = Literal["default", "overwrite", "update", "evaluate"]
 
 
 class ModelConfig(BaseModel):
-    """Configuration for a single model, loaded from config/models.yaml.
-
-    provider maps to an llm_cgr PROVIDER_MAP key (e.g. "anthropic", "deepseek").
-    defaults hold per-model sampling params used when inference config sets nulls.
-    enable_reasoning controls whether the model's chain-of-thought trace is captured.
-    """
+    """Configuration for a single model, loaded from config/models.yaml."""
 
     name: str
     provider: str
@@ -30,12 +25,7 @@ class ModelConfig(BaseModel):
 
 
 class InferenceConfig(BaseModel):
-    """Sampling parameters for a generation run, loaded from config/inference.yaml.
-
-    temperature and top_p may be None to fall back to per-model defaults.
-    seed ensures reproducibility for greedy / low-temperature runs.
-    max_workers controls how many API calls are in-flight concurrently.
-    """
+    """Sampling parameters for a generation run, loaded from config/inference.yaml."""
 
     name: str
     temperature: float | None
@@ -46,11 +36,7 @@ class InferenceConfig(BaseModel):
 
 
 class ResponseData(BaseModel):
-    """Data returned from a single API call.
-
-    Produced by ModelRunner.generate(). generate_responses() aggregates
-    multiple ResponseData objects into a single GenerationResult per prompt.
-    """
+    """Data returned from a single API call."""
 
     response: str
     reasoning: str | None = None
@@ -58,12 +44,7 @@ class ResponseData(BaseModel):
 
 
 class GenerationResult(BaseModel):
-    """All responses for a single prompt across all samples.
-
-    Stores responses as lists (one entry per sample) so prompt_messages and other
-    shared fields are not repeated. The id and responses fields match the format
-    expected by langchoicebench.evaluate_benchmark().
-    """
+    """All responses for a single prompt across all samples."""
 
     id: str  # BenchmarkPrompt.id — "{project_id}__{prompt_variant}"
     project_id: str  # for joining with analysis results

@@ -28,12 +28,7 @@ def _generate_sample(
 ) -> tuple[str, str | None]:
     """Generate a single sample, retrying transient failures with backoff.
 
-    Generating one sample at a time (rather than the whole batch via
-    llm.generate(samples=n)) means a single failure only loses that one
-    sample, instead of discarding every sample already generated for the
-    prompt.
-
-    Returns an empty response if all attempts fail.
+    Returns an empty string if all attempts fail.
     """
     for attempt, delay in enumerate([0, *RETRY_DELAYS]):
         if delay:
@@ -80,18 +75,10 @@ def generate_responses(
     on_result: Callable[[GenerationResult], None],
     context_condition: str = "none",
 ) -> None:
-    """Generate model responses for a set of (prompt, n_samples) tasks.
+    """Generate model responses for a set of (prompt, n_samples) tasks concurrently.
 
-    Each task is dispatched separately, and each sample within a task is
-    generated one at a time via _generate_sample. Up to inference_config.max_workers
-    tasks run concurrently.
-
-    As each task completes, on_result is called with its GenerationResult — this
-    lets the caller persist results to disk incrementally, so a crash partway
-    through does not lose already-completed work.
-
-    For greedy decoding (temperature=0.0) n_samples is capped at 1 since outputs
-    are deterministic.
+    Calls on_result with each GenerationResult as it completes, so the caller can
+    persist results to disk incrementally.
     """
     # resolve sampling params — inference config takes priority, then model defaults
     temperature = inference_config.temperature
@@ -120,11 +107,7 @@ def generate_responses(
         prompt: BenchmarkPrompt,
         n_samples: int,
     ) -> GenerationResult:
-        """Generate n_samples for a single prompt and return a GenerationResult.
-
-        Each sample is generated (and retried) individually, so a failure on
-        one sample does not discard the others already generated for this prompt.
-        """
+        """Generate n_samples for a single prompt and return a GenerationResult."""
         pairs = [
             _generate_sample(
                 llm=llm,
