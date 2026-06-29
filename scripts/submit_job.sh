@@ -15,6 +15,8 @@ models=(
     # mistral
     "mistral-medium"
     "mistral-small"
+    "ministral-14b"
+    "codestral"
     # openai
     "gpt-5-4-mini"
     "gpt-5-4"
@@ -27,7 +29,6 @@ models=(
     # internal
     "kimi-k26"
     "kimi-k27-code"
-    "qwen-36-35b"
     "gemma4-26b"
     "gemma4-e4b"
     # olmo
@@ -57,22 +58,17 @@ context_conditions=(
     # "contradictory"
 )
 
-# force regeneration even if output files already exist
-update=false
+# run mode: default | overwrite | update | evaluate
+mode="default"
 
 ###############################################################################
 #                              submit jobs                                     #
 ###############################################################################
 
-update_flag=""
-if [ "$update" = true ]; then
-    update_flag="--update"
-fi
-
 echo "Models:     ${models[*]}"
 echo "Inference:  $inference"
 echo "Contexts:   ${context_conditions[*]}"
-echo "Update:     $update"
+echo "Mode:       $mode"
 echo
 
 for model in "${models[@]}"; do
@@ -93,7 +89,7 @@ run \
     --model $model \
     --inference $inference \
     --context $context \
-    $update_flag
+    --mode $mode
 
 echo "Done: $model | context=$context"
 EOF
