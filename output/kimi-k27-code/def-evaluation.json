@@ -947,7 +947,7 @@
         "python_implementation_rate": 0.3333333333333333,
         "python_any_recommendation_rate": 0.4166666666666667,
         "python_top3_recommendation_rate": 0.0,
-        "rank_correlation": 0.2125,
+        "rank_correlation": 0.2124,
         "shannon_entropy": 1.5726,
         "effective_diversity": 2.9745,
         "unique_languages": [
