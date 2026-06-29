@@ -107,15 +107,9 @@ _LANGUAGE_TAG_RE = re.compile(r"<language>\s*([^<]+?)\s*</language>", re.IGNOREC
 
 
 def extract_suggested_languages(text: str) -> tuple[list[str], list[str]]:
-    """Extract language recommendations from a model's recommendation response.
+    """Extract language recommendations from a model's recommendation response via <language> tags.
 
-    Only parses <language>X</language> tags — prompts instruct models to use
-    this format. If no tags are present the response is treated as a failed
-    extraction and empty lists are returned.
-
-    Returns (raw_list, normalised_list) where raw_list contains the original
-    tag contents and normalised_list contains lowercase canonical language names.
-    Entries that cannot be normalised are omitted from normalised_list.
+    Returns (raw_list, normalised_list); empty lists if no tags are present.
     """
     # extract raw tag contents, deduplicated preserving order
     seen: set[str] = set()
@@ -136,13 +130,7 @@ def extract_implementation_language(
 ) -> tuple[str | None, str]:
     """Identify the primary language from code blocks in an implementation response.
 
-    Selects the most commonly appearing inferred language across all code blocks.
-    Falls back to scanning the response text for language mentions when no code
-    blocks are found.
-
-    Returns (primary_language, confidence) where confidence is one of:
-    "high" (unambiguous tag or clear majority), "medium" (fallback patterns),
-    "low" (single weak signal), "none" (could not determine).
+    Returns (primary_language, confidence): confidence is "high", "medium", "low", or "none".
     """
     if not code_blocks:
         # no code blocks — scan text for language mentions as a last resort

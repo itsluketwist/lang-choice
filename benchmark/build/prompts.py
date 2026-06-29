@@ -1,12 +1,6 @@
-"""Prompt templates used to expand project definitions into BenchmarkPrompts.
+"""Prompt templates for expanding project definitions into BenchmarkPrompts (build-time only).
 
-This is a build-time file — it is not part of the published library.
-The rendered prompts are stored in the bundled JSONL splits inside the library.
-
-Recommendation variants instruct the model to use <language>X</language> tags.
-This structured format is far more reliable than open-ended text for extraction,
-and the library's extract_suggested_languages() parses these tags as its primary
-strategy (with regex fallback for responses that don't follow the format).
+Recommendation variants use <language>X</language> tags for reliable extraction.
 """
 
 IMPLEMENTATION_VARIANTS: dict[str, str] = {

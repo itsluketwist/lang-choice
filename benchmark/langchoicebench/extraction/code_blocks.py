@@ -1,10 +1,6 @@
-"""Extract code blocks from markdown responses and infer their programming language.
+"""Extract fenced code blocks from markdown responses and infer their language.
 
-Handles triple-backtick fenced code blocks. Language detection uses the tag on
-the fence, falls back to file-name hints and import patterns within the code.
-
-Each extracted block exposes {language, source, confidence} — the raw code
-content is not returned since the library only needs the language signal.
+Each block exposes {language, source, confidence} — raw code is not returned.
 """
 
 import re
@@ -89,17 +85,9 @@ _IMPORT_LANGUAGE_PATTERNS: list[tuple[re.Pattern[str], str]] = [
 
 
 def extract_code_blocks(text: str) -> list[dict]:
-    """Extract all fenced code blocks from a markdown response.
+    """Extract all triple-backtick fenced code blocks from a markdown response.
 
-    Each returned dict contains:
-      language   — canonical language name, or None if unidentifiable
-      source     — how the language was determined: "tag", "filename", "import", or None
-      confidence — detection confidence: "high", "medium", "low", or None
-
-    The raw code content is intentionally not returned — the library only needs
-    the language signal, not the code itself.
-
-    Returns an empty list when no fenced blocks are present.
+    Returns a list of {language, source, confidence} dicts, or empty if none found.
     """
     blocks = []
     for match in _CODE_BLOCK_RE.finditer(text):

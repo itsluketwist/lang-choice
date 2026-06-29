@@ -163,11 +163,9 @@ def _spearman_correlation(
     x: list[float],
     y: list[float],
 ) -> float | None:
-    """Compute the Spearman rank correlation coefficient between two lists.
+    """Compute the Spearman rank correlation between two lists using average-rank tie-breaking.
 
-    Uses average-rank tie-breaking and the Pearson formula on the ranked vectors.
-    Requires at least 3 data points and matching lengths.
-    Returns None when the inputs are degenerate (constant, mismatched, too short).
+    Returns None when inputs are degenerate (constant, mismatched lengths, or fewer than 3 points).
     """
     n = len(x)
     if n < 3 or n != len(y):
@@ -200,13 +198,8 @@ def _compute_task_stats(
     top1_langs: set[str],
     top3_langs: set[str],
 ) -> TaskStats:
-    """Compute per-task language usage and rank-correlation statistics.
+    """Compute per-task language usage and rank-correlation statistics for one project.
 
-    Aggregates all implementation and recommendation results for a single project.
-    top1_langs / top3_langs are the sets of languages that appeared at rank 1 / in
-    the top 3 across all recommendation responses for this project.
-    Rank correlation compares recommendation mrr scores to implementation rates across
-    the union of all observed languages (None when fewer than 3 languages).
     Returns a populated TaskStats.
     """
     impl_total = len(impl_results) or 1
@@ -283,11 +276,7 @@ def _compute_final_ranking(
 ) -> list[tuple[str, float]]:
     """Aggregate per-task recommendation ranks into a global language ranking.
 
-    For each task, languages are already ordered by recommendation rate descending,
-    so rank = position index + 1 (rank 1 = most recommended). The global average
-    rank for each language is taken over all tasks where it appears at least once.
-    Returns (language, avg_rank) sorted ascending — lowest average rank = most
-    consistently recommended language across tasks.
+    Returns (language, avg_rank) tuples sorted ascending by average rank.
     """
     lang_ranks: defaultdict[str, list[float]] = defaultdict(list)
     for task in per_task:
@@ -332,20 +321,6 @@ def compute_summary(
     title_by_project: dict[str, str] | None = None,
 ) -> BenchmarkSummary:
     """Compute overall and per-area aggregate statistics.
-
-    area_by_project maps project_id to its area name (e.g. "mobile").
-    title_by_project optionally maps project_id to a human-readable title used in TaskStats.
-
-    top1/top3_recommended_rate measure consistency: whether the implementation language
-    matched the top-1 or top-3 recommendations for the same project.
-
-    Overall diversity stats are aggregated from per-area stats:
-      unique_languages — union of all per-area language lists
-      shannon_entropy  — arithmetic mean of per-area entropies
-      effective_diversity — arithmetic mean of per-area effective diversities
-
-    Per-area AreaStats each include a per_task list of TaskStats, one per project.
-    final_recommendation_ranking averages per-task recommendation ranks globally.
 
     Returns a BenchmarkSummary with overall and per_area AreaStats.
     """
