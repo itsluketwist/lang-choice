@@ -51,6 +51,25 @@ mistral-small:
     top_p: 0.95
     max_tokens: 8192
 
+ministral-14b:
+  provider: "mistral"
+  model_path: "ministral-14b-2512"
+  enable_reasoning: true
+  defaults:
+    temperature: 0.7
+    top_p: 0.95
+    max_tokens: 8192
+
+codestral:
+  provider: "mistral"
+  model_path: "codestral-2508"
+  enable_reasoning: true
+  defaults:
+    temperature: 0.7
+    top_p: 0.95
+    max_tokens: 8192
+
+
 # =============================================================================
 # OpenAI — GPT-5.4 (large, general) + o4-mini (cost, reasoning)
 # reasoning on o4-mini is internal; trace not exposed via API
@@ -231,15 +250,6 @@ kimi-k27-code:  # Kimi-K2.7-Code
   enable_reasoning: true
   defaults:
     temperature: 1.0
-    top_p: 0.95
-    max_tokens: 8192
-
-qwen-36-35b:  # Qwen3.6-35B-A3B
-  provider: "custom"
-  model_path: "arc:nexus"
-  enable_reasoning: true
-  defaults:
-    temperature: 0.6
     top_p: 0.95
     max_tokens: 8192
 
