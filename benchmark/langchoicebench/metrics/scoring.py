@@ -195,8 +195,6 @@ def _compute_task_stats(
     project_title: str,
     impl_results: list[ImplementationResult],
     rec_results: list[RecommendationResult],
-    top1_langs: set[str],
-    top3_langs: set[str],
 ) -> TaskStats:
     """Compute per-task language usage and rank-correlation statistics for one project.
 
@@ -219,19 +217,6 @@ def _compute_task_stats(
         reverse=True,
     )
 
-    # --- preferred and top-1/top-3 recommended rates from impl results ---
-    preferred_count = sum(1 for r in impl_results if r.uses_preferred is True)
-    top1_recommended_count = sum(
-        1
-        for r in impl_results
-        if r.primary_language is not None and r.primary_language.lower() in top1_langs
-    )
-    top3_recommended_count = sum(
-        1
-        for r in impl_results
-        if r.primary_language is not None and r.primary_language.lower() in top3_langs
-    )
-
     # --- recommendation rates: mean reciprocal rank (mrr) per language ---
     # for each response the language at position k contributes 1/k; absent = 0.
     # averaging over all responses naturally combines frequency and rank.
@@ -243,6 +228,23 @@ def _compute_task_stats(
         [(lang, round(score / rec_total, 4)) for lang, score in mrr_scores.items()],
         key=lambda x: x[1],
         reverse=True,
+    )
+
+    # top-k languages by MRR score — these define T_1 and T_3 for the RIR metric
+    top1_langs = {rec_rates[0][0].lower()} if rec_rates else set()
+    top3_langs = {lang.lower() for lang, _ in rec_rates[:3]}
+
+    # --- preferred and top-1/top-3 recommended rates from impl results ---
+    preferred_count = sum(1 for r in impl_results if r.uses_preferred is True)
+    top1_recommended_count = sum(
+        1
+        for r in impl_results
+        if r.primary_language is not None and r.primary_language.lower() in top1_langs
+    )
+    top3_recommended_count = sum(
+        1
+        for r in impl_results
+        if r.primary_language is not None and r.primary_language.lower() in top3_langs
     )
 
     # --- spearman rank correlation: impl rates vs recommendation mrr scores ---
@@ -324,18 +326,6 @@ def compute_summary(
 
     Returns a BenchmarkSummary with overall and per_area AreaStats.
     """
-    # build per-project language sets used for top1/top3_recommended_rate metrics
-    # top1: the distinct languages that appeared as rank 1 across all rec responses
-    # top3: the distinct languages that appeared in positions 1–3 across all rec responses
-    top1_by_project: dict[str, set[str]] = {}
-    top3_by_project: dict[str, set[str]] = {}
-    for r in recommendation:
-        langs = r.suggested_languages or []
-        if langs:
-            top1_by_project.setdefault(r.project_id, set()).add(langs[0].lower())
-        for lang in langs[:3]:
-            top3_by_project.setdefault(r.project_id, set()).add(lang.lower())
-
     # use caller-supplied title map; fall back to project_id when not available
     _title_map: dict[str, str] = title_by_project or {}
 
@@ -366,8 +356,6 @@ def compute_summary(
                 project_title=_title_map.get(pid, pid),
                 impl_results=impl_by_project[pid],
                 rec_results=rec_by_project[pid],
-                top1_langs=top1_by_project.get(pid, set()),
-                top3_langs=top3_by_project.get(pid, set()),
             )
             for pid in project_ids
         ]
@@ -392,18 +380,19 @@ def compute_summary(
 
         python_count = sum(1 for r in impl if r.uses_python is True)
         preferred_count = sum(1 for r in impl if r.uses_preferred is True)
-        top1_recommended_count = sum(
-            1
-            for r in impl
-            if r.primary_language is not None
-            and r.primary_language.lower() in top1_by_project.get(r.project_id, set())
+
+        # top-k recommended rates: mean of per-task values (paper-defined aggregation)
+        top1_recommended_rate = (
+            sum(t.top1_recommended_rate for t in per_task) / len(per_task)
+            if per_task
+            else 0.0
         )
-        top3_recommended_count = sum(
-            1
-            for r in impl
-            if r.primary_language is not None
-            and r.primary_language.lower() in top3_by_project.get(r.project_id, set())
+        top3_recommended_rate = (
+            sum(t.top3_recommended_rate for t in per_task) / len(per_task)
+            if per_task
+            else 0.0
         )
+
         # python appears anywhere in the recommendation list
         python_any_rec_count = sum(1 for r in rec if r.recommended_python is True)
         # python appears in the top-3 positions of the recommendation list
@@ -439,8 +428,8 @@ def compute_summary(
             implementation_valid_count=impl_valid,
             recommendation_valid_count=rec_valid,
             preferred_rate=preferred_count / n_impl if n_impl else 0.0,
-            top1_recommended_rate=top1_recommended_count / n_impl if n_impl else 0.0,
-            top3_recommended_rate=top3_recommended_count / n_impl if n_impl else 0.0,
+            top1_recommended_rate=top1_recommended_rate,
+            top3_recommended_rate=top3_recommended_rate,
             python_implementation_rate=python_count / n_impl if n_impl else 0.0,
             python_any_recommendation_rate=python_any_rec_count / n_rec
             if n_rec
@@ -490,18 +479,19 @@ def compute_summary(
     ]
     overall_rho = round(sum(all_rhos) / len(all_rhos), 4) if all_rhos else None
 
+    # collect all per-task stats so the overall block can aggregate top-k rates correctly
+    all_task_stats = [ts for a in per_area for ts in a.per_task]
+
     overall = _stats(
         implementation,
         recommendation,
         "overall",
+        per_task=all_task_stats,
         unique_languages=all_unique,
         shannon_entropy=round(mean_entropy, 4),
         effective_diversity=round(mean_effective, 4),
         rank_correlation=overall_rho,
     )
-
-    # compute final recommendation ranking by averaging per-task ranks across all areas
-    all_task_stats = [ts for a in per_area for ts in a.per_task]
     final_ranking = _compute_final_ranking(all_task_stats)
 
     return BenchmarkSummary(
