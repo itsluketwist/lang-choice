@@ -33,6 +33,15 @@ deepseek-pro:
 # Mistral — Medium 3.5 (large) + Small 4 (cost); both support reasoning
 # =============================================================================
 
+mistral-medium:
+  provider: "mistral"
+  model_path: "mistral-medium-3-5"
+  enable_reasoning: true
+  defaults:
+    temperature: 0.3
+    top_p: 1.0
+    max_tokens: 8192
+
 mistral-small:
   provider: "mistral"
   model_path: "mistral-small-2603"
@@ -89,7 +98,7 @@ gpt-5-4:
 
 claude-sonnet:
   provider: "anthropic"
-  model_path: "claude-sonnet-4-6"
+  model_path: "claude-sonnet-5"
   enable_reasoning: true
   defaults:
     temperature: 1.0
