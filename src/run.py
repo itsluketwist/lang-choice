@@ -82,8 +82,8 @@ def run_experiment(
             f"  [DEBUG] limited to {len(impl_prompts)} impl + {len(rec_prompts)} rec prompts"
         )
 
-    impl_samples = inference_cfg.samples["implementation"]
-    rec_samples = inference_cfg.samples["recommendation"]
+    impl_samples = inference_cfg.samples["implementation"] if not debug else 1
+    rec_samples = inference_cfg.samples["recommendation"] if not debug else 1
 
     log(f"  {len(impl_prompts)} implementation prompts × {impl_samples} samples")
     log(f"  {len(rec_prompts)} recommendation prompts × {rec_samples} samples")

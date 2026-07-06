@@ -7,8 +7,8 @@
       "implementation_valid_count": 1204,
       "recommendation_valid_count": 264,
       "preferred_rate": 0.11428571428571428,
-      "top1_recommended_rate": 0.13452380952380952,
-      "top3_recommended_rate": 0.38095238095238093,
+      "top1_recommended_rate": 0.11905357142857143,
+      "top3_recommended_rate": 0.2750107142857143,
       "python_implementation_rate": 0.5285714285714286,
       "python_any_recommendation_rate": 0.36428571428571427,
       "python_top3_recommendation_rate": 0.11904761904761904,
@@ -29,7 +29,1528 @@
         "swift",
         "typescript"
       ],
-      "per_task": []
+      "per_task": [
+        {
+          "project_id": "embedded_microcontroller_firmware",
+          "area": "embedded",
+          "project_title": "Microcontroller Firmware",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 49,
+          "recommendation_valid_count": 15,
+          "preferred_rate": 0.75,
+          "top1_recommended_rate": 0.5833,
+          "top3_recommended_rate": 0.75,
+          "implementation_rates": [
+            [
+              "c",
+              0.5833
+            ],
+            [
+              "c++",
+              0.1667
+            ],
+            [
+              "python",
+              0.0667
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c",
+              1.0
+            ],
+            [
+              "c++",
+              0.5
+            ],
+            [
+              "rust",
+              0.2444
+            ],
+            [
+              "python",
+              0.1578
+            ],
+            [
+              "java",
+              0.03
+            ],
+            [
+              "go",
+              0.0278
+            ],
+            [
+              "c#",
+              0.0133
+            ],
+            [
+              "javascript",
+              0.0095
+            ]
+          ],
+          "rank_correlation": 0.791
+        },
+        {
+          "project_id": "embedded_resource_constrained_edge",
+          "area": "embedded",
+          "project_title": "Resource-Constrained Edge Deployment",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 60,
+          "recommendation_valid_count": 8,
+          "preferred_rate": 0.0,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.0,
+          "implementation_rates": [
+            [
+              "python",
+              1.0
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c",
+              0.5333
+            ],
+            [
+              "rust",
+              0.2444
+            ],
+            [
+              "c++",
+              0.1778
+            ],
+            [
+              "python",
+              0.0733
+            ],
+            [
+              "go",
+              0.0722
+            ],
+            [
+              "java",
+              0.0111
+            ],
+            [
+              "javascript",
+              0.0095
+            ]
+          ],
+          "rank_correlation": 0.0
+        },
+        {
+          "project_id": "embedded_robotics_control_loop",
+          "area": "embedded",
+          "project_title": "Robotics Control Loop",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 47,
+          "recommendation_valid_count": 7,
+          "preferred_rate": 0.0667,
+          "top1_recommended_rate": 0.0333,
+          "top3_recommended_rate": 0.0667,
+          "implementation_rates": [
+            [
+              "python",
+              0.7167
+            ],
+            [
+              "c++",
+              0.0333
+            ],
+            [
+              "c",
+              0.0333
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c++",
+              0.4667
+            ],
+            [
+              "rust",
+              0.2111
+            ],
+            [
+              "c",
+              0.15
+            ],
+            [
+              "python",
+              0.0911
+            ],
+            [
+              "java",
+              0.07
+            ],
+            [
+              "go",
+              0.0411
+            ],
+            [
+              "ada",
+              0.0389
+            ]
+          ],
+          "rank_correlation": 0.4781
+        },
+        {
+          "project_id": "embedded_sensor_processing_pipeline",
+          "area": "embedded",
+          "project_title": "Sensor-Processing Pipeline",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 59,
+          "recommendation_valid_count": 4,
+          "preferred_rate": 0.0167,
+          "top1_recommended_rate": 0.0167,
+          "top3_recommended_rate": 0.0167,
+          "implementation_rates": [
+            [
+              "python",
+              0.9667
+            ],
+            [
+              "c",
+              0.0167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c",
+              0.2667
+            ],
+            [
+              "c++",
+              0.1222
+            ],
+            [
+              "rust",
+              0.1
+            ],
+            [
+              "python",
+              0.05
+            ],
+            [
+              "java",
+              0.0133
+            ]
+          ],
+          "rank_correlation": 0.1118
+        },
+        {
+          "project_id": "enterprise_dotnet_ecosystem_service",
+          "area": "enterprise",
+          "project_title": ".NET Ecosystem Service",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 60,
+          "recommendation_valid_count": 11,
+          "preferred_rate": 0.2333,
+          "top1_recommended_rate": 0.2333,
+          "top3_recommended_rate": 1.0,
+          "implementation_rates": [
+            [
+              "python",
+              0.7667
+            ],
+            [
+              "c#",
+              0.2333
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c#",
+              0.7333
+            ],
+            [
+              "java",
+              0.3167
+            ],
+            [
+              "python",
+              0.2778
+            ],
+            [
+              "javascript",
+              0.1633
+            ],
+            [
+              "go",
+              0.0933
+            ],
+            [
+              "f#",
+              0.0444
+            ]
+          ],
+          "rank_correlation": 0.5409
+        },
+        {
+          "project_id": "enterprise_highconcurrency_backend",
+          "area": "enterprise",
+          "project_title": "High-Concurrency Backend Service",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 53,
+          "recommendation_valid_count": 10,
+          "preferred_rate": 0.0,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.0,
+          "implementation_rates": [
+            [
+              "python",
+              0.8167
+            ],
+            [
+              "javascript",
+              0.0667
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "rust",
+              0.6
+            ],
+            [
+              "go",
+              0.3111
+            ],
+            [
+              "c++",
+              0.2244
+            ],
+            [
+              "javascript",
+              0.165
+            ],
+            [
+              "java",
+              0.1367
+            ],
+            [
+              "python",
+              0.1156
+            ],
+            [
+              "c",
+              0.0667
+            ],
+            [
+              "c#",
+              0.0169
+            ],
+            [
+              "scala",
+              0.0167
+            ],
+            [
+              "haskell",
+              0.0141
+            ],
+            [
+              "php",
+              0.0095
+            ],
+            [
+              "ruby",
+              0.0095
+            ],
+            [
+              "kotlin",
+              0.0095
+            ]
+          ],
+          "rank_correlation": 0.2196
+        },
+        {
+          "project_id": "enterprise_jvm_ecosystem_service",
+          "area": "enterprise",
+          "project_title": "JVM Ecosystem Service",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 55,
+          "recommendation_valid_count": 6,
+          "preferred_rate": 0.1,
+          "top1_recommended_rate": 0.0167,
+          "top3_recommended_rate": 0.1167,
+          "implementation_rates": [
+            [
+              "python",
+              0.7167
+            ],
+            [
+              "java",
+              0.0667
+            ],
+            [
+              "go",
+              0.05
+            ],
+            [
+              "kotlin",
+              0.0333
+            ],
+            [
+              "typescript",
+              0.0167
+            ],
+            [
+              "c",
+              0.0167
+            ],
+            [
+              "rust",
+              0.0167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "rust",
+              0.3133
+            ],
+            [
+              "kotlin",
+              0.2222
+            ],
+            [
+              "java",
+              0.1056
+            ],
+            [
+              "c#",
+              0.0911
+            ],
+            [
+              "go",
+              0.0744
+            ],
+            [
+              "scala",
+              0.0467
+            ],
+            [
+              "typescript",
+              0.0278
+            ],
+            [
+              "python",
+              0.0133
+            ]
+          ],
+          "rank_correlation": -0.017
+        },
+        {
+          "project_id": "enterprise_strongly_typed_service",
+          "area": "enterprise",
+          "project_title": "Strongly Typed Enterprise Service",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 45,
+          "recommendation_valid_count": 10,
+          "preferred_rate": 0.0,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.0,
+          "implementation_rates": [
+            [
+              "python",
+              0.75
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "java",
+              0.5
+            ],
+            [
+              "rust",
+              0.2689
+            ],
+            [
+              "c#",
+              0.2389
+            ],
+            [
+              "c++",
+              0.1856
+            ],
+            [
+              "go",
+              0.1522
+            ],
+            [
+              "python",
+              0.1167
+            ],
+            [
+              "kotlin",
+              0.0395
+            ],
+            [
+              "scala",
+              0.0389
+            ],
+            [
+              "ruby",
+              0.0295
+            ],
+            [
+              "javascript",
+              0.0083
+            ],
+            [
+              "php",
+              0.0074
+            ]
+          ],
+          "rank_correlation": 0.0
+        },
+        {
+          "project_id": "frontend_browser_extension",
+          "area": "frontend",
+          "project_title": "Browser Extension",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 33,
+          "recommendation_valid_count": 11,
+          "preferred_rate": 0.4167,
+          "top1_recommended_rate": 0.4167,
+          "top3_recommended_rate": 0.4167,
+          "implementation_rates": [
+            [
+              "javascript",
+              0.4167
+            ],
+            [
+              "python",
+              0.0667
+            ],
+            [
+              "c",
+              0.05
+            ],
+            [
+              "c#",
+              0.0167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "javascript",
+              0.6
+            ],
+            [
+              "rust",
+              0.2444
+            ],
+            [
+              "typescript",
+              0.2333
+            ],
+            [
+              "dart",
+              0.0222
+            ]
+          ],
+          "rank_correlation": -0.1154
+        },
+        {
+          "project_id": "frontend_browser_web_application",
+          "area": "frontend",
+          "project_title": "Browser-Based Web Application",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 39,
+          "recommendation_valid_count": 11,
+          "preferred_rate": 0.1833,
+          "top1_recommended_rate": 0.1833,
+          "top3_recommended_rate": 0.6333,
+          "implementation_rates": [
+            [
+              "python",
+              0.45
+            ],
+            [
+              "javascript",
+              0.1833
+            ],
+            [
+              "c",
+              0.0167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "javascript",
+              0.6333
+            ],
+            [
+              "python",
+              0.3222
+            ],
+            [
+              "typescript",
+              0.15
+            ],
+            [
+              "java",
+              0.1389
+            ],
+            [
+              "ruby",
+              0.0689
+            ],
+            [
+              "go",
+              0.0489
+            ],
+            [
+              "c#",
+              0.0378
+            ],
+            [
+              "r",
+              0.0222
+            ],
+            [
+              "julia",
+              0.0133
+            ],
+            [
+              "rust",
+              0.0111
+            ]
+          ],
+          "rank_correlation": 0.3584
+        },
+        {
+          "project_id": "frontend_interactive_client_visualization",
+          "area": "frontend",
+          "project_title": "Interactive Client-Side Visualisation",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 30,
+          "recommendation_valid_count": 9,
+          "preferred_rate": 0.1,
+          "top1_recommended_rate": 0.1,
+          "top3_recommended_rate": 0.5,
+          "implementation_rates": [
+            [
+              "python",
+              0.4
+            ],
+            [
+              "javascript",
+              0.1
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "javascript",
+              0.6
+            ],
+            [
+              "python",
+              0.1056
+            ],
+            [
+              "typescript",
+              0.1
+            ],
+            [
+              "dart",
+              0.0222
+            ],
+            [
+              "ruby",
+              0.0133
+            ]
+          ],
+          "rank_correlation": 0.7826
+        },
+        {
+          "project_id": "frontend_single_page_application",
+          "area": "frontend",
+          "project_title": "Single-Page Application",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 30,
+          "recommendation_valid_count": 12,
+          "preferred_rate": 0.1167,
+          "top1_recommended_rate": 0.1167,
+          "top3_recommended_rate": 0.5,
+          "implementation_rates": [
+            [
+              "python",
+              0.3833
+            ],
+            [
+              "javascript",
+              0.1167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "javascript",
+              0.7333
+            ],
+            [
+              "typescript",
+              0.2
+            ],
+            [
+              "python",
+              0.1056
+            ],
+            [
+              "kotlin",
+              0.0389
+            ],
+            [
+              "java",
+              0.0389
+            ],
+            [
+              "dart",
+              0.0222
+            ],
+            [
+              "rust",
+              0.0133
+            ],
+            [
+              "c#",
+              0.0133
+            ],
+            [
+              "ruby",
+              0.0111
+            ]
+          ],
+          "rank_correlation": 0.5984
+        },
+        {
+          "project_id": "games_2d_game",
+          "area": "games",
+          "project_title": "2D Game",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 30,
+          "recommendation_valid_count": 10,
+          "preferred_rate": 0.0,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.0,
+          "implementation_rates": [
+            [
+              "python",
+              0.4833
+            ],
+            [
+              "r",
+              0.0167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c#",
+              0.4444
+            ],
+            [
+              "c++",
+              0.37
+            ],
+            [
+              "javascript",
+              0.3189
+            ],
+            [
+              "python",
+              0.2244
+            ],
+            [
+              "java",
+              0.1644
+            ]
+          ],
+          "rank_correlation": -0.5409
+        },
+        {
+          "project_id": "games_game_engine_plugin",
+          "area": "games",
+          "project_title": "Game Engine Plugin",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 27,
+          "recommendation_valid_count": 11,
+          "preferred_rate": 0.0167,
+          "top1_recommended_rate": 0.0167,
+          "top3_recommended_rate": 0.0167,
+          "implementation_rates": [
+            [
+              "python",
+              0.4167
+            ],
+            [
+              "c++",
+              0.0167
+            ],
+            [
+              "javascript",
+              0.0167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c++",
+              0.7333
+            ],
+            [
+              "c#",
+              0.3
+            ],
+            [
+              "rust",
+              0.0667
+            ],
+            [
+              "python",
+              0.0611
+            ],
+            [
+              "c",
+              0.0333
+            ],
+            [
+              "java",
+              0.0222
+            ],
+            [
+              "haskell",
+              0.0133
+            ]
+          ],
+          "rank_correlation": 0.0687
+        },
+        {
+          "project_id": "games_physics_simulation",
+          "area": "games",
+          "project_title": "Physics Simulation with Frame-Rate Constraints",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 40,
+          "recommendation_valid_count": 8,
+          "preferred_rate": 0.0167,
+          "top1_recommended_rate": 0.0167,
+          "top3_recommended_rate": 0.6667,
+          "implementation_rates": [
+            [
+              "python",
+              0.65
+            ],
+            [
+              "c++",
+              0.0167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c++",
+              0.5333
+            ],
+            [
+              "c#",
+              0.2222
+            ],
+            [
+              "python",
+              0.1478
+            ],
+            [
+              "rust",
+              0.1222
+            ],
+            [
+              "java",
+              0.1056
+            ],
+            [
+              "javascript",
+              0.0244
+            ]
+          ],
+          "rank_correlation": 0.5409
+        },
+        {
+          "project_id": "games_realtime_rendering_demo",
+          "area": "games",
+          "project_title": "Real-Time Rendering Demo",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 18,
+          "recommendation_valid_count": 8,
+          "preferred_rate": 0.0,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.3,
+          "implementation_rates": [
+            [
+              "python",
+              0.3
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c++",
+              0.5333
+            ],
+            [
+              "c#",
+              0.2222
+            ],
+            [
+              "python",
+              0.1544
+            ],
+            [
+              "java",
+              0.1078
+            ],
+            [
+              "javascript",
+              0.0967
+            ],
+            [
+              "rust",
+              0.0333
+            ]
+          ],
+          "rank_correlation": 0.1309
+        },
+        {
+          "project_id": "low_latency_highfreq_messaging_system",
+          "area": "low_latency",
+          "project_title": "High-Frequency Messaging System",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 50,
+          "recommendation_valid_count": 10,
+          "preferred_rate": 0.0,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.0,
+          "implementation_rates": [
+            [
+              "python",
+              0.8333
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c++",
+              0.5222
+            ],
+            [
+              "rust",
+              0.4333
+            ],
+            [
+              "go",
+              0.2444
+            ],
+            [
+              "java",
+              0.1722
+            ],
+            [
+              "c#",
+              0.0967
+            ],
+            [
+              "python",
+              0.0806
+            ],
+            [
+              "javascript",
+              0.0302
+            ],
+            [
+              "ruby",
+              0.025
+            ],
+            [
+              "php",
+              0.0074
+            ]
+          ],
+          "rank_correlation": -0.1369
+        },
+        {
+          "project_id": "low_latency_latency_trading_platform",
+          "area": "low_latency",
+          "project_title": "Low-Latency Trading Platform",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 31,
+          "recommendation_valid_count": 7,
+          "preferred_rate": 0.0,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.0,
+          "implementation_rates": [
+            [
+              "python",
+              0.4167
+            ],
+            [
+              "javascript",
+              0.1
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c++",
+              0.3722
+            ],
+            [
+              "rust",
+              0.2722
+            ],
+            [
+              "java",
+              0.1544
+            ],
+            [
+              "go",
+              0.1078
+            ],
+            [
+              "kotlin",
+              0.0944
+            ],
+            [
+              "c#",
+              0.0906
+            ],
+            [
+              "python",
+              0.0401
+            ],
+            [
+              "scala",
+              0.0167
+            ]
+          ],
+          "rank_correlation": -0.5934
+        },
+        {
+          "project_id": "low_latency_realtime_market_data_processor",
+          "area": "low_latency",
+          "project_title": "Real-Time Market Data Processor",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 27,
+          "recommendation_valid_count": 11,
+          "preferred_rate": 0.0,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.0,
+          "implementation_rates": [
+            [
+              "python",
+              0.4
+            ],
+            [
+              "c",
+              0.05
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c++",
+              0.5389
+            ],
+            [
+              "rust",
+              0.4467
+            ],
+            [
+              "go",
+              0.3056
+            ],
+            [
+              "java",
+              0.1767
+            ],
+            [
+              "python",
+              0.1495
+            ],
+            [
+              "c#",
+              0.0733
+            ],
+            [
+              "javascript",
+              0.0625
+            ],
+            [
+              "ruby",
+              0.0179
+            ],
+            [
+              "scala",
+              0.0167
+            ]
+          ],
+          "rank_correlation": -0.3027
+        },
+        {
+          "project_id": "low_latency_ultra_lowlatency_networking",
+          "area": "low_latency",
+          "project_title": "Ultra-Low-Latency Networking Service",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 55,
+          "recommendation_valid_count": 9,
+          "preferred_rate": 0.0167,
+          "top1_recommended_rate": 0.0167,
+          "top3_recommended_rate": 0.0167,
+          "implementation_rates": [
+            [
+              "python",
+              0.9
+            ],
+            [
+              "c",
+              0.0167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c",
+              0.4222
+            ],
+            [
+              "rust",
+              0.2889
+            ],
+            [
+              "c++",
+              0.2778
+            ],
+            [
+              "go",
+              0.1056
+            ],
+            [
+              "python",
+              0.0467
+            ],
+            [
+              "java",
+              0.0244
+            ]
+          ],
+          "rank_correlation": 0.0676
+        },
+        {
+          "project_id": "mobile_app_store_consumer_app",
+          "area": "mobile",
+          "project_title": "App-Store-Deployed Consumer Application",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 51,
+          "recommendation_valid_count": 6,
+          "preferred_rate": 0.0167,
+          "top1_recommended_rate": 0.45,
+          "top3_recommended_rate": 0.4667,
+          "implementation_rates": [
+            [
+              "javascript",
+              0.45
+            ],
+            [
+              "python",
+              0.3333
+            ],
+            [
+              "c",
+              0.05
+            ],
+            [
+              "kotlin",
+              0.0167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "javascript",
+              0.25
+            ],
+            [
+              "kotlin",
+              0.1389
+            ],
+            [
+              "swift",
+              0.1389
+            ],
+            [
+              "dart",
+              0.1222
+            ]
+          ],
+          "rank_correlation": 0.0448
+        },
+        {
+          "project_id": "mobile_native_android_app",
+          "area": "mobile",
+          "project_title": "Native Android Application",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 57,
+          "recommendation_valid_count": 11,
+          "preferred_rate": 0.2667,
+          "top1_recommended_rate": 0.2667,
+          "top3_recommended_rate": 0.7167,
+          "implementation_rates": [
+            [
+              "java",
+              0.45
+            ],
+            [
+              "kotlin",
+              0.2667
+            ],
+            [
+              "python",
+              0.1167
+            ],
+            [
+              "c",
+              0.1167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "kotlin",
+              0.7333
+            ],
+            [
+              "java",
+              0.3667
+            ]
+          ],
+          "rank_correlation": 0.7778
+        },
+        {
+          "project_id": "mobile_native_ios_app",
+          "area": "mobile",
+          "project_title": "Native iOS Application",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 52,
+          "recommendation_valid_count": 15,
+          "preferred_rate": 0.8667,
+          "top1_recommended_rate": 0.8667,
+          "top3_recommended_rate": 0.8667,
+          "implementation_rates": [
+            [
+              "swift",
+              0.8667
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "swift",
+              1.0
+            ],
+            [
+              "objective-c",
+              0.5
+            ],
+            [
+              "kotlin",
+              0.0222
+            ],
+            [
+              "python",
+              0.0222
+            ],
+            [
+              "rust",
+              0.0167
+            ]
+          ],
+          "rank_correlation": 0.7255
+        },
+        {
+          "project_id": "mobile_offline_first_mobile_app",
+          "area": "mobile",
+          "project_title": "Offline-First Mobile Application",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 53,
+          "recommendation_valid_count": 8,
+          "preferred_rate": 0.0167,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.65,
+          "implementation_rates": [
+            [
+              "python",
+              0.3333
+            ],
+            [
+              "javascript",
+              0.3167
+            ],
+            [
+              "c",
+              0.2
+            ],
+            [
+              "kotlin",
+              0.0167
+            ],
+            [
+              "r",
+              0.0167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "dart",
+              0.4333
+            ],
+            [
+              "javascript",
+              0.3167
+            ],
+            [
+              "python",
+              0.1222
+            ],
+            [
+              "c#",
+              0.0944
+            ],
+            [
+              "kotlin",
+              0.0633
+            ],
+            [
+              "swift",
+              0.0611
+            ]
+          ],
+          "rank_correlation": 0.0185
+        },
+        {
+          "project_id": "systems_highthroughput_parser",
+          "area": "systems",
+          "project_title": "High-Throughput Parser",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 49,
+          "recommendation_valid_count": 7,
+          "preferred_rate": 0.0,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.0,
+          "implementation_rates": [
+            [
+              "python",
+              0.8167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "rust",
+              0.4
+            ],
+            [
+              "c++",
+              0.2833
+            ],
+            [
+              "go",
+              0.1667
+            ],
+            [
+              "java",
+              0.0767
+            ],
+            [
+              "python",
+              0.0656
+            ],
+            [
+              "c",
+              0.0389
+            ],
+            [
+              "c#",
+              0.0244
+            ],
+            [
+              "javascript",
+              0.0095
+            ]
+          ],
+          "rank_correlation": -0.0825
+        },
+        {
+          "project_id": "systems_memory_constrained_utility",
+          "area": "systems",
+          "project_title": "Memory-Constrained System Utility",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 24,
+          "recommendation_valid_count": 10,
+          "preferred_rate": 0.0,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.0,
+          "implementation_rates": [
+            [
+              "python",
+              0.3833
+            ],
+            [
+              "r",
+              0.0167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "rust",
+              0.6667
+            ],
+            [
+              "c",
+              0.3222
+            ],
+            [
+              "go",
+              0.2222
+            ],
+            [
+              "python",
+              0.1233
+            ],
+            [
+              "c++",
+              0.0744
+            ],
+            [
+              "javascript",
+              0.0244
+            ],
+            [
+              "ruby",
+              0.0095
+            ]
+          ],
+          "rank_correlation": -0.3117
+        },
+        {
+          "project_id": "systems_perf_critical_networking_tool",
+          "area": "systems",
+          "project_title": "Performance-Critical Networking Tool",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 42,
+          "recommendation_valid_count": 9,
+          "preferred_rate": 0.0,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.0,
+          "implementation_rates": [
+            [
+              "python",
+              0.6833
+            ],
+            [
+              "javascript",
+              0.0167
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c",
+              0.3889
+            ],
+            [
+              "c++",
+              0.3444
+            ],
+            [
+              "rust",
+              0.3
+            ],
+            [
+              "go",
+              0.1667
+            ],
+            [
+              "python",
+              0.0511
+            ],
+            [
+              "java",
+              0.0433
+            ],
+            [
+              "c#",
+              0.0133
+            ]
+          ],
+          "rank_correlation": -0.452
+        },
+        {
+          "project_id": "systems_systems_daemon",
+          "area": "systems",
+          "project_title": "Systems Daemon",
+          "implementation_count": 60,
+          "recommendation_count": 15,
+          "implementation_valid_count": 38,
+          "recommendation_valid_count": 10,
+          "preferred_rate": 0.0,
+          "top1_recommended_rate": 0.0,
+          "top3_recommended_rate": 0.0,
+          "implementation_rates": [
+            [
+              "python",
+              0.6333
+            ]
+          ],
+          "recommendation_rates": [
+            [
+              "c",
+              0.5833
+            ],
+            [
+              "rust",
+              0.3444
+            ],
+            [
+              "c++",
+              0.2611
+            ],
+            [
+              "go",
+              0.1833
+            ],
+            [
+              "python",
+              0.1067
+            ],
+            [
+              "java",
+              0.0278
+            ]
+          ],
+          "rank_correlation": -0.3928
+        }
+      ]
     },
     "per_area": [
       {
@@ -39,8 +1560,8 @@
         "implementation_valid_count": 215,
         "recommendation_valid_count": 34,
         "preferred_rate": 0.20833333333333334,
-        "top1_recommended_rate": 0.15833333333333333,
-        "top3_recommended_rate": 0.4041666666666667,
+        "top1_recommended_rate": 0.15832500000000002,
+        "top3_recommended_rate": 0.20835,
         "python_implementation_rate": 0.6875,
         "python_any_recommendation_rate": 0.38333333333333336,
         "python_top3_recommendation_rate": 0.05,
@@ -63,7 +1584,7 @@
             "recommendation_valid_count": 15,
             "preferred_rate": 0.75,
             "top1_recommended_rate": 0.5833,
-            "top3_recommended_rate": 0.8167,
+            "top3_recommended_rate": 0.75,
             "implementation_rates": [
               [
                 "c",
@@ -173,7 +1694,7 @@
             "recommendation_valid_count": 7,
             "preferred_rate": 0.0667,
             "top1_recommended_rate": 0.0333,
-            "top3_recommended_rate": 0.7833,
+            "top3_recommended_rate": 0.0667,
             "implementation_rates": [
               [
                 "python",
@@ -274,8 +1795,8 @@
         "implementation_valid_count": 213,
         "recommendation_valid_count": 37,
         "preferred_rate": 0.08333333333333333,
-        "top1_recommended_rate": 0.0875,
-        "top3_recommended_rate": 0.49583333333333335,
+        "top1_recommended_rate": 0.0625,
+        "top3_recommended_rate": 0.279175,
         "python_implementation_rate": 0.7625,
         "python_any_recommendation_rate": 0.45,
         "python_top3_recommendation_rate": 0.2,
@@ -353,7 +1874,7 @@
             "recommendation_valid_count": 10,
             "preferred_rate": 0.0,
             "top1_recommended_rate": 0.0,
-            "top3_recommended_rate": 0.0667,
+            "top3_recommended_rate": 0.0,
             "implementation_rates": [
               [
                 "python",
@@ -429,8 +1950,8 @@
             "implementation_valid_count": 55,
             "recommendation_valid_count": 6,
             "preferred_rate": 0.1,
-            "top1_recommended_rate": 0.1167,
-            "top3_recommended_rate": 0.1667,
+            "top1_recommended_rate": 0.0167,
+            "top3_recommended_rate": 0.1167,
             "implementation_rates": [
               [
                 "python",
@@ -507,7 +2028,7 @@
             "recommendation_valid_count": 10,
             "preferred_rate": 0.0,
             "top1_recommended_rate": 0.0,
-            "top3_recommended_rate": 0.75,
+            "top3_recommended_rate": 0.0,
             "implementation_rates": [
               [
                 "python",
@@ -571,7 +2092,7 @@
         "implementation_valid_count": 132,
         "recommendation_valid_count": 43,
         "preferred_rate": 0.20416666666666666,
-        "top1_recommended_rate": 0.20416666666666666,
+        "top1_recommended_rate": 0.204175,
         "top3_recommended_rate": 0.5125,
         "python_implementation_rate": 0.325,
         "python_any_recommendation_rate": 0.3,
@@ -819,8 +2340,8 @@
         "implementation_valid_count": 115,
         "recommendation_valid_count": 37,
         "preferred_rate": 0.008333333333333333,
-        "top1_recommended_rate": 0.008333333333333333,
-        "top3_recommended_rate": 0.4708333333333333,
+        "top1_recommended_rate": 0.00835,
+        "top3_recommended_rate": 0.24584999999999999,
         "python_implementation_rate": 0.4625,
         "python_any_recommendation_rate": 0.48333333333333334,
         "python_top3_recommendation_rate": 0.21666666666666667,
@@ -844,7 +2365,7 @@
             "recommendation_valid_count": 10,
             "preferred_rate": 0.0,
             "top1_recommended_rate": 0.0,
-            "top3_recommended_rate": 0.4833,
+            "top3_recommended_rate": 0.0,
             "implementation_rates": [
               [
                 "python",
@@ -889,7 +2410,7 @@
             "recommendation_valid_count": 11,
             "preferred_rate": 0.0167,
             "top1_recommended_rate": 0.0167,
-            "top3_recommended_rate": 0.4333,
+            "top3_recommended_rate": 0.0167,
             "implementation_rates": [
               [
                 "python",
@@ -1039,8 +2560,8 @@
         "implementation_valid_count": 163,
         "recommendation_valid_count": 37,
         "preferred_rate": 0.004166666666666667,
-        "top1_recommended_rate": 0.004166666666666667,
-        "top3_recommended_rate": 0.10416666666666667,
+        "top1_recommended_rate": 0.004175,
+        "top3_recommended_rate": 0.004175,
         "python_implementation_rate": 0.6375,
         "python_any_recommendation_rate": 0.4,
         "python_top3_recommendation_rate": 0.016666666666666666,
@@ -1177,7 +2698,7 @@
             "recommendation_valid_count": 11,
             "preferred_rate": 0.0,
             "top1_recommended_rate": 0.0,
-            "top3_recommended_rate": 0.4,
+            "top3_recommended_rate": 0.0,
             "implementation_rates": [
               [
                 "python",
@@ -1286,8 +2807,8 @@
         "implementation_valid_count": 213,
         "recommendation_valid_count": 40,
         "preferred_rate": 0.2916666666666667,
-        "top1_recommended_rate": 0.4791666666666667,
-        "top3_recommended_rate": 0.6791666666666667,
+        "top1_recommended_rate": 0.39585000000000004,
+        "top3_recommended_rate": 0.675025,
         "python_implementation_rate": 0.19583333333333333,
         "python_any_recommendation_rate": 0.11666666666666667,
         "python_top3_recommendation_rate": 0.08333333333333333,
@@ -1313,7 +2834,7 @@
             "implementation_valid_count": 51,
             "recommendation_valid_count": 6,
             "preferred_rate": 0.0167,
-            "top1_recommended_rate": 0.4667,
+            "top1_recommended_rate": 0.45,
             "top3_recommended_rate": 0.4667,
             "implementation_rates": [
               [
@@ -1444,8 +2965,8 @@
             "implementation_valid_count": 53,
             "recommendation_valid_count": 8,
             "preferred_rate": 0.0167,
-            "top1_recommended_rate": 0.3167,
-            "top3_recommended_rate": 0.6667,
+            "top1_recommended_rate": 0.0,
+            "top3_recommended_rate": 0.65,
             "implementation_rates": [
               [
                 "python",
