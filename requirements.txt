@@ -1,6 +1,7 @@
 -e ./benchmark
 jupyter
 llm-codegen-research[api]
+plotly
 pydantic
 pyyaml
 rich
