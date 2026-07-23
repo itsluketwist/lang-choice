@@ -20,6 +20,7 @@ classifiers = [
 ]
 requires-python = ">=3.11"
 dependencies = [
+    "ipywidgets",
     "jupyter",
     "langchoicebench",
     "llm-codegen-research[api]",
@@ -30,6 +31,7 @@ dependencies = [
     "pydantic",
     "pyyaml",
     "rich",
+    "tqdm",
 ]
 
 [project.optional-dependencies]

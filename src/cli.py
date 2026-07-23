@@ -1,7 +1,7 @@
 """The command line interface entry-point for the experiment pipeline.
 
 Usage:
-    run --model deepseek-r1 \\
+    run --model deepseek-pro \\
         --model-config config/models.yaml \\
         --inference greedy \\
         --inference-config config/inference.yaml \\

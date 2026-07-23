@@ -78,7 +78,7 @@ for model in "${models[@]}"; do
         sbatch <<EOF
 #!/bin/bash -l
 #SBATCH --job-name=cc-${model}-${context}
-#SBATCH --output=/users/%u/code/code-choice/logs/${model}/${context}-%j.out
+#SBATCH --output=/users/%u/code/lang-choice/logs/${model}/${context}-%j.out
 #SBATCH --partition=cpu
 #SBATCH --mem=8G
 #SBATCH --time=04:00:00
