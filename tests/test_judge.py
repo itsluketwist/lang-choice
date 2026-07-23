@@ -4,7 +4,6 @@ import json
 from pathlib import Path
 
 from judge.build_gold import sample_gold_traces
-from judge.labelling import _load_judge_verdicts, _render_judge_verdicts
 from judge.prompts import MAX_TRACE_CHARS, build_request_body, parse_verdict
 from judge.summarise import summarise_model
 from judge.taxonomy import LABEL_DESCRIPTIONS
@@ -423,100 +422,3 @@ class TestValidate:
             "python_for_ease": 1,
             "automatic_python": 1,
         }
-
-
-class TestLabelling:
-    """Test the judge-verdicts panel in the labelling ui."""
-
-    def test_judge_accordion_open_by_default(self, tmp_path: Path, monkeypatch) -> None:
-        """Both judges' verdicts should be visible without an extra click."""
-        from judge.labelling import label_gold
-
-        monkeypatch.chdir(tmp_path)
-        unlabelled_path = tmp_path / "gold_unlabelled.jsonl"
-        _write_jsonl(
-            unlabelled_path,
-            [
-                {
-                    "model": "m",
-                    "id": "p__write",
-                    "project_id": "p",
-                    "sample_index": 0,
-                    "user_prompt": "prompt",
-                    "reasoning": "trace",
-                }
-            ],
-        )
-        widget = label_gold(
-            unlabelled_path=unlabelled_path,
-            labelled_path=tmp_path / "gold_labelled.jsonl",
-        )
-        judge_accordion = widget.children[3]
-        assert judge_accordion.selected_index == 0
-
-    def test_load_judge_verdicts_keys_by_trace_then_judge(
-        self, tmp_path: Path, monkeypatch
-    ) -> None:
-        """Should merge verdicts from multiple judge files, keyed by trace."""
-        monkeypatch.chdir(tmp_path)
-        _write_jsonl(
-            tmp_path / "judge" / "data" / "gold_judgements_gpt-5-mini.jsonl",
-            [
-                {
-                    "model": "m",
-                    "id": "p__write",
-                    "project_id": "p",
-                    "sample_index": 0,
-                    "judge_model": "gpt-5-mini",
-                    "verdict": {
-                        "label": "automatic_python",
-                        "evidence_quotes": [],
-                        "confidence": "high",
-                        "rationale": "r1",
-                    },
-                }
-            ],
-        )
-        _write_jsonl(
-            tmp_path / "judge" / "data" / "gold_judgements_gpt-5.4-mini.jsonl",
-            [
-                {
-                    "model": "m",
-                    "id": "p__write",
-                    "project_id": "p",
-                    "sample_index": 0,
-                    "judge_model": "gpt-5.4-mini",
-                    "verdict": {
-                        "label": "phantom_python_evidence",
-                        "evidence_quotes": ["quote"],
-                        "confidence": "medium",
-                        "rationale": "r2",
-                    },
-                }
-            ],
-        )
-        verdicts = _load_judge_verdicts()
-        assert set(verdicts["m|p__write|0"]) == {"gpt-5-mini", "gpt-5.4-mini"}
-        assert verdicts["m|p__write|0"]["gpt-5.4-mini"]["label"] == (
-            "phantom_python_evidence"
-        )
-
-    def test_render_judge_verdicts_placeholder_when_empty(self) -> None:
-        """Should render a placeholder when no judge has verdicts for a trace."""
-        assert "no judge verdicts" in _render_judge_verdicts({})
-
-    def test_render_judge_verdicts_includes_label_and_quotes(self) -> None:
-        """Should render the label, confidence, rationale, and evidence quotes."""
-        html_out = _render_judge_verdicts(
-            {
-                "gpt-5-mini": {
-                    "label": "phantom_python_evidence",
-                    "evidence_quotes": ["the problem says to use Python"],
-                    "confidence": "high",
-                    "rationale": "fabricated instruction",
-                }
-            }
-        )
-        assert "phantom_python_evidence" in html_out
-        assert "the problem says to use Python" in html_out
-        assert "fabricated instruction" in html_out

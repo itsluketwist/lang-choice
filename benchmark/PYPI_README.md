@@ -18,7 +18,7 @@
 
 The benchmark accompanies the research paper:
 
-> *Reasoning-Model Language Choice and Context-Anchor Hallucination Study* — [citation coming]
+> *LangChoiceBench: Measuring and Explaining Programming-Language Choice in LLMs*
 
 ## *installation*
 
