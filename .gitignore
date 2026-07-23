@@ -181,3 +181,5 @@ benchmark/build/*.md
 notebooks/*
 config/context/*
 figures/*
+output/*/*batches.json
+judge/labelling.py

@@ -6,13 +6,12 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["src", "src.generation", "src.analysis", "src.utils"]
+packages = ["src", "src.generation", "src.analysis", "src.utils", "judge"]
 
 [project]
 name = "src"
 readme = "README.md"
 version = "0.dev0"
-dynamic = ["dependencies"]
 authors = [{ name = "Lukas Twist", email = "itsluketwist@gmail.com" }]
 license-files = ["LICENSE"]
 classifiers = [
@@ -20,6 +19,18 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 requires-python = ">=3.11"
+dependencies = [
+    "jupyter",
+    "langchoicebench",
+    "llm-codegen-research[api]",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "plotly",
+    "pydantic",
+    "pyyaml",
+    "rich",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -30,6 +41,10 @@ dev = [
 
 [project.scripts]
 run = "src.cli:main"
+
+[tool.uv.sources]
+# use the local benchmark package (langchoicebench on PyPI) as an editable install
+langchoicebench = { path = "benchmark", editable = true }
 
 [tool.pytest.ini_options]
 # add benchmark/ to sys.path so langchoicebench is importable without a full install
