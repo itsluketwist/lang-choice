@@ -47,6 +47,10 @@ jobs:
       name: release
       url: https://huggingface.co/datasets/itsluketwist/LangChoiceBench
 
+    permissions:
+      id-token: write
+      contents: read
+
     steps:
 
       - name: 1. Checkout the code...
@@ -60,9 +64,9 @@ jobs:
 
       - name: 4. Upload dataset to Hugging Face Hub
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_OIDC_RESOURCE: datasets/itsluketwist/LangChoiceBench
         run: |
-          uvx --from huggingface_hub hf upload itsluketwist/LangChoiceBench HF_README.md README.md --repo-type dataset
-          uvx --from huggingface_hub hf upload itsluketwist/LangChoiceBench VERSION VERSION --repo-type dataset
-          uvx --from huggingface_hub hf upload itsluketwist/LangChoiceBench langchoicebench/data/implementation.jsonl data/implementation.jsonl --repo-type dataset
-          uvx --from huggingface_hub hf upload itsluketwist/LangChoiceBench langchoicebench/data/recommendation.jsonl data/recommendation.jsonl --repo-type dataset
+          uvx --from 'huggingface_hub>=1.19.0' hf upload itsluketwist/LangChoiceBench HF_README.md README.md --repo-type dataset
+          uvx --from 'huggingface_hub>=1.19.0' hf upload itsluketwist/LangChoiceBench VERSION VERSION --repo-type dataset
+          uvx --from 'huggingface_hub>=1.19.0' hf upload itsluketwist/LangChoiceBench langchoicebench/data/implementation.jsonl data/implementation.jsonl --repo-type dataset
+          uvx --from 'huggingface_hub>=1.19.0' hf upload itsluketwist/LangChoiceBench langchoicebench/data/recommendation.jsonl data/recommendation.jsonl --repo-type dataset
