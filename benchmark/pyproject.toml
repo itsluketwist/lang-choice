@@ -16,7 +16,7 @@ langchoicebench = ["data/*.jsonl"]
 name = "langchoicebench"
 readme = "PYPI_README.md"
 # bump the version here before triggering the release workflow
-version = "0.1.0"
+version = "0.2.0"
 description = "langchoicebench — evaluate programming language choice in LLMs."
 authors = [{ name = "Lukas Twist", email = "itsluketwist@gmail.com" }]
 license-files = ["LICENSE"]
