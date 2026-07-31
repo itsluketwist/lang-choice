@@ -39,8 +39,7 @@ class Trace(BaseModel):
 def _prompt_text_by_id() -> dict[str, str]:
     """Map benchmark prompt id to its rendered prompt text.
 
-    Older runs did not store prompt_messages, but all runs used the same 84
-    bundled implementation prompts, so the text can be reconstructed by id.
+    Fallback for older runs that didn't store prompt_messages.
     Returns a dict of prompt id to prompt text.
     """
     return {p.id: p.prompt for p in load_implementation_split()}
@@ -49,9 +48,8 @@ def _prompt_text_by_id() -> dict[str, str]:
 def uses_python_by_key(model_dir: Path) -> dict[tuple[str, int], bool]:
     """Map (prompt id, sample index) to whether that response was python code.
 
-    The evaluation file stores results positionally in the same order as the
-    implementation file (per prompt, samples in order), which allows an exact
-    join even though project_id repeats across the 3 prompt variants.
+    Joins positionally: the evaluation file is in the same per-prompt,
+    per-sample order as the implementation file.
     Returns the (id, sample_index) -> uses_python mapping.
     """
     impl_records = load_jsonl(model_dir / "def-implementation.jsonl")

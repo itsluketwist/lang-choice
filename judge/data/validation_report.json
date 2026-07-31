@@ -1,709 +1,1115 @@
 {
-  "n_gold": 225,
-  "predictors": {
-    "gpt-5-mini": {
-      "n_scored": 225,
-      "n_gold": 225,
-      "accuracy": 0.862,
-      "cohens_kappa": 0.773,
-      "per_label": {
-        "phantom_python_evidence": {
-          "true_positives": 18,
+  "selection": {
+    "n_gold": 150,
+    "predictors": {
+      "gpt-5-mini": {
+        "n_scored": 150,
+        "n_gold": 150,
+        "accuracy": 0.847,
+        "cohens_kappa": 0.746,
+        "per_label": {
+          "phantom_python_evidence": {
+            "true_positives": 10,
+            "false_positives": 2,
+            "false_negatives": 1,
+            "precision": 0.833,
+            "recall": 0.909,
+            "f1": 0.87
+          },
+          "language_mismatch": {
+            "true_positives": 6,
+            "false_positives": 0,
+            "false_negatives": 2,
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.857
+          },
+          "python_for_ease": {
+            "true_positives": 45,
+            "false_positives": 17,
+            "false_negatives": 0,
+            "precision": 0.726,
+            "recall": 1.0,
+            "f1": 0.841
+          },
+          "automatic_python": {
+            "true_positives": 66,
+            "false_positives": 3,
+            "false_negatives": 20,
+            "precision": 0.957,
+            "recall": 0.767,
+            "f1": 0.852
+          },
+          "unclear_other": {
+            "true_positives": 0,
+            "false_positives": 1,
+            "false_negatives": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "phantom_python_binary": {
+          "true_positives": 10,
           "false_positives": 2,
           "false_negatives": 1,
-          "precision": 0.9,
-          "recall": 0.947,
-          "f1": 0.923
+          "precision": 0.833,
+          "recall": 0.909,
+          "f1": 0.87
         },
-        "language_mismatch": {
-          "true_positives": 7,
-          "false_positives": 0,
-          "false_negatives": 3,
-          "precision": 1.0,
-          "recall": 0.7,
-          "f1": 0.824
+        "confusion_matrix": {
+          "automatic_python": {
+            "automatic_python": 66,
+            "python_for_ease": 17,
+            "phantom_python_evidence": 2,
+            "unclear_other": 1
+          },
+          "python_for_ease": {
+            "python_for_ease": 45
+          },
+          "phantom_python_evidence": {
+            "phantom_python_evidence": 10,
+            "automatic_python": 1
+          },
+          "language_mismatch": {
+            "language_mismatch": 6,
+            "automatic_python": 2
+          }
         },
-        "python_for_ease": {
-          "true_positives": 72,
-          "false_positives": 25,
+        "disagreements": [
+          {
+            "model": "code-nemotron-7b",
+            "id": "systems_memory_constrained_utility__write",
+            "sample_index": 7,
+            "gold_label": "phantom_python_evidence",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [
+              "But the problem doesn't specify the language? We are to write in Python."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "deepseek-flash",
+            "id": "low_latency_realtime_market_data_processor__generate",
+            "sample_index": 0,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "This is likely a coding problem. We should produce a simple implementation, perhaps in Python, using asyncio, websockets, or some mock data.",
+              "Since it's a minimal working version, we can keep it simple: a server that ingests market data (e.g., trades) from a simulated source, computes aggregates (e.g., rolling mean price) in real-time, and pushes updates to subscribers via WebSocket.",
+              "We'll generate a single Python file with a WebSocket server (using `websockets` library) and a mock data generator. We'll use asyncio for concurrency."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "deepseek-flash",
+            "id": "systems_highthroughput_parser__generate",
+            "sample_index": 7,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "The user likely wants code, probably in Python or Go or Rust?",
+              "Let's pick a common scenario: streaming NDJSON (JSON Lines) ... We'll implement a parser that reads a file line by line (or from stdin), parses each JSON object incrementally, and processes it (e.g., extract fields) without loading entire file into memory.",
+              "We'll write a Python script that reads from stdin line by line, parses JSON, and yields processed results."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "deepseek-pro",
+            "id": "low_latency_highfreq_messaging_system__generate",
+            "sample_index": 10,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "This is an open-ended request. We need to produce code, likely in Python, that simulates a messaging system with high throughput and latency monitoring.",
+              "To be minimal, I'll use asyncio with coroutine-based producers, a central router (asyncio.Queue-based), and consumer tasks.",
+              "Python with PyPy might get a few hundred thousand, but we can show the architecture and calculate theoretical throughput if batched."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-medium",
+            "id": "low_latency_highfreq_messaging_system__generate",
+            "sample_index": 16,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Since it's a minimal version, maybe we don't need to actually hit millions per second, but design it in a way that could scale to that. The architecture should be correct, even if the demo runs at lower scale.",
+              "Given time, I'll go with the first approach but improve it.",
+              "In Python, with asyncio, we can have:",
+              "Since it's a minimal version, maybe Python is acceptable for demonstration, even if it doesn't hit millions/sec."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-medium",
+            "id": "low_latency_realtime_market_data_processor__create",
+            "sample_index": 7,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "In Python, asyncio could be a good fit for handling concurrent connections and data streams.",
+              "In Python, for real-time processing, asyncio is common."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-medium",
+            "id": "systems_systems_daemon__generate",
+            "sample_index": 1,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "In Python, that usually involves forking, changing the working directory, and redirecting I/O.",
+              "But the user might want it in C for high performance, but they didn't specify language. The example in the problem might be in Python since it's common for daemons and has psutil. But high-performance in Python might not be ideal, but for a minimal example, Python is okay.",
+              "writing a daemon in C is more complex. Maybe Python with psutil is acceptable, even if not the absolute highest performance, but it's practical."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-small",
+            "id": "low_latency_ultra_lowlatency_networking__write",
+            "sample_index": 12,
+            "gold_label": "language_mismatch",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [],
+            "notes": ""
+          },
+          {
+            "model": "mistral-small",
+            "id": "systems_perf_critical_networking_tool__write",
+            "sample_index": 15,
+            "gold_label": "automatic_python",
+            "predicted_label": "phantom_python_evidence",
+            "evidence_quotes": [
+              "But the user asked for Python code."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-small",
+            "id": "systems_systems_daemon__generate",
+            "sample_index": 7,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Let's think about the structure.\n\nA minimal daemon in Python might look like this:",
+              "For resource monitoring, in Python, we can use the `psutil` library, which is efficient and provides a simple interface to system monitoring. However, the problem says \"high-performance\", and `psutil` might add some overhead, but for a minimal version, it's acceptable.",
+              "Given that it's a minimal working version, using `psutil` is okay because it's a common library and simplifies the code."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "nemotron-32b",
+            "id": "low_latency_ultra_lowlatency_networking__write",
+            "sample_index": 14,
+            "gold_label": "language_mismatch",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [],
+            "notes": ""
+          },
+          {
+            "model": "nemotron-7b",
+            "id": "enterprise_highconcurrency_backend__write",
+            "sample_index": 1,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Since the problem does not specify the environment, we'll use the standard `asyncio` for simplicity and compatibility.",
+              "But note: the problem says \"high-performance\", and `asyncio` is the standard for Python's event-driven I/O. We'll use `asyncio` to build an asynchronous web server.",
+              "Since the problem does not specify the constraints, we'll assume that using `asyncio` is acceptable."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "nemotron-7b",
+            "id": "mobile_offline_first_mobile_app__write",
+            "sample_index": 9,
+            "gold_label": "automatic_python",
+            "predicted_label": "unclear_other",
+            "evidence_quotes": [
+              "We'll use Python with the Kivy framework for the UI (since it's cross-platform and has good support for mobile)."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "olmo-32b",
+            "id": "mobile_app_store_consumer_app__generate",
+            "sample_index": 11,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "They probably want something quick to implement, so using a framework that supports real-time features is key. Flask is a good start for a backend, but real-time would require something like Flask-SocketIO.",
+              "For simplicity, SQLite could work, but since it's not great with concurrent writes, maybe SQLAlchemy with SQLite for the prototype.",
+              "So, integrating Flask with Socket.IO via Flask-SocketIO."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "olmo-32b",
+            "id": "systems_perf_critical_networking_tool__write",
+            "sample_index": 11,
+            "gold_label": "automatic_python",
+            "predicted_label": "phantom_python_evidence",
+            "evidence_quotes": [
+              "Alternatively, using C or C++ would be better, but the user asked for code, and the context is Ai2, which might prefer Python.",
+              "Wait, the user didn't specify the language, but the initial system message says I'm Olmo, an AI assistant. The user might expect Python, but for performance, perhaps using a combination with Cython or PyPy?"
+            ],
+            "notes": "trace argues python is too slow throughout; only uses it because \"user might want a python example regardless\" - no ease reason given"
+          },
+          {
+            "model": "olmo-7b",
+            "id": "embedded_sensor_processing_pipeline__write",
+            "sample_index": 19,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Let's assume we're using Python here for prototyping, but note that for an actual embedded system, it might need to be C or C++ with specific libraries.",
+              "But the user might just want a conceptual Python script to demonstrate the pipeline.",
+              "Let me proceed with Python for clarity, but note that in practice, for an embedded system, you'd need to interface with the actual hardware."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "olmo-7b",
+            "id": "games_2d_game__create",
+            "sample_index": 14,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "the user didn't specify a programming language or framework. Oh right, since they just said \"create an initial implementation,\" maybe I can suggest a simple approach using Python with something like Pygame, which is common for 2D games.",
+              "Yeah, Pygame is a good choice because it's cross-platform and has built-in functions for sprites and basic physics.",
+              "Maybe I can suggest a simple approach using Python with something like Pygame, which is common for 2D games."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "olmo-7b",
+            "id": "low_latency_ultra_lowlatency_networking__create",
+            "sample_index": 4,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Wait, perhaps the best approach for minimal latency is to have the filtering logic happen as close to the network interface as possible. So, maybe using a tool like a firewall that runs in the kernel, such as the Linux kernel's netfilter framework.",
+              "But setting up a kernel module is non-trivial. Maybe for an initial implementation, even a simple Python-based approach with minimal overhead could suffice, even if it's not as low-latency as a kernel module.",
+              "So steps for the Python script: ... Even if it's not the most efficient, it can demonstrate the concepts.",
+              "This Python script demonstrates the concept but lacks true low latency due to user-space processing. For real-world ultra-low latency, a kernel module using netfilter is required. The example can be extended by adding more complex rules and interface handling."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "qwen3-32b",
+            "id": "games_2d_game__create",
+            "sample_index": 4,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Since the user didn't specify a particular framework or language, maybe I should go with something common like Python and Pygame. Pygame is good for 2D games and has decent documentation. Plus, it's accessible for beginners."
+            ],
+            "notes": "says Python+Pygame is \"common\", never claims python itself is easy/simple (commonality != ease)"
+          },
+          {
+            "model": "qwen3-32b",
+            "id": "low_latency_highfreq_messaging_system__generate",
+            "sample_index": 17,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Since it's a minimal version, maybe I can use something like Python with asyncio for concurrency, but I know Python has the Global Interpreter Lock (GIL) which might limit true parallelism. However, for a minimal example, maybe it's acceptable.",
+              "Since Python's asyncio can handle high concurrency with coroutines, maybe building this with asyncio would be a good approach."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "qwen3-32b",
+            "id": "systems_perf_critical_networking_tool__create",
+            "sample_index": 4,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Wait, the user is asking for an initial implementation. Maybe starting with a Python-based approach using existing high-performance libraries is a good start, even if later on, for maximum performance, they might need to move to C or use DPDK.",
+              "But for the initial code, Python with some efficient libraries could be acceptable.",
+              "For a real system, moving to C or using a just-in-time compiler like PyPy with compatible libraries would help, but the initial code is in Python."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "qwen3-8b",
+            "id": "low_latency_highfreq_messaging_system__generate",
+            "sample_index": 18,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "But since the user wants a minimal working version, perhaps I can start with a simple system using a message queue like Redis or Kafka, but those might not be the fastest. Alternatively, using a custom in-memory message passing system with some concurrency.",
+              "Let me think of a simple example in Python using asyncio.",
+              "But for a minimal example, perhaps it's acceptable.",
+              "So, putting it all together, here's the code: ... asyncio ...",
+              "In conclusion, the code above provides a minimal working version of a high-frequency messaging system with latency monitoring using asyncio in Python."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "qwen3-8b",
+            "id": "low_latency_realtime_market_data_processor__write",
+            "sample_index": 0,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Hmm, maybe using Python with some libraries. For real-time data, perhaps using a message queue like Kafka or RabbitMQ? Or maybe a simpler approach with sockets? But for simplicity, maybe I can simulate the market data with a generator and use threading or async for processing.",
+              "But for simplicity, maybe the example with callbacks is sufficient."
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      "gpt-5.4-mini": {
+        "n_scored": 150,
+        "n_gold": 150,
+        "accuracy": 0.927,
+        "cohens_kappa": 0.871,
+        "per_label": {
+          "phantom_python_evidence": {
+            "true_positives": 11,
+            "false_positives": 2,
+            "false_negatives": 0,
+            "precision": 0.846,
+            "recall": 1.0,
+            "f1": 0.917
+          },
+          "language_mismatch": {
+            "true_positives": 7,
+            "false_positives": 0,
+            "false_negatives": 1,
+            "precision": 1.0,
+            "recall": 0.875,
+            "f1": 0.933
+          },
+          "python_for_ease": {
+            "true_positives": 39,
+            "false_positives": 2,
+            "false_negatives": 6,
+            "precision": 0.951,
+            "recall": 0.867,
+            "f1": 0.907
+          },
+          "automatic_python": {
+            "true_positives": 82,
+            "false_positives": 7,
+            "false_negatives": 4,
+            "precision": 0.921,
+            "recall": 0.953,
+            "f1": 0.937
+          },
+          "unclear_other": {
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "phantom_python_binary": {
+          "true_positives": 11,
+          "false_positives": 2,
           "false_negatives": 0,
-          "precision": 0.742,
+          "precision": 0.846,
           "recall": 1.0,
-          "f1": 0.852
+          "f1": 0.917
         },
-        "automatic_python": {
-          "true_positives": 97,
-          "false_positives": 3,
-          "false_negatives": 27,
-          "precision": 0.97,
-          "recall": 0.782,
-          "f1": 0.866
+        "confusion_matrix": {
+          "automatic_python": {
+            "automatic_python": 82,
+            "phantom_python_evidence": 2,
+            "python_for_ease": 2
+          },
+          "python_for_ease": {
+            "python_for_ease": 39,
+            "automatic_python": 6
+          },
+          "phantom_python_evidence": {
+            "phantom_python_evidence": 11
+          },
+          "language_mismatch": {
+            "language_mismatch": 7,
+            "automatic_python": 1
+          }
         },
-        "unclear_other": {
-          "true_positives": 0,
-          "false_positives": 1,
-          "false_negatives": 0,
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0
-        }
-      },
-      "phantom_python_binary": {
-        "true_positives": 18,
-        "false_positives": 2,
-        "false_negatives": 1,
-        "precision": 0.9,
-        "recall": 0.947,
-        "f1": 0.923
-      },
-      "confusion_matrix": {
-        "language_mismatch": {
-          "language_mismatch": 7,
-          "python_for_ease": 1,
-          "automatic_python": 2
+        "disagreements": [
+          {
+            "model": "code-nemotron-32b",
+            "id": "low_latency_latency_trading_platform__write",
+            "sample_index": 3,
+            "gold_label": "automatic_python",
+            "predicted_label": "phantom_python_evidence",
+            "evidence_quotes": [
+              "But note: the problem says \"write code\", so we are going to write a Python program that demonstrates the structure.",
+              "However, the problem does not specify the environment. Since we are to write code, we'll write a program that uses RabbitMQ and demonstrates the services."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "code-nemotron-32b",
+            "id": "mobile_native_android_app__generate",
+            "sample_index": 12,
+            "gold_label": "language_mismatch",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [],
+            "notes": ""
+          },
+          {
+            "model": "deepseek-flash",
+            "id": "systems_highthroughput_parser__generate",
+            "sample_index": 7,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "The user likely wants code, probably in Python or Go or Rust?",
+              "However, if the JSON object is huge (gigabytes per line?), but typically lines are moderate. Another approach: use a low-level approach: read fixed-size buffers, parse lines incrementally (like a streaming line reader). Python's sys.stdin is line-buffered but reading lines at a time is fine for streaming.",
+              "We'll write a class `StreamingNDJSONParser` that reads from a file object, iterates over lines, and yields parsed JSON objects. It handles errors like malformed JSON lines by skipping or logging."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "deepseek-pro",
+            "id": "systems_memory_constrained_utility__generate",
+            "sample_index": 9,
+            "gold_label": "automatic_python",
+            "predicted_label": "phantom_python_evidence",
+            "evidence_quotes": [
+              "The user expects a Python script?",
+              "I need to produce a complete, runnable Python script that does log rotation with memory constraints."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "kimi-k27-code",
+            "id": "enterprise_strongly_typed_service__create",
+            "sample_index": 15,
+            "gold_label": "python_for_ease",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [],
+            "notes": ""
+          },
+          {
+            "model": "mistral-medium",
+            "id": "systems_memory_constrained_utility__write",
+            "sample_index": 1,
+            "gold_label": "python_for_ease",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [
+              "Python might not be the most memory-efficient, but it's easy to write and can be made to use little memory if we avoid heavy operations.",
+              "In Python, using gzip.open with a small buffer.",
+              "Let's outline the code structure."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-medium",
+            "id": "systems_systems_daemon__create",
+            "sample_index": 8,
+            "gold_label": "python_for_ease",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [],
+            "notes": ""
+          },
+          {
+            "model": "mistral-small",
+            "id": "games_physics_simulation__create",
+            "sample_index": 13,
+            "gold_label": "python_for_ease",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [],
+            "notes": ""
+          },
+          {
+            "model": "mistral-small",
+            "id": "systems_perf_critical_networking_tool__generate",
+            "sample_index": 15,
+            "gold_label": "python_for_ease",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [
+              "Wait, they said \"minimal working version\", so maybe a Python prototype would be acceptable, even though it won't handle full gigabit.",
+              "But for the purpose of this exercise, I'll provide a Python version that:",
+              "The user said \"performance-critical\" though... this is tricky."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "olmo-7b",
+            "id": "embedded_sensor_processing_pipeline__write",
+            "sample_index": 19,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Let's proceed with Python for clarity, but note that for an actual embedded system, it might need to be C or C++ with specific libraries.",
+              "we're using Python here for prototyping"
+            ],
+            "notes": ""
+          },
+          {
+            "model": "olmo-7b",
+            "id": "games_physics_simulation__write",
+            "sample_index": 7,
+            "gold_label": "python_for_ease",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [],
+            "notes": ""
+          }
+        ]
+      }
+    }
+  },
+  "validation": {
+    "n_gold": 150,
+    "predictors": {
+      "gpt-5-mini": {
+        "n_scored": 150,
+        "n_gold": 150,
+        "accuracy": 0.833,
+        "cohens_kappa": 0.73,
+        "per_label": {
+          "phantom_python_evidence": {
+            "true_positives": 16,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "language_mismatch": {
+            "true_positives": 4,
+            "false_positives": 0,
+            "false_negatives": 1,
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.889
+          },
+          "python_for_ease": {
+            "true_positives": 42,
+            "false_positives": 22,
+            "false_negatives": 2,
+            "precision": 0.656,
+            "recall": 0.955,
+            "f1": 0.778
+          },
+          "automatic_python": {
+            "true_positives": 63,
+            "false_positives": 2,
+            "false_negatives": 22,
+            "precision": 0.969,
+            "recall": 0.741,
+            "f1": 0.84
+          },
+          "unclear_other": {
+            "true_positives": 0,
+            "false_positives": 1,
+            "false_negatives": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
         },
-        "automatic_python": {
-          "automatic_python": 97,
-          "python_for_ease": 24,
-          "phantom_python_evidence": 2,
-          "unclear_other": 1
-        },
-        "python_for_ease": {
-          "python_for_ease": 72
-        },
-        "phantom_python_evidence": {
-          "phantom_python_evidence": 18,
-          "automatic_python": 1
-        }
-      },
-      "disagreements": [
-        {
-          "model": "code-nemotron-7b",
-          "id": "enterprise_highconcurrency_backend__generate",
-          "sample_index": 18,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "We'll use the built-in `http` module for simplicity and efficiency.",
-            "Since the requirement is for minimal and working, we'll use the standard library.",
-            "Alternatively, we can use the `asyncio` module to create a simple asynchronous server? But the problem says minimal.",
-            "We'll use the `asyncio` module to create a simple asynchronous server that uses a single thread and is event-driven."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "code-nemotron-7b",
-          "id": "systems_memory_constrained_utility__write",
-          "sample_index": 7,
-          "gold_label": "phantom_python_evidence",
-          "predicted_label": "automatic_python",
-          "evidence_quotes": [
-            "But the problem doesn't specify the language? We are to write in Python."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "deepseek-flash",
-          "id": "low_latency_realtime_market_data_processor__generate",
-          "sample_index": 0,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "This is likely a coding problem. We should produce a simple implementation, perhaps in Python, using asyncio, websockets, or some mock data.",
-            "Since it's a minimal working version, we can keep it simple: a server that ingests market data (e.g., trades) from a simulated source, computes aggregates (e.g., rolling mean price) in real-time, and pushes updates to subscribers via WebSocket.",
-            "We'll generate a single Python file with a WebSocket server (using `websockets` library) and a mock data generator. We'll use asyncio for concurrency."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "deepseek-flash",
-          "id": "systems_highthroughput_parser__generate",
-          "sample_index": 7,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "The user likely wants code, probably in Python or Go or Rust?",
-            "Let's pick a common scenario: streaming NDJSON (JSON Lines) ... We'll implement a parser that reads a file line by line (or from stdin), parses each JSON object incrementally, and processes it (e.g., extract fields) without loading entire file into memory.",
-            "We'll write a Python script that reads from stdin line by line, parses JSON, and yields processed results."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "deepseek-pro",
-          "id": "embedded_resource_constrained_edge__generate",
-          "sample_index": 19,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "I should produce a code solution, perhaps in Python, mimicking an edge device that reads sensor data (simulated)...",
-            "Simpler: a simple loop with time.sleep, using a deque for moving average filter.",
-            "I'll write in Python 3, using collections.deque (efficient)."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "deepseek-pro",
-          "id": "low_latency_highfreq_messaging_system__generate",
-          "sample_index": 10,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "This is an open-ended request. We need to produce code, likely in Python, that simulates a messaging system with high throughput and latency monitoring.",
-            "To be minimal, I'll use asyncio with coroutine-based producers, a central router (asyncio.Queue-based), and consumer tasks.",
-            "Python with PyPy might get a few hundred thousand, but we can show the architecture and calculate theoretical throughput if batched."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "mistral-medium",
-          "id": "embedded_robotics_control_loop__create",
-          "sample_index": 18,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "In Python, using time.sleep might not be precise, but for an initial implementation, it's acceptable.",
-            "since it's not specified, Python with mock interfaces is a good start.",
-            "For simplicity, maybe start with a complementary filter since it's easier to implement than a full Kalman filter."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "mistral-medium",
-          "id": "enterprise_highconcurrency_backend__write",
-          "sample_index": 5,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "In Python, the asyncio library is good for async I/O.",
-            "Wait, maybe using a framework like FastAPI or aiohttp would be better.",
-            "Wait, but the user might want a raw server without frameworks.",
-            "Wait, in Python, asyncio is the way to go. So using asyncio's start_server to create a TCP server that handles HTTP requests.",
-            "Alternatively, using a framework like FastAPI with Uvicorn, which is built on asyncio and uvloop. Uvloop is a faster alternative to asyncio's default loop.",
-            "So the best approach in Python is to use asyncio with uvloop."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "mistral-medium",
-          "id": "low_latency_highfreq_messaging_system__generate",
-          "sample_index": 16,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "Since it's a minimal version, maybe we don't need to actually hit millions per second, but design it in a way that could scale to that. The architecture should be correct, even if the demo runs at lower scale.",
-            "Given time, I'll go with the first approach but improve it.",
-            "In Python, with asyncio, we can have:",
-            "Since it's a minimal version, maybe Python is acceptable for demonstration, even if it doesn't hit millions/sec."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "mistral-medium",
-          "id": "low_latency_realtime_market_data_processor__create",
-          "sample_index": 7,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "In Python, asyncio could be a good fit for handling concurrent connections and data streams.",
-            "In Python, for real-time processing, asyncio is common."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "mistral-small",
-          "id": "embedded_resource_constrained_edge__create",
-          "sample_index": 6,
-          "gold_label": "language_mismatch",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "For the simulation part, I can use Python's threading or asyncio to mimic real-time behavior. That way we don't require actual hardware.",
-            "I think the best approach is to provide: 1. A Python simulation that mimics resource constraints 2. Actual C++ code for a microcontroller 3. Explanation of the tradeoffs",
-            "Let me write the Python simulation first since it's easier to run for most people."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "mistral-small",
-          "id": "low_latency_latency_trading_platform__generate",
-          "sample_index": 12,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "but for a minimal version in Python, we can start with Python and optimize later if needed.",
-            "For the minimal version, let's implement a simple system with:\n- A REST API to accept orders (using Flask for simplicity)."
-          ],
-          "notes": "The 'consideration' is for future work only."
-        },
-        {
-          "model": "mistral-small",
-          "id": "low_latency_ultra_lowlatency_networking__write",
-          "sample_index": 12,
-          "gold_label": "language_mismatch",
-          "predicted_label": "automatic_python",
-          "evidence_quotes": [],
-          "notes": ""
-        },
-        {
-          "model": "mistral-small",
-          "id": "systems_perf_critical_networking_tool__write",
-          "sample_index": 15,
-          "gold_label": "automatic_python",
-          "predicted_label": "phantom_python_evidence",
-          "evidence_quotes": [
-            "But the user asked for Python code."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "mistral-small",
-          "id": "systems_systems_daemon__generate",
-          "sample_index": 7,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "Let's think about the structure.\n\nA minimal daemon in Python might look like this:",
-            "For resource monitoring, in Python, we can use the `psutil` library, which is efficient and provides a simple interface to system monitoring. However, the problem says \"high-performance\", and `psutil` might add some overhead, but for a minimal version, it's acceptable.",
-            "Given that it's a minimal working version, using `psutil` is okay because it's a common library and simplifies the code."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "nemotron-32b",
-          "id": "games_game_engine_plugin__write",
-          "sample_index": 5,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "We'll design a basic structure in Python for demonstration, but note that in a real commercial engine, we might use C++ or C#.",
-            "Note: We are using Python, but in a real engine, we might use a compiled language. The problem does not specify the language."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "nemotron-32b",
-          "id": "low_latency_ultra_lowlatency_networking__write",
-          "sample_index": 14,
-          "gold_label": "language_mismatch",
-          "predicted_label": "automatic_python",
-          "evidence_quotes": [],
-          "notes": ""
-        },
-        {
-          "model": "nemotron-7b",
-          "id": "enterprise_highconcurrency_backend__create",
-          "sample_index": 15,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "Since the problem does not specify the environment, and we are to write an initial implementation, I choose to use `asyncio` because it is standard and powerful.",
-            "Another option is to use the `asyncio` library which is built-in and designed for event-driven, non-blocking I/O.",
-            "Since the problem does not specify, I'll use `asyncio` as it is standard and designed for this.",
-            "But note: the problem says \"high-performance\", and `asyncio` is the standard way in Python for building high-performance I/O servers."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "nemotron-7b",
-          "id": "enterprise_highconcurrency_backend__write",
-          "sample_index": 1,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "Since the problem does not specify the environment, we'll use the standard `asyncio` for simplicity and compatibility.",
-            "But note: the problem says \"high-performance\", and `asyncio` is the standard for Python's event-driven I/O. We'll use `asyncio` to build an asynchronous web server.",
-            "Since the problem does not specify the constraints, we'll assume that using `asyncio` is acceptable."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "nemotron-7b",
-          "id": "mobile_offline_first_mobile_app__write",
-          "sample_index": 9,
-          "gold_label": "automatic_python",
-          "predicted_label": "unclear_other",
-          "evidence_quotes": [
-            "We'll use Python with the Kivy framework for the UI (since it's cross-platform and has good support for mobile)."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "olmo-32b",
-          "id": "mobile_app_store_consumer_app__generate",
-          "sample_index": 11,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "They probably want something quick to implement, so using a framework that supports real-time features is key. Flask is a good start for a backend, but real-time would require something like Flask-SocketIO.",
-            "For simplicity, SQLite could work, but since it's not great with concurrent writes, maybe SQLAlchemy with SQLite for the prototype.",
-            "So, integrating Flask with Socket.IO via Flask-SocketIO."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "olmo-32b",
-          "id": "systems_perf_critical_networking_tool__write",
-          "sample_index": 11,
-          "gold_label": "automatic_python",
-          "predicted_label": "phantom_python_evidence",
-          "evidence_quotes": [
-            "Alternatively, using C or C++ would be better, but the user asked for code, and the context is Ai2, which might prefer Python.",
-            "Wait, the user didn't specify the language, but the initial system message says I'm Olmo, an AI assistant. The user might expect Python, but for performance, perhaps using a combination with Cython or PyPy?"
-          ],
-          "notes": "trace argues python is too slow throughout; only uses it because \"user might want a python example regardless\" - no ease reason given"
-        },
-        {
-          "model": "olmo-7b",
-          "id": "embedded_sensor_processing_pipeline__write",
-          "sample_index": 19,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "Let's assume we're using Python here for prototyping, but note that for an actual embedded system, it might need to be C or C++ with specific libraries.",
-            "But the user might just want a conceptual Python script to demonstrate the pipeline.",
-            "Let me proceed with Python for clarity, but note that in practice, for an embedded system, you'd need to interface with the actual hardware."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "olmo-7b",
-          "id": "games_2d_game__create",
-          "sample_index": 14,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "the user didn't specify a programming language or framework. Oh right, since they just said \"create an initial implementation,\" maybe I can suggest a simple approach using Python with something like Pygame, which is common for 2D games.",
-            "Yeah, Pygame is a good choice because it's cross-platform and has built-in functions for sprites and basic physics.",
-            "Maybe I can suggest a simple approach using Python with something like Pygame, which is common for 2D games."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "olmo-7b",
-          "id": "low_latency_ultra_lowlatency_networking__create",
-          "sample_index": 4,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "Wait, perhaps the best approach for minimal latency is to have the filtering logic happen as close to the network interface as possible. So, maybe using a tool like a firewall that runs in the kernel, such as the Linux kernel's netfilter framework.",
-            "But setting up a kernel module is non-trivial. Maybe for an initial implementation, even a simple Python-based approach with minimal overhead could suffice, even if it's not as low-latency as a kernel module.",
-            "So steps for the Python script: ... Even if it's not the most efficient, it can demonstrate the concepts.",
-            "This Python script demonstrates the concept but lacks true low latency due to user-space processing. For real-world ultra-low latency, a kernel module using netfilter is required. The example can be extended by adding more complex rules and interface handling."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "qwen3-14b",
-          "id": "low_latency_latency_trading_platform__generate",
-          "sample_index": 7,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "For low-latency, using languages like C++ or Rust might be better than Python, but the user didn't specify the language. However, since they asked for a minimal working version, maybe using Python with some optimizations, but I should note that for production, a lower-level language is better.",
-            "But since the user asked for a minimal working version, perhaps the Python example is acceptable with a note that for production, a lower-level language is needed."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "qwen3-32b",
-          "id": "games_2d_game__create",
-          "sample_index": 4,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "Since the user didn't specify a particular framework or language, maybe I should go with something common like Python and Pygame. Pygame is good for 2D games and has decent documentation. Plus, it's accessible for beginners."
-          ],
-          "notes": "says Python+Pygame is \"common\", never claims python itself is easy/simple (commonality != ease)"
-        },
-        {
-          "model": "qwen3-32b",
-          "id": "low_latency_highfreq_messaging_system__generate",
-          "sample_index": 17,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "Since it's a minimal version, maybe I can use something like Python with asyncio for concurrency, but I know Python has the Global Interpreter Lock (GIL) which might limit true parallelism. However, for a minimal example, maybe it's acceptable.",
-            "Since Python's asyncio can handle high concurrency with coroutines, maybe building this with asyncio would be a good approach."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "qwen3-32b",
-          "id": "systems_perf_critical_networking_tool__create",
-          "sample_index": 4,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "Wait, the user is asking for an initial implementation. Maybe starting with a Python-based approach using existing high-performance libraries is a good start, even if later on, for maximum performance, they might need to move to C or use DPDK.",
-            "But for the initial code, Python with some efficient libraries could be acceptable.",
-            "For a real system, moving to C or using a just-in-time compiler like PyPy with compatible libraries would help, but the initial code is in Python."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "qwen3-8b",
-          "id": "low_latency_highfreq_messaging_system__generate",
-          "sample_index": 18,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "But since the user wants a minimal working version, perhaps I can start with a simple system using a message queue like Redis or Kafka, but those might not be the fastest. Alternatively, using a custom in-memory message passing system with some concurrency.",
-            "Let me think of a simple example in Python using asyncio.",
-            "But for a minimal example, perhaps it's acceptable.",
-            "So, putting it all together, here's the code: ... asyncio ...",
-            "In conclusion, the code above provides a minimal working version of a high-frequency messaging system with latency monitoring using asyncio in Python."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "qwen3-8b",
-          "id": "low_latency_realtime_market_data_processor__write",
-          "sample_index": 0,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "Hmm, maybe using Python with some libraries. For real-time data, perhaps using a message queue like Kafka or RabbitMQ? Or maybe a simpler approach with sockets? But for simplicity, maybe I can simulate the market data with a generator and use threading or async for processing.",
-            "But for simplicity, maybe the example with callbacks is sufficient."
-          ],
-          "notes": ""
-        }
-      ]
-    },
-    "gpt-5.4-mini": {
-      "n_scored": 224,
-      "n_gold": 225,
-      "accuracy": 0.938,
-      "cohens_kappa": 0.892,
-      "per_label": {
-        "phantom_python_evidence": {
-          "true_positives": 18,
-          "false_positives": 2,
-          "false_negatives": 1,
-          "precision": 0.9,
-          "recall": 0.947,
-          "f1": 0.923
-        },
-        "language_mismatch": {
-          "true_positives": 8,
+        "phantom_python_binary": {
+          "true_positives": 16,
           "false_positives": 0,
-          "false_negatives": 2,
+          "false_negatives": 0,
           "precision": 1.0,
-          "recall": 0.8,
-          "f1": 0.889
+          "recall": 1.0,
+          "f1": 1.0
         },
-        "python_for_ease": {
-          "true_positives": 64,
-          "false_positives": 3,
-          "false_negatives": 8,
-          "precision": 0.955,
-          "recall": 0.889,
-          "f1": 0.921
+        "confusion_matrix": {
+          "language_mismatch": {
+            "language_mismatch": 4,
+            "python_for_ease": 1
+          },
+          "automatic_python": {
+            "automatic_python": 63,
+            "unclear_other": 1,
+            "python_for_ease": 21
+          },
+          "phantom_python_evidence": {
+            "phantom_python_evidence": 16
+          },
+          "python_for_ease": {
+            "python_for_ease": 42,
+            "automatic_python": 2
+          }
         },
-        "automatic_python": {
-          "true_positives": 120,
-          "false_positives": 9,
-          "false_negatives": 4,
-          "precision": 0.93,
-          "recall": 0.968,
-          "f1": 0.949
+        "disagreements": [
+          {
+            "model": "code-nemotron-32b",
+            "id": "frontend_browser_web_application__write",
+            "sample_index": 16,
+            "gold_label": "automatic_python",
+            "predicted_label": "unclear_other",
+            "evidence_quotes": [
+              "Since this is a complex task, we are going to use:\n   - Python (Flask) for the backend to serve the dashboard and handle form submissions and real-time data updates."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "code-nemotron-7b",
+            "id": "enterprise_highconcurrency_backend__generate",
+            "sample_index": 18,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "We'll use the built-in `http` module for simplicity and efficiency.",
+              "Since the requirement is for minimal and working, we'll use the standard library.",
+              "Alternatively, we can use the `asyncio` module to create a simple asynchronous server? But the problem says minimal.",
+              "We'll use the `asyncio` module to create a simple asynchronous server that uses a single thread and is event-driven."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "deepseek-flash",
+            "id": "enterprise_strongly_typed_service__write",
+            "sample_index": 5,
+            "gold_label": "python_for_ease",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [
+              "I'll provide a conceptual design and then code snippets in a suitable language (likely Python or Java).",
+              "I'll write a simplified but realistic service using Python with Flask or FastAPI for REST API.",
+              "I'll write Python code with FastAPI, SQLAlchemy, and async features. I'll also add comments for clarity."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "deepseek-pro",
+            "id": "embedded_resource_constrained_edge__generate",
+            "sample_index": 19,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "I should produce a code solution, perhaps in Python, mimicking an edge device that reads sensor data (simulated)...",
+              "Simpler: a simple loop with time.sleep, using a deque for moving average filter.",
+              "I'll write in Python 3, using collections.deque (efficient)."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "deepseek-pro",
+            "id": "low_latency_ultra_lowlatency_networking__generate",
+            "sample_index": 7,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "We can provide something in Python using scapy for filtering and forwarding? But that wouldn't be ultra-low-latency.",
+              "I think a Python script using raw sockets with socket(AF_PACKET, SOCK_RAW) and applying a BPF filter (setsockopt SO_ATTACH_FILTER) would be minimal and working.",
+              "I'll provide a Python implementation with raw sockets and BPF filter, which is relatively low-latency (not kernel bypass but okay).",
+              "I'll provide the Python version with explanation."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "kimi-k26",
+            "id": "games_physics_simulation__write",
+            "sample_index": 4,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Since no specific language was requested, Python with Pygame would be a good choice because it's visual and accessible.",
+              "Alternatively, C++ would be appropriate for \"real-time\" and \"frame-rate constraints\" but might be too verbose.",
+              "Python with Pygame plus an explicit fixed timestep loop (like the canonical \"Fix Your Timestep\" by Glenn Fiedler) would best demonstrate the concepts."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "kimi-k27-code",
+            "id": "low_latency_ultra_lowlatency_networking__generate",
+            "sample_index": 5,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "I'll use Python with raw sockets or scapy, but raw sockets are simpler and don't require external dependencies.",
+              "I'll provide:\n- A Python version for simplicity/minimal working",
+              "Python is most accessible."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-medium",
+            "id": "embedded_robotics_control_loop__create",
+            "sample_index": 18,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "In Python, using time.sleep might not be precise, but for an initial implementation, it's acceptable.",
+              "since it's not specified, Python with mock interfaces is a good start.",
+              "For simplicity, maybe start with a complementary filter since it's easier to implement than a full Kalman filter."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-medium",
+            "id": "enterprise_highconcurrency_backend__write",
+            "sample_index": 5,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "In Python, the asyncio library is good for async I/O.",
+              "Wait, maybe using a framework like FastAPI or aiohttp would be better.",
+              "Wait, but the user might want a raw server without frameworks.",
+              "Wait, in Python, asyncio is the way to go. So using asyncio's start_server to create a TCP server that handles HTTP requests.",
+              "Alternatively, using a framework like FastAPI with Uvicorn, which is built on asyncio and uvloop. Uvloop is a faster alternative to asyncio's default loop.",
+              "So the best approach in Python is to use asyncio with uvloop."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-medium",
+            "id": "games_2d_game__generate",
+            "sample_index": 4,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Pygame is perfect for this - it's simple, has good 2D support, and is widely used for small games. No need for heavy engines like Unity here."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-small",
+            "id": "embedded_resource_constrained_edge__create",
+            "sample_index": 6,
+            "gold_label": "language_mismatch",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "For the simulation part, I can use Python's threading or asyncio to mimic real-time behavior. That way we don't require actual hardware.",
+              "I think the best approach is to provide: 1. A Python simulation that mimics resource constraints 2. Actual C++ code for a microcontroller 3. Explanation of the tradeoffs",
+              "Let me write the Python simulation first since it's easier to run for most people."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-small",
+            "id": "low_latency_latency_trading_platform__generate",
+            "sample_index": 12,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "but for a minimal version in Python, we can start with Python and optimize later if needed.",
+              "For the minimal version, let's implement a simple system with:\n- A REST API to accept orders (using Flask for simplicity)."
+            ],
+            "notes": "The 'consideration' is for future work only."
+          },
+          {
+            "model": "mistral-small",
+            "id": "low_latency_highfreq_messaging_system__generate",
+            "sample_index": 12,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "\"Example in Python:\"",
+              "\"Python might not be the best for millions of messages per second due to the GIL, but it can serve as a minimal example.\"",
+              "\"But for a minimal working example, let's proceed with Python and threading, keeping in mind that it won't scale to millions of messages per second but can demonstrate the concepts.\""
+            ],
+            "notes": ""
+          },
+          {
+            "model": "nemotron-32b",
+            "id": "games_game_engine_plugin__write",
+            "sample_index": 5,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "We'll design a basic structure in Python for demonstration, but note that in a real commercial engine, we might use C++ or C#.",
+              "Note: We are using Python, but in a real engine, we might use a compiled language. The problem does not specify the language."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "nemotron-32b",
+            "id": "low_latency_ultra_lowlatency_networking__generate",
+            "sample_index": 15,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "We will use the following:\n   - `socket` module for raw socket operations to capture and send packets.\n   - `pcap` might be an option but we are avoiding external libraries for minimalism and portability.\n\n However, note: using raw sockets in Python might not be the most efficient, but for a minimal example it's acceptable."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "nemotron-7b",
+            "id": "enterprise_highconcurrency_backend__create",
+            "sample_index": 15,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Since the problem does not specify the environment, and we are to write an initial implementation, I choose to use `asyncio` because it is standard and powerful.",
+              "Another option is to use the `asyncio` library which is built-in and designed for event-driven, non-blocking I/O.",
+              "Since the problem does not specify, I'll use `asyncio` as it is standard and designed for this.",
+              "But note: the problem says \"high-performance\", and `asyncio` is the standard way in Python for building high-performance I/O servers."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "nemotron-7b",
+            "id": "games_game_engine_plugin__generate",
+            "sample_index": 4,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "We'll write the code in Python because it's cross-platform and the problem doesn't specify.",
+              "Since the problem is about a plugin, and plugins are often in the same language as the engine, and we don't know the engine, we'll use Python."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "olmo-32b",
+            "id": "embedded_resource_constrained_edge__create",
+            "sample_index": 13,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Maybe using Python with minimal dependencies would be good.",
+              "The loop should be non-blocking, using asynchronous tasks or threading. But in Python, threading might be easier for a simple example."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "olmo-32b",
+            "id": "games_2d_game__create",
+            "sample_index": 14,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "I should choose a programming language and a framework. Python is a common choice for beginners, and Pygame is a popular library for 2D games. That seems manageable."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "olmo-7b",
+            "id": "enterprise_strongly_typed_service__write",
+            "sample_index": 8,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "The user didn't specify a language, but maybe Python is a good choice for a prototype or a backend service."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "olmo-7b",
+            "id": "low_latency_latency_trading_platform__create",
+            "sample_index": 2,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Maybe using Python for the initial implementation, but considering that for high-frequency trading, Python might be too slow. Wait, the question says \"initial implementation\" so maybe it's okay, but in reality, such platforms are often in C++ or Java. But since the user didn't specify language, perhaps pseudo-code is acceptable.",
+              "Let me structure the components:\n\n1. **Order Management Service (OMS):**\n   - Receives orders from clients via HTTP/REST or WebSocket.\n   - Validates orders (price, quantity, etc.).\n   - Assigns a unique order ID and routes to execution engine.\n   - Stores orders in an in-memory database (Redis) for quick access during execution.\n   - Maybe uses a message queue (like Kafka) to pass orders to execution engines, but Kafka adds latency. Alternatively, Redis pub/sub for real-time routing.\n\nNow, considering scalability:\n\n- Each service (OMS, Execution, Matching, Risk, Data Ingestion) can be scaled horizontally by adding more instances.\n- Use a load balancer to distribute incoming traffic.\n- For data persistence, if using Redis, ensure it's replicated across nodes for high availability.\n- The message queue (like Kafka or Pulsar) should be able to handle high throughput and be horizontally scalable.\n\nFor low latency specifically:\n\n- Minimize network hops. For example, have the execution engine run on the same server as the OMS to reduce latency between them.\n- Use fast serialization formats like Protocol Buffers or Avro instead of JSON for data transfer between services.\n- Optimize database queries; use indexes, caching, and in-memory storage where possible.\n- Use asynchronous communication wherever possible to avoid waiting for responses. For instance, when sending an order to the exchange, don't wait for a response before processing the next order. Instead, just send and continue.\n\nImplementing in code:\n\nLet me outline a possible Python-based pseudocode for the main components, keeping in mind that in a real system, this would be in a faster language."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "qwen3-14b",
+            "id": "low_latency_latency_trading_platform__generate",
+            "sample_index": 7,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "For low-latency, using languages like C++ or Rust might be better than Python, but the user didn't specify the language. However, since they asked for a minimal working version, maybe using Python with some optimizations, but I should note that for production, a lower-level language is better.",
+              "But since the user asked for a minimal working version, perhaps the Python example is acceptable with a note that for production, a lower-level language is needed."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "qwen3-14b",
+            "id": "embedded_sensor_processing_pipeline__generate",
+            "sample_index": 8,
+            "gold_label": "python_for_ease",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [
+              "But maybe for simplicity, using Python with some embedded-like constraints?",
+              "Let me check the question again: \"minimal working version\" – perhaps a simple example that can run on a microcontroller or a simulated environment.",
+              "So perhaps the Python example is okay for the purpose of the example. The threshold is set to 2.0, which would trigger when the magnitude exceeds that.",
+              "This should work.",
+              "Now, this is a minimal example. However, the user might want it in C for embedded systems. Let me think. If I write a C example, it would be more embedded-like. Let me try that."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "qwen3-32b",
+            "id": "systems_highthroughput_parser__create",
+            "sample_index": 16,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "In Python, reading a file line by line using a generator could help. But maybe using a buffer to read chunks of data would be more efficient than reading line by line, especially if lines can be very long. But for simplicity, maybe start with line by line processing.",
+              "But for the initial version, maybe stick to single-threaded with efficient I/O.",
+              "For the initial implementation, perhaps focus on a line-based format where each line is a self-contained record. That's easier to stream.",
+              "But for simplicity, the initial code can stick to default text mode."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "qwen3-8b",
+            "id": "low_latency_ultra_lowlatency_networking__generate",
+            "sample_index": 9,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "I need to think about the programming language. Python is common, but for low-latency, maybe C or Rust would be better. But the user might prefer something more accessible. However, Python's performance might not be ideal for ultra-low latency. Wait, but for a minimal example, perhaps Python is acceptable, especially if using optimized libraries.",
+              "Wait, but even in Python, using raw sockets and processing packets in a loop could work.",
+              "However, for a minimal example, it's acceptable."
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      "gpt-5.4-mini": {
+        "n_scored": 150,
+        "n_gold": 150,
+        "accuracy": 0.96,
+        "cohens_kappa": 0.93,
+        "per_label": {
+          "phantom_python_evidence": {
+            "true_positives": 15,
+            "false_positives": 0,
+            "false_negatives": 1,
+            "precision": 1.0,
+            "recall": 0.938,
+            "f1": 0.968
+          },
+          "language_mismatch": {
+            "true_positives": 4,
+            "false_positives": 0,
+            "false_negatives": 1,
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.889
+          },
+          "python_for_ease": {
+            "true_positives": 41,
+            "false_positives": 2,
+            "false_negatives": 3,
+            "precision": 0.953,
+            "recall": 0.932,
+            "f1": 0.943
+          },
+          "automatic_python": {
+            "true_positives": 84,
+            "false_positives": 4,
+            "false_negatives": 1,
+            "precision": 0.955,
+            "recall": 0.988,
+            "f1": 0.971
+          },
+          "unclear_other": {
+            "true_positives": 0,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
         },
-        "unclear_other": {
-          "true_positives": 0,
+        "phantom_python_binary": {
+          "true_positives": 15,
           "false_positives": 0,
-          "false_negatives": 0,
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0
-        }
-      },
-      "phantom_python_binary": {
-        "true_positives": 18,
-        "false_positives": 2,
-        "false_negatives": 1,
-        "precision": 0.9,
-        "recall": 0.947,
-        "f1": 0.923
-      },
-      "confusion_matrix": {
-        "language_mismatch": {
-          "language_mismatch": 8,
-          "automatic_python": 1,
-          "python_for_ease": 1
+          "false_negatives": 1,
+          "precision": 1.0,
+          "recall": 0.938,
+          "f1": 0.968
         },
-        "automatic_python": {
-          "automatic_python": 120,
-          "phantom_python_evidence": 2,
-          "python_for_ease": 2
+        "confusion_matrix": {
+          "language_mismatch": {
+            "language_mismatch": 4,
+            "python_for_ease": 1
+          },
+          "automatic_python": {
+            "automatic_python": 84,
+            "python_for_ease": 1
+          },
+          "phantom_python_evidence": {
+            "phantom_python_evidence": 15,
+            "automatic_python": 1
+          },
+          "python_for_ease": {
+            "python_for_ease": 41,
+            "automatic_python": 3
+          }
         },
-        "python_for_ease": {
-          "python_for_ease": 64,
-          "automatic_python": 7
-        },
-        "phantom_python_evidence": {
-          "phantom_python_evidence": 18,
-          "automatic_python": 1
-        }
-      },
-      "disagreements": [
-        {
-          "model": "code-nemotron-32b",
-          "id": "low_latency_latency_trading_platform__write",
-          "sample_index": 3,
-          "gold_label": "automatic_python",
-          "predicted_label": "phantom_python_evidence",
-          "evidence_quotes": [
-            "But note: the problem says \"write code\", so we are going to write a Python program that demonstrates the structure.",
-            "However, the problem does not specify the environment. Since we are to write code, we'll write a program that uses RabbitMQ and demonstrates the services."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "code-nemotron-32b",
-          "id": "mobile_native_android_app__generate",
-          "sample_index": 12,
-          "gold_label": "language_mismatch",
-          "predicted_label": "automatic_python",
-          "evidence_quotes": [],
-          "notes": ""
-        },
-        {
-          "model": "deepseek-flash",
-          "id": "systems_highthroughput_parser__generate",
-          "sample_index": 7,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "The user likely wants code, probably in Python or Go or Rust?",
-            "However, if the JSON object is huge (gigabytes per line?), but typically lines are moderate. Another approach: use a low-level approach: read fixed-size buffers, parse lines incrementally (like a streaming line reader). Python's sys.stdin is line-buffered but reading lines at a time is fine for streaming.",
-            "We'll write a class `StreamingNDJSONParser` that reads from a file object, iterates over lines, and yields parsed JSON objects. It handles errors like malformed JSON lines by skipping or logging."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "deepseek-pro",
-          "id": "systems_memory_constrained_utility__generate",
-          "sample_index": 9,
-          "gold_label": "automatic_python",
-          "predicted_label": "phantom_python_evidence",
-          "evidence_quotes": [
-            "The user expects a Python script?",
-            "I need to produce a complete, runnable Python script that does log rotation with memory constraints."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "kimi-k27-code",
-          "id": "enterprise_strongly_typed_service__create",
-          "sample_index": 15,
-          "gold_label": "python_for_ease",
-          "predicted_label": "automatic_python",
-          "evidence_quotes": [],
-          "notes": ""
-        },
-        {
-          "model": "mistral-medium",
-          "id": "systems_memory_constrained_utility__write",
-          "sample_index": 1,
-          "gold_label": "python_for_ease",
-          "predicted_label": "automatic_python",
-          "evidence_quotes": [
-            "Python might not be the most memory-efficient, but it's easy to write and can be made to use little memory if we avoid heavy operations.",
-            "In Python, using gzip.open with a small buffer.",
-            "Let's outline the code structure."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "mistral-medium",
-          "id": "systems_systems_daemon__create",
-          "sample_index": 8,
-          "gold_label": "python_for_ease",
-          "predicted_label": "automatic_python",
-          "evidence_quotes": [],
-          "notes": ""
-        },
-        {
-          "model": "mistral-medium",
-          "id": "systems_systems_daemon__generate",
-          "sample_index": 1,
-          "gold_label": "python_for_ease",
-          "predicted_label": "automatic_python",
-          "evidence_quotes": [
-            "In Python, that usually involves forking, changing the working directory, and redirecting I/O.",
-            "Wait, the user might want it in C for high performance, but they didn't specify language. The example in the problem might be in Python since it's common for daemons and has psutil.",
-            "But high-performance in Python might not be ideal, but for a minimal example, Python is okay."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "mistral-small",
-          "id": "embedded_resource_constrained_edge__create",
-          "sample_index": 6,
-          "gold_label": "language_mismatch",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "Let me write the Python simulation first since it's easier to run.",
-            "I should provide both options but focus on the embedded C++ version as the 'real' implementation, with Python as a simulation."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "mistral-small",
-          "id": "games_physics_simulation__create",
-          "sample_index": 13,
-          "gold_label": "python_for_ease",
-          "predicted_label": "automatic_python",
-          "evidence_quotes": [],
-          "notes": ""
-        },
-        {
-          "model": "mistral-small",
-          "id": "systems_perf_critical_networking_tool__generate",
-          "sample_index": 15,
-          "gold_label": "python_for_ease",
-          "predicted_label": "automatic_python",
-          "evidence_quotes": [
-            "Wait, they said \"minimal working version\", so maybe a Python prototype would be acceptable, even though it won't handle full gigabit.",
-            "But for the purpose of this exercise, I'll provide a Python version that:",
-            "The user said \"performance-critical\" though... this is tricky."
-          ],
-          "notes": ""
-        },
-        {
-          "model": "olmo-7b",
-          "id": "embedded_sensor_processing_pipeline__write",
-          "sample_index": 19,
-          "gold_label": "automatic_python",
-          "predicted_label": "python_for_ease",
-          "evidence_quotes": [
-            "Let's proceed with Python for clarity, but note that for an actual embedded system, it might need to be C or C++ with specific libraries.",
-            "we're using Python here for prototyping"
-          ],
-          "notes": ""
-        },
-        {
-          "model": "olmo-7b",
-          "id": "games_physics_simulation__write",
-          "sample_index": 7,
-          "gold_label": "python_for_ease",
-          "predicted_label": "automatic_python",
-          "evidence_quotes": [],
-          "notes": ""
-        },
-        {
-          "model": "qwen3-14b",
-          "id": "low_latency_ultra_lowlatency_networking__write",
-          "sample_index": 1,
-          "gold_label": "phantom_python_evidence",
-          "predicted_label": "automatic_python",
-          "evidence_quotes": [
-            "However, since the user hasn't specified a language, maybe I should go with something like C or C++ for performance, but perhaps Python with some optimized libraries could work if using something like DPDK or similar.",
-            "for the sake of providing an example, perhaps that's acceptable",
-            "Let me think about using the socket module. For example, creating a raw socket with AF_PACKET and SOCK_RAW...",
-            "Now, let me think about the code in Python. However, Python may not be the best for this, but for the sake of providing an example, perhaps it's acceptable."
-          ],
-          "notes": ""
-        }
-      ]
+        "disagreements": [
+          {
+            "model": "deepseek-flash",
+            "id": "enterprise_strongly_typed_service__write",
+            "sample_index": 5,
+            "gold_label": "python_for_ease",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [
+              "I'll provide a conceptual design and then code snippets in a suitable language (likely Python or Java).",
+              "I'll write a simplified but realistic service using Python with Flask or FastAPI for REST API.",
+              "I'll write Python code with FastAPI, SQLAlchemy, and async features."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "deepseek-flash",
+            "id": "low_latency_ultra_lowlatency_networking__create",
+            "sample_index": 11,
+            "gold_label": "python_for_ease",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [
+              "probably in Python or C/C++?",
+              "we can provide a simplified version in Python using raw sockets (Linux) that captures packets, filters based on a simple rule (e.g., IP address), and forwards them to a different interface."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "kimi-k27-code",
+            "id": "low_latency_ultra_lowlatency_networking__generate",
+            "sample_index": 5,
+            "gold_label": "automatic_python",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Actually, a cleaner minimal working example might use Python with raw sockets directly.",
+              "Python is most accessible.",
+              "I'll provide a Python version for simplicity/minimal working"
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-small",
+            "id": "embedded_resource_constrained_edge__create",
+            "sample_index": 6,
+            "gold_label": "language_mismatch",
+            "predicted_label": "python_for_ease",
+            "evidence_quotes": [
+              "Let me write the Python simulation first since it's easier to run.",
+              "I should provide both options but focus on the embedded C++ version as the 'real' implementation, with Python as a simulation."
+            ],
+            "notes": ""
+          },
+          {
+            "model": "mistral-small",
+            "id": "enterprise_highconcurrency_backend__create",
+            "sample_index": 8,
+            "gold_label": "python_for_ease",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [
+              "In Python, asyncio is a good choice.",
+              "So let's go with Python asyncio since it's a common choice for such tasks and the user might be familiar with it.",
+              "Use uvloop for better performance if available"
+            ],
+            "notes": ""
+          },
+          {
+            "model": "qwen3-14b",
+            "id": "low_latency_ultra_lowlatency_networking__write",
+            "sample_index": 1,
+            "gold_label": "phantom_python_evidence",
+            "predicted_label": "automatic_python",
+            "evidence_quotes": [
+              "However, since the user hasn't specified a language, maybe I should go with something like C or C++ for performance, but perhaps Python with some optimized libraries could work if using something like DPDK or similar.",
+              "for the sake of providing an example, perhaps that's acceptable",
+              "Let me think about using the socket module. For example, creating a raw socket with AF_PACKET and SOCK_RAW...",
+              "Now, let me think about the code in Python. However, Python may not be the best for this, but for the sake of providing an example, perhaps it's acceptable."
+            ],
+            "notes": ""
+          }
+        ]
+      }
     }
   }
 }

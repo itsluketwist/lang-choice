@@ -132,7 +132,7 @@ class TestGoldSampling:
         gold = sample_gold_traces(models=["model-a", "model-b"], traces_per_model=3)
         assert len(gold) == 6
         for model in ("model-a", "model-b"):
-            ids = [t.id for t in gold if t.model == model]
+            ids = [r["id"] for r in gold if r["model"] == model]
             assert len(ids) == len(set(ids)) == 3
 
     def test_doubles_up_when_prompts_run_out(self, tmp_path: Path, monkeypatch) -> None:
@@ -151,9 +151,9 @@ class TestGoldSampling:
         gold = sample_gold_traces(models=["model-a"], traces_per_model=4)
         assert len(gold) == 4
         # both prompts are covered before any prompt is repeated
-        ids = [t.id for t in gold]
+        ids = [r["id"] for r in gold]
         assert set(ids) == {"proj0__write", "proj1__write"}
-        assert len(set((t.id, t.sample_index) for t in gold)) == 4
+        assert len(set((r["id"], r["sample_index"]) for r in gold)) == 4
 
     def test_deterministic(self, tmp_path: Path, monkeypatch) -> None:
         """Should return the same sample for the same seed."""
@@ -164,7 +164,11 @@ class TestGoldSampling:
         )
         first = sample_gold_traces(models=["model-a"], traces_per_model=3, seed=7)
         second = sample_gold_traces(models=["model-a"], traces_per_model=3, seed=7)
-        assert [t.key for t in first] == [t.key for t in second]
+
+        def _keys(records: list[dict]) -> list[str]:
+            return [f"{r['model']}|{r['id']}|{r['sample_index']}" for r in records]
+
+        assert _keys(first) == _keys(second)
 
 
 class TestPrompts:

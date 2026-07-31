@@ -105,8 +105,7 @@ def _collect_batch(
 
     if batch.status != "completed" or batch.output_file_id is None:
         log(f"    batch {batch_id} ended with status '{batch.status}', skipping")
-        # surface validation errors (e.g. an unsupported model id) so a failed
-        # batch is diagnosable from the run log
+        # surface errors so a failed batch is diagnosable from the run log
         if batch.errors and batch.errors.data:
             first = batch.errors.data[0]
             log(f"    first batch error: [{first.code}] {first.message}")
@@ -147,8 +146,7 @@ def judge_traces(
 ) -> None:
     """Judge all given traces, resuming any prior partial run.
 
-    Verdicts are appended to results_path; in-flight batch ids are tracked in
-    batches_path so an interrupted run resumes without resubmitting.
+    Verdicts are appended to results_path as they arrive.
     """
     client = OpenAI()
     traces_by_key = {trace.key: trace for trace in traces}

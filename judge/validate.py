@@ -135,28 +135,54 @@ def disagreements(
     ]
 
 
-def main() -> None:
-    """Score all judge pilots against the gold labels and save the report."""
-    gold_records = load_jsonl(GOLD_LABELLED_PATH)
+def _score_split(
+    split_name: str,
+    gold_records: list[dict],
+    judgement_paths: list[Path],
+) -> dict:
+    """Score every judge pilot against one split (selection or validation) of gold.
+
+    Returns a dict with "n_gold" and per-judge "predictors" scores.
+    """
     gold = {_key(record): record["gold_label"] for record in gold_records}
     # partial labelling is fine — predictors are scored on the overlap only
-    log(f"Gold set: {len(gold)} hand-labelled traces so far")
+    log(f"{split_name} set: {len(gold)} hand-labelled traces so far")
 
-    report: dict = {"n_gold": len(gold), "predictors": {}}
-
-    for path in sorted(DATA_DIR.glob("gold_judgements_*.jsonl")):
+    result: dict = {"n_gold": len(gold), "predictors": {}}
+    for path in judgement_paths:
         judge_model = path.stem.removeprefix("gold_judgements_")
         judgements = load_jsonl(path)
         predictions = {_key(r): r["verdict"]["label"] for r in judgements}
         evidence = {_key(r): r["verdict"]["evidence_quotes"] for r in judgements}
         scores = score_against_gold(gold, predictions)
         scores["disagreements"] = disagreements(gold_records, predictions, evidence)
-        report["predictors"][judge_model] = scores
+        result["predictors"][judge_model] = scores
         log(
-            f"  {judge_model}: accuracy={scores['accuracy']}, "
+            f"  [{split_name}] {judge_model}: accuracy={scores['accuracy']}, "
             f"kappa={scores['cohens_kappa']}, "
             f"phantom-python f1={scores['phantom_python_binary']['f1']}"
         )
+    return result
+
+
+def main() -> None:
+    """Score all judge pilots against the gold labels and save the report.
+
+    Scored separately for the "selection" split (pick a winning judge) and
+    the "validation" split (held-out check on that winner) — see
+    judge/README.md for what each split is for.
+    """
+    all_gold_records = load_jsonl(GOLD_LABELLED_PATH)
+    judgement_paths = sorted(DATA_DIR.glob("gold_judgements_*.jsonl"))
+
+    report = {
+        split_name: _score_split(
+            split_name=split_name,
+            gold_records=[r for r in all_gold_records if r.get("split") == split_name],
+            judgement_paths=judgement_paths,
+        )
+        for split_name in ("selection", "validation")
+    }
 
     save_json(report, REPORT_PATH)
     log(f"Saved report to {REPORT_PATH}")

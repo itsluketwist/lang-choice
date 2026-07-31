@@ -29,7 +29,9 @@ Every implementation sample whose final response was Python and which has a comp
 Run from the repository root with the virtual environment active.
 
 ```shell
-# 1. build the frozen gold sample (15 traces/model, deterministic)
+# 1. build the frozen gold sample (20 traces/model, deterministic), split
+#    into a 10-trace "selection" set (compare judges, pick a winner) and a
+#    10-trace "validation" set (held out, final check on the winner)
 #    -> judge/data/gold_unlabelled.jsonl
 python -m judge.build_gold
 
@@ -40,11 +42,11 @@ python -m judge.build_gold
 python -m judge.run --judge-model gpt-5-mini --gold-only
 python -m judge.run --judge-model gpt-5.4-mini --gold-only
 
-# 4. score both pilots against the gold labels
+# 4. score both pilots against the gold labels, separately per split
 #    -> judge/data/validation_report.json
 python -m judge.validate
 
-# 5. full run with whichever judge scores best
+# 5. full run with whichever judge scores best on the selection split
 python -m judge.run --judge-model <winner> --model all
 
 # 6. aggregate verdicts -> output/<model>/def-judge-analysis.json
@@ -61,15 +63,17 @@ judge/
   taxonomy.py     — labels, schemas
   traces.py       — load python-choosing traces from output/
   prompts.py      — frozen judge prompt + request assembly
-  build_gold.py   — deterministic gold sampling
+  build_gold.py   — deterministic gold sampling + selection/validation split
   run.py          — batch submit / poll / collect
   summarise.py    — per-model aggregation
-  validate.py     — scoring vs the gold labels
+  validate.py     — scoring vs the gold labels, per split
   data/
-    gold_unlabelled.jsonl          — frozen blind sample (committed)
-    gold_labelled.jsonl            — hand labels (committed)
+    gold_unlabelled.jsonl          — frozen blind sample (committed), 20/model
+                                      with a "split" tag per record
+    gold_labelled.jsonl            — hand labels (committed), same split tag
     gold_judgements_<judge>.jsonl  — pilot verdicts
-    validation_report.json         — precision/recall/F1, kappa, disagreements
+    validation_report.json         — {"selection": {...}, "validation": {...}}
+                                      precision/recall/F1/kappa per judge
 
 output/<model>/
   def-judge-results.jsonl   — one verdict per judged trace
