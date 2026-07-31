@@ -4,7 +4,7 @@
     "project_slug": "native_ios_app",
     "project_title": "Native iOS Application",
     "project_description": "A consumer-grade iOS application distributed via the App Store with native UI components, device integrations (camera, location), and platform-specific APIs (HealthKit, CoreML).",
-    "task_description": "a native iOS habit tracking application",
+    "project_prompt": "a native iOS habit tracking application",
     "constraints": [
       "App Store distribution requires Apple-approved languages and runtimes",
       "UIKit and SwiftUI frameworks only accessible from Swift/Objective-C",
@@ -41,7 +41,7 @@
     "project_slug": "native_android_app",
     "project_title": "Native Android Application",
     "project_description": "A production Android application targeting the Google Play Store with native Material Design UI, Android-specific services, and performance-critical rendering loops.",
-    "task_description": "a native Android banking application",
+    "project_prompt": "a native Android banking application",
     "constraints": [
       "Google Play Store officially recommends Kotlin as the primary language since 2017",
       "Direct access to Android APIs (Intent, Service, WorkManager, Firebase) requires JVM-based languages",
@@ -77,7 +77,7 @@
     "project_slug": "offline_first_mobile_app",
     "project_title": "Offline-First Mobile Application",
     "project_description": "A mobile app designed to function seamlessly without internet connectivity, using local persistent storage as the canonical data source, with conflict-resolution logic for background sync when connectivity returns.",
-    "task_description": "an offline-first field surveying app that syncs data when reconnected",
+    "project_prompt": "an offline-first field surveying app that syncs data when reconnected",
     "constraints": [
       "Local data source must support complex SQL queries and transactional integrity",
       "Conflict resolution requires versioning, timestamps, and domain logic to reconcile diverging states",
@@ -103,7 +103,7 @@
     "project_slug": "app_store_consumer_app",
     "project_title": "App-Store-Deployed Consumer Application",
     "project_description": "A polished, consumer-facing mobile application requiring App Store/Play Store deployment with analytics integration, crash reporting, and in-app monetization.",
-    "task_description": "a social messaging app with real-time notifications and in-app monetization",
+    "project_prompt": "a social messaging app with real-time notifications and in-app monetization",
     "constraints": [
       "App Store (iOS) and Google Play Store (Android) require compliance with platform policies",
       "Push notification systems require native runtime integration",
@@ -139,7 +139,7 @@
     "project_slug": "browser_web_application",
     "project_title": "Browser-Based Web Application",
     "project_description": "A full-featured web application running in modern browsers with client-side rendering, DOM manipulation, event handling, and local state management.",
-    "task_description": "an interactive browser-based dashboard with real-time data visualisation and form handling",
+    "project_prompt": "an interactive browser-based dashboard with real-time data visualisation and form handling",
     "constraints": [
       "Browsers execute only JavaScript natively; no Python runtime exists in-browser",
       "DOM API access is JavaScript-first; Python bridges transpile at runtime with performance overhead",
@@ -170,7 +170,7 @@
     "project_slug": "browser_extension",
     "project_title": "Browser Extension",
     "project_description": "A Chrome/Firefox/Edge extension with background service workers, content scripts, popup UI, and persistent storage via the browser's Storage API.",
-    "task_description": "a privacy-focused browser extension that blocks tracking scripts",
+    "project_prompt": "a privacy-focused browser extension that blocks tracking scripts",
     "constraints": [
       "Modern browser extension APIs require background logic to run in service workers",
       "Service workers must respond to events and shut down within a short window",
@@ -206,7 +206,7 @@
     "project_slug": "interactive_client_visualization",
     "project_title": "Interactive Client-Side Visualisation",
     "project_description": "A highly interactive data visualisation running in the browser (charts, maps, 3D models) requiring real-time updates, mouse/touch event handling, and 60fps rendering.",
-    "task_description": "an interactive client-side stock price heatmap with real-time updates and zoom/pan interactions",
+    "project_prompt": "an interactive client-side stock price heatmap with real-time updates and zoom/pan interactions",
     "constraints": [
       "Canvas/WebGL rendering requires tight event loops and minimal latency between events and redraws",
       "Real-time updates require efficient DOM updates and animation frame synchronization",
@@ -236,7 +236,7 @@
     "project_slug": "single_page_application",
     "project_title": "Single-Page Application",
     "project_description": "A full-featured browser application with client-side routing, state management, API communication, and form handling.",
-    "task_description": "a browser-based project management application with drag-and-drop task boards and real-time collaboration",
+    "project_prompt": "a browser-based project management application with drag-and-drop task boards and real-time collaboration",
     "constraints": [
       "Applications require sophisticated client-side state management to prevent bugs in complex UIs",
       "Large applications benefit from compile-time safety unavailable in Python",
@@ -267,7 +267,7 @@
     "project_slug": "latency_trading_platform",
     "project_title": "Low-Latency Trading Platform",
     "project_description": "A high-frequency trading system processing market data feeds, computing trading signals, and submitting orders with microsecond-level latency targets.",
-    "task_description": "a low-latency trading platform that will allow scaling in the future",
+    "project_prompt": "a low-latency trading platform that will allow scaling in the future",
     "constraints": [
       "Latency targets of <50 microseconds require compiled languages with zero-cost abstractions",
       "The Global Interpreter Lock prevents true multi-core parallelism",
@@ -304,7 +304,7 @@
     "project_slug": "realtime_market_data_processor",
     "project_title": "Real-Time Market Data Processor",
     "project_description": "A streaming data processor consuming tick data from exchanges, enriching with computed fields (volatility, correlations), and broadcasting to multiple subscribers with sub-millisecond latency.",
-    "task_description": "a real-time market data processor that computes price aggregates and streams results to subscribers",
+    "project_prompt": "a real-time market data processor that computes price aggregates and streams results to subscribers",
     "constraints": [
       "Incoming tick rates can exceed 100,000 events/second on high-volume instruments",
       "Processing must complete in under 1 millisecond per tick",
@@ -335,7 +335,7 @@
     "project_slug": "highfreq_messaging_system",
     "project_title": "High-Frequency Messaging System",
     "project_description": "A low-latency message broker or event streaming platform handling millions of messages per second with guaranteed ordering, at-least-once delivery, and sub-microsecond per-message overhead.",
-    "task_description": "a high-frequency messaging system that routes millions of messages per second with latency monitoring",
+    "project_prompt": "a high-frequency messaging system that routes millions of messages per second with latency monitoring",
     "constraints": [
       "Microsecond-level latency requirements demand compiled code with minimal abstraction overhead",
       "The Global Interpreter Lock prevents efficient multi-threaded message routing",
@@ -366,7 +366,7 @@
     "project_slug": "ultra_lowlatency_networking",
     "project_title": "Ultra-Low-Latency Networking Service",
     "project_description": "A network protocol handler or packet processor operating at the kernel level, handling raw sockets, packet filtering, and forwarding with latency measured in nanoseconds.",
-    "task_description": "an ultra-low-latency networking service with packet-level filtering and forwarding",
+    "project_prompt": "an ultra-low-latency networking service with packet-level filtering and forwarding",
     "constraints": [
       "Nanosecond-level latency requires kernel-level programming and direct hardware control",
       "Standard I/O models add microseconds per packet",
@@ -402,7 +402,7 @@
     "project_slug": "highthroughput_parser",
     "project_title": "High-Throughput Parser",
     "project_description": "A performance-critical data format parser processing gigabytes of data per second with minimal CPU overhead and memory usage.",
-    "task_description": "a high-throughput streaming data parser handling gigabyte-scale input with minimal memory overhead",
+    "project_prompt": "a high-throughput streaming data parser handling gigabyte-scale input with minimal memory overhead",
     "constraints": [
       "Throughput targets (1GB/sec+) require compiled efficiency",
       "Memory efficiency critical; interpreted runtimes carry significant object overhead",
@@ -433,7 +433,7 @@
     "project_slug": "memory_constrained_utility",
     "project_title": "Memory-Constrained System Utility",
     "project_description": "A system utility or daemon operating with a strict RAM budget, managing resources efficiently and minimising allocations during runtime.",
-    "task_description": "a memory-constrained log rotation daemon with strict memory limits",
+    "project_prompt": "a memory-constrained log rotation daemon with strict memory limits",
     "constraints": [
       "Memory budget <100MB for a daemon that must run for months without restart",
       "Interpreter runtimes alone may consume much of the available memory budget",
@@ -469,7 +469,7 @@
     "project_slug": "systems_daemon",
     "project_title": "Systems Daemon",
     "project_description": "A long-running system service requiring reliable performance, efficient resource usage, high throughput, and graceful shutdown.",
-    "task_description": "a high-performance system daemon for monitoring and managing operating system resources",
+    "project_prompt": "a high-performance system daemon for monitoring and managing operating system resources",
     "constraints": [
       "High throughput requires compiled efficiency",
       "Memory pooling and reuse to avoid pauses during peak load",
@@ -500,7 +500,7 @@
     "project_slug": "perf_critical_networking_tool",
     "project_title": "Performance-Critical Networking Tool",
     "project_description": "A network analysis or packet manipulation tool processing packets in real-time with minimal CPU overhead.",
-    "task_description": "a performance-critical network flow analyser monitoring gigabit-scale traffic",
+    "project_prompt": "a performance-critical network flow analyser monitoring gigabit-scale traffic",
     "constraints": [
       "Packet processing at gigabit rates requires compiled efficiency",
       "Memory efficiency critical for in-memory flow tables at scale",
@@ -531,7 +531,7 @@
     "project_slug": "microcontroller_firmware",
     "project_title": "Microcontroller Firmware",
     "project_description": "Bare-metal or RTOS firmware for microcontrollers with limited RAM and flash, requiring efficient code and deterministic timing.",
-    "task_description": "firmware for a microcontroller that reads and processes sensor data",
+    "project_prompt": "firmware for a microcontroller that reads and processes sensor data",
     "constraints": [
       "Typical memory budgets: 8-256KB RAM, 64KB-1MB flash",
       "Real-time requirements for sensor reading loops; interpreted overhead unacceptable",
@@ -567,7 +567,7 @@
     "project_slug": "robotics_control_loop",
     "project_title": "Robotics Control Loop",
     "project_description": "Real-time control firmware for robotics with hard real-time constraints, typically running on embedded Linux or an RTOS.",
-    "task_description": "a robotics control loop with real-time sensor fusion and motor control",
+    "project_prompt": "a robotics control loop with real-time sensor fusion and motor control",
     "constraints": [
       "Hard real-time requirements (<5ms control loop); interpreted overhead unacceptable",
       "Sensor fusion requires precise timing synchronisation",
@@ -603,7 +603,7 @@
     "project_slug": "sensor_processing_pipeline",
     "project_title": "Sensor-Processing Pipeline",
     "project_description": "A data pipeline processing raw sensor inputs (audio, video, accelerometer) with filtering, feature extraction, and optional ML inference on resource-constrained edge devices.",
-    "task_description": "an embedded sensor-processing pipeline that detects anomalies from accelerometer data",
+    "project_prompt": "an embedded sensor-processing pipeline that detects anomalies from accelerometer data",
     "constraints": [
       "Processing latency <100ms for interactive applications",
       "Memory efficiency; raw sensor buffers can exceed available RAM",
@@ -634,7 +634,7 @@
     "project_slug": "resource_constrained_edge",
     "project_title": "Resource-Constrained Edge Deployment",
     "project_description": "A complete system deployed on edge devices (IoT gateways, routers, industrial controllers) with limited RAM, running local processing and connectivity.",
-    "task_description": "a resource-constrained edge system that filters sensor data and manages actuators",
+    "project_prompt": "a resource-constrained edge system that filters sensor data and manages actuators",
     "constraints": [
       "Device memory <256MB, often with storage constraints",
       "Reliability; uptime requirements of months/years without restart",
@@ -670,7 +670,7 @@
     "project_slug": "2d_game",
     "project_title": "2D Game",
     "project_description": "A 2D game with sprite animation, physics, and 60fps rendering targeting multiple platforms (PC, console, mobile).",
-    "task_description": "a 2D platformer game with physics simulation and sprite animation",
+    "project_prompt": "a 2D platformer game with physics simulation and sprite animation",
     "constraints": [
       "60fps rendering requires tight game loop with <16ms frame time",
       "Physics simulation (collision detection, rigid bodies) must complete within frame budget",
@@ -706,7 +706,7 @@
     "project_slug": "realtime_rendering_demo",
     "project_title": "Real-Time Rendering Demo",
     "project_description": "A real-time 3D rendering application with complex shaders, lighting, and 60fps frame rate, demonstrating advanced graphics capabilities.",
-    "task_description": "a real-time 3D scene viewer with dynamic lighting and shader effects",
+    "project_prompt": "a real-time 3D scene viewer with dynamic lighting and shader effects",
     "constraints": [
       "60fps at high resolution requires GPU acceleration and efficient CPU-GPU communication",
       "Shader compilation and cache management require graphics API knowledge",
@@ -736,7 +736,7 @@
     "project_slug": "game_engine_plugin",
     "project_title": "Game Engine Plugin",
     "project_description": "A plugin or extension for a commercial game engine implementing custom game mechanics, physics simulation, or procedural generation.",
-    "task_description": "a custom physics plugin for a commercial game engine",
+    "project_prompt": "a custom physics plugin for a commercial game engine",
     "constraints": [
       "Plugin API requires language compatibility with the host engine",
       "Performance-critical code must match engine language for zero-copy semantics",
@@ -772,7 +772,7 @@
     "project_slug": "physics_simulation",
     "project_title": "Physics Simulation with Frame-Rate Constraints",
     "project_description": "A complex physics simulation (cloth, fluid, rigid body dynamics) running as part of a real-time game loop with a 60fps target.",
-    "task_description": "a real-time physics simulation with rigid body dynamics and frame-rate constraints",
+    "project_prompt": "a real-time physics simulation with rigid body dynamics and frame-rate constraints",
     "constraints": [
       "Physics simulation time step <5ms (limited by 60fps frame budget)",
       "Numerical stability critical; small integration errors accumulate across frames",
@@ -803,7 +803,7 @@
     "project_slug": "strongly_typed_service",
     "project_title": "Strongly Typed Enterprise Service",
     "project_description": "A critical backend service (e.g. payment processor, order management) requiring compile-time type safety to prevent runtime errors, with complex domain models.",
-    "task_description": "a payment processing service for a large financial institution",
+    "project_prompt": "a payment processing service for a large financial institution",
     "constraints": [
       "Compile-time type checking prevents invalid state transitions (e.g. debiting account before authorisation)",
       "Large codebase requires refactoring safety; type system catches breakage",
@@ -834,7 +834,7 @@
     "project_slug": "jvm_ecosystem_service",
     "project_title": "JVM Ecosystem Service",
     "project_description": "A service deployed in a Java-ecosystem enterprise with existing JVM infrastructure, requiring integration with JVM libraries and operational tooling.",
-    "task_description": "a backend microservice for a large enterprise with strict type safety requirements and integration with existing corporate systems",
+    "project_prompt": "a backend microservice for a large enterprise with strict type safety requirements and integration with existing corporate systems",
     "constraints": [
       "Enterprise already has extensive JVM-based tooling and libraries in production",
       "Integration with existing JVM services and data stores requires language compatibility",
@@ -870,7 +870,7 @@
     "project_slug": "dotnet_ecosystem_service",
     "project_title": ".NET Ecosystem Service",
     "project_description": "A service deployed in a .NET/Windows-native enterprise environment with existing CLR infrastructure and cloud services, requiring integration with .NET libraries.",
-    "task_description": "a backend service for a large enterprise with existing Windows and Azure cloud infrastructure",
+    "project_prompt": "a backend service for a large enterprise with existing Windows and Azure cloud infrastructure",
     "constraints": [
       "Enterprise already has extensive .NET-based tooling and libraries in production",
       "Integration with existing CLR services and data stores requires language compatibility",
@@ -901,7 +901,7 @@
     "project_slug": "highconcurrency_backend",
     "project_title": "High-Concurrency Backend Service",
     "project_description": "A backend service handling millions of concurrent connections requiring efficient concurrency primitives and predictable latency at scale.",
-    "task_description": "a high-performance web server to handle a large number of concurrent requests",
+    "project_prompt": "a high-performance web server to handle a large number of concurrent requests",
     "constraints": [
       "Millions of concurrent connections require efficient thread/coroutine scheduling",
       "The Global Interpreter Lock prevents true parallelism; each connection competes for it",
