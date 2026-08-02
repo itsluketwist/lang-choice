@@ -176,6 +176,7 @@ CLAUDE.md
 logs/*
 writeup/*
 benchmark/build/*.md
+benchmark/build/validation_records
 
 # temporary
 notebooks/*
