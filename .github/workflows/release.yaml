@@ -68,5 +68,6 @@ jobs:
         run: |
           uvx --from 'huggingface_hub>=1.19.0' hf upload itsluketwist/LangChoiceBench HF_README.md README.md --repo-type dataset
           uvx --from 'huggingface_hub>=1.19.0' hf upload itsluketwist/LangChoiceBench VERSION VERSION --repo-type dataset
+          uvx --from 'huggingface_hub>=1.19.0' hf upload itsluketwist/LangChoiceBench langchoicebench/data/CANARY.txt data/CANARY.txt --repo-type dataset
           uvx --from 'huggingface_hub>=1.19.0' hf upload itsluketwist/LangChoiceBench langchoicebench/data/implementation.jsonl data/implementation.jsonl --repo-type dataset
           uvx --from 'huggingface_hub>=1.19.0' hf upload itsluketwist/LangChoiceBench langchoicebench/data/recommendation.jsonl data/recommendation.jsonl --repo-type dataset
