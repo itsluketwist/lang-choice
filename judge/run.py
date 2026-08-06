@@ -97,10 +97,12 @@ def _collect_batch(
         if batch.status in TERMINAL_STATUSES:
             break
         counts = batch.request_counts
-        log(
-            f"    batch {batch_id}: {batch.status} "
-            f"({counts.completed}/{counts.total} done, {counts.failed} failed)"
+        progress = (
+            f" ({counts.completed}/{counts.total} done, {counts.failed} failed)"
+            if counts is not None
+            else ""
         )
+        log(f"    batch {batch_id}: {batch.status}{progress}")
         time.sleep(POLL_SECONDS)
 
     if batch.status != "completed" or batch.output_file_id is None:

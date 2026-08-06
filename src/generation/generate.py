@@ -81,15 +81,19 @@ def generate_responses(
     persist results to disk incrementally.
     """
     # resolve sampling params — inference config takes priority, then model defaults
-    temperature = inference_config.temperature
-    if temperature is None:
-        temperature = model_config.defaults.get("temperature", 1.0)
+    temperature: float = (
+        inference_config.temperature
+        if inference_config.temperature is not None
+        else model_config.defaults.get("temperature", 1.0)
+    )
 
-    top_p = inference_config.top_p
-    if top_p is None:
-        top_p = model_config.defaults.get("top_p", 1.0)
+    top_p: float = (
+        inference_config.top_p
+        if inference_config.top_p is not None
+        else model_config.defaults.get("top_p", 1.0)
+    )
 
-    max_tokens = model_config.defaults.get("max_tokens", 8192)
+    max_tokens: int = model_config.defaults.get("max_tokens", 8192)
 
     total_samples = sum(n for _, n in tasks)
     log(

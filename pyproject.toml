@@ -51,3 +51,6 @@ langchoicebench = { path = "benchmark", editable = true }
 [tool.pytest.ini_options]
 # add benchmark/ to sys.path so langchoicebench is importable without a full install
 pythonpath = [".", "benchmark"]
+
+[tool.ty.environment]
+root = [".", "benchmark", "benchmark/build"]
