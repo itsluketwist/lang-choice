@@ -33,6 +33,9 @@ class InferenceConfig(BaseModel):
     samples: dict[str, int]  # {"implementation": N, "recommendation": N}
     seed: int
     max_workers: int = 10
+    # output file prefix, e.g. "t03" — defaults to the first 3 chars of the name,
+    # which is needed when several presets share those chars (temp-0.3, temp-0.6)
+    prefix: str | None = None
 
 
 class ResponseData(BaseModel):
@@ -56,3 +59,7 @@ class GenerationResult(BaseModel):
     context_condition: str = "none"
     prompt_messages: list[dict[str, str]] = []  # stored once — same for all samples
     warnings: list[list[str]] = []
+
+    # two-stage runs only: the recommendation prompt whose responses were replayed
+    # as the first turn. responses[i] answers recommendation sample i.
+    stage_one_id: str | None = None

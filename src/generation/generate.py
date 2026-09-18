@@ -18,40 +18,24 @@ from src.utils.log import log
 RETRY_DELAYS = [1, 5, 15]
 
 
-def _generate_sample(
-    llm: GenerationProtocol,
-    prompt: str,
-    temperature: float,
-    top_p: float,
-    max_tokens: int,
-    enable_reasoning: bool,
+def generate_with_retries(
+    call: Callable[[], tuple[str | None, str | None]],
 ) -> tuple[str, str | None]:
-    """Generate a single sample, retrying transient failures with backoff.
+    """Run one generation call, retrying transient failures with backoff.
 
-    Returns an empty string if all attempts fail.
+    The call returns a (response, reasoning) pair. Shared with the two-stage runs.
+    Returns an empty response if all attempts fail.
     """
     for attempt, delay in enumerate([0, *RETRY_DELAYS]):
         if delay:
             time.sleep(delay)
         try:
-            [generation] = llm.generate(
-                user=prompt,
-                samples=1,
-                temperature=temperature,
-                top_p=top_p,
-                max_tokens=max_tokens,
-            )
+            response, reasoning = call()
         except Exception as e:
             if attempt == len(RETRY_DELAYS):
                 log(f"\n    [WARNING] sample failed after {attempt + 1} attempts: {e}")
                 return "", None
             continue
-
-        if enable_reasoning:
-            response, reasoning = cast(tuple[str | None, str | None], generation)
-        else:
-            response = cast(str | None, generation)
-            reasoning = None
 
         if response:
             return response, reasoning
@@ -67,20 +51,14 @@ def _generate_sample(
     return "", None  # unreachable, satisfies type checking
 
 
-def generate_responses(
-    tasks: list[tuple[BenchmarkPrompt, int]],
+def resolve_sampling(
     model_config: ModelConfig,
     inference_config: InferenceConfig,
-    task_type: str,
-    on_result: Callable[[GenerationResult], None],
-    context_condition: str = "none",
-) -> None:
-    """Generate model responses for a set of (prompt, n_samples) tasks concurrently.
+) -> tuple[float, float, int]:
+    """Resolve sampling params — inference config takes priority, then model defaults.
 
-    Calls on_result with each GenerationResult as it completes, so the caller can
-    persist results to disk incrementally.
+    Returns a (temperature, top_p, max_tokens) tuple.
     """
-    # resolve sampling params — inference config takes priority, then model defaults
     temperature: float = (
         inference_config.temperature
         if inference_config.temperature is not None
@@ -94,6 +72,53 @@ def generate_responses(
     )
 
     max_tokens: int = model_config.defaults.get("max_tokens", 8192)
+
+    return temperature, top_p, max_tokens
+
+
+def _generate_sample(
+    llm: GenerationProtocol,
+    prompt: str,
+    temperature: float,
+    top_p: float,
+    max_tokens: int,
+    enable_reasoning: bool,
+) -> tuple[str, str | None]:
+    """Generate a single sample, retrying transient failures with backoff.
+
+    Returns an empty string if all attempts fail.
+    """
+
+    def _call() -> tuple[str | None, str | None]:
+        """Make one API call, splitting out reasoning where the model returns it."""
+        [generation] = llm.generate(
+            user=prompt,
+            samples=1,
+            temperature=temperature,
+            top_p=top_p,
+            max_tokens=max_tokens,
+        )
+        if enable_reasoning:
+            return cast(tuple[str | None, str | None], generation)
+        return cast(str | None, generation), None
+
+    return generate_with_retries(_call)
+
+
+def generate_responses(
+    tasks: list[tuple[BenchmarkPrompt, int]],
+    model_config: ModelConfig,
+    inference_config: InferenceConfig,
+    task_type: str,
+    on_result: Callable[[GenerationResult], None],
+    context_condition: str = "none",
+) -> None:
+    """Generate model responses for a set of (prompt, n_samples) tasks concurrently.
+
+    Calls on_result with each GenerationResult as it completes, so the caller can
+    persist results to disk incrementally.
+    """
+    temperature, top_p, max_tokens = resolve_sampling(model_config, inference_config)
 
     total_samples = sum(n for _, n in tasks)
     log(

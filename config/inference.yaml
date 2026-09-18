@@ -23,3 +23,40 @@ default:
     recommendation: 5
   seed: 42
   max_workers: 10
+
+# decoding sensitivity sweep: same sample counts as "default" so the existing
+# def-* results can stand in for whichever temperature matches a model's default.
+# top_p stays null so that temperature is the only thing that varies.
+
+temp-0.3:
+  name: temp-0.3
+  prefix: t03
+  temperature: 0.3
+  top_p: null
+  samples:
+    implementation: 20
+    recommendation: 5
+  seed: 42
+  max_workers: 10
+
+temp-0.6:
+  name: temp-0.6
+  prefix: t06
+  temperature: 0.6
+  top_p: null
+  samples:
+    implementation: 20
+    recommendation: 5
+  seed: 42
+  max_workers: 10
+
+temp-1.0:
+  name: temp-1.0
+  prefix: t10
+  temperature: 1.0
+  top_p: null
+  samples:
+    implementation: 20
+    recommendation: 5
+  seed: 42
+  max_workers: 10

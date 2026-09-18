@@ -18,6 +18,7 @@ from langchoicebench.loader import (
     load_recommendation_split,
 )
 from langchoicebench.metrics import (
+    CONTROL_AREAS,
     classify_language,
     compute_consistency_metrics,
     compute_summary,
@@ -61,6 +62,7 @@ __all__ = [
     "extract_suggested_languages",
     "normalise_language",
     # scoring
+    "CONTROL_AREAS",
     "classify_language",
     "compute_consistency_metrics",
     "compute_summary",
