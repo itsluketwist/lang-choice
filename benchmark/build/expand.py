@@ -10,9 +10,7 @@ _REQUIRED_FIELDS = {
     "project_description",
     "project_prompt",
     "constraints",
-    "preferred_languages",
-    "acceptable_languages",
-    "suboptimal_languages",
+    "suitable_languages",
 }
 
 # every definition explains its python judgement with exactly one of these:
@@ -44,9 +42,9 @@ def load_raw(raw_data: dict) -> list[dict]:
                     f"Definition '{raw['project_slug']}' must have exactly one of "
                     f"{sorted(_RATIONALE_FIELDS)}, found: {sorted(rationales)}",
                 )
-            if not raw["preferred_languages"]:
+            if not raw["suitable_languages"]:
                 raise ValueError(
-                    f"Definition '{raw['project_slug']}' has empty preferred_languages",
+                    f"Definition '{raw['project_slug']}' has empty suitable_languages",
                 )
             defn = dict(raw)
             defn["area"] = area
@@ -73,9 +71,7 @@ def expand_splits(
             "project_id": defn["id"],
             "area": defn["area"],
             "project_title": defn["project_title"],
-            "preferred_languages": defn["preferred_languages"],
-            "acceptable_languages": defn["acceptable_languages"],
-            "suboptimal_languages": defn["suboptimal_languages"],
+            "suitable_languages": defn["suitable_languages"],
         }
 
         for variant_key in IMPLEMENTATION_VARIANTS:

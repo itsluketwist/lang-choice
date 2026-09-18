@@ -245,7 +245,5 @@ def _prompt_to_project(prompt: BenchmarkPrompt) -> ProjectDefinition:
         project_prompt="",
         constraints=[],
         python_weakness_rationale="",
-        preferred_languages=prompt.preferred_languages,
-        acceptable_languages=prompt.acceptable_languages,
-        suboptimal_languages=prompt.suboptimal_languages,
+        suitable_languages=prompt.suitable_languages,
     )

@@ -22,28 +22,20 @@ from langchoicebench.schema import (
 CONTROL_AREAS: frozenset[str] = frozenset({"python_control"})
 
 
-def classify_language(
+def is_suitable_language(
     language: str | None,
     project: ProjectDefinition,
-) -> str:
-    """Classify a language against the project's ground truth lists.
+) -> bool:
+    """Check whether a language is in the project's suitable-languages ground truth.
 
-    Comparison is case-insensitive. Returns the most favourable class:
-    preferred > acceptable > suboptimal > unknown.
-    Returns "unknown" when language is None or unrecognised.
+    Comparison is case-insensitive.
+    Returns False when language is None or not in project.suitable_languages.
     """
     if language is None:
-        return "unknown"
+        return False
 
     lang_lower = language.lower()
-
-    if lang_lower in {lang.lower() for lang in project.preferred_languages}:
-        return "preferred"
-    if lang_lower in {lang.lower() for lang in project.acceptable_languages}:
-        return "acceptable"
-    if lang_lower in {lang.lower() for lang in project.suboptimal_languages}:
-        return "suboptimal"
-    return "unknown"
+    return lang_lower in {lang.lower() for lang in project.suitable_languages}
 
 
 def score_recommendation(
@@ -52,25 +44,18 @@ def score_recommendation(
 ) -> RecommendationResult:
     """Populate classification fields on a RecommendationResult against ground truth.
 
-    Returns the result with recommendation_class and convenience flags set.
+    Returns the result with convenience flags set.
     """
-    top = result.top_recommendation
     normalised = result.suggested_languages or []
 
-    recommended_preferred = any(
-        classify_language(lang, project) == "preferred" for lang in normalised
-    )
-    recommended_acceptable = any(
-        classify_language(lang, project) in ("preferred", "acceptable")
-        for lang in normalised
+    recommended_suitable = any(
+        is_suitable_language(lang, project) for lang in normalised
     )
     recommended_python = any(lang.lower() == "python" for lang in normalised)
 
     return result.model_copy(
         update={
-            "recommendation_class": classify_language(top, project),
-            "recommended_preferred": recommended_preferred,
-            "recommended_acceptable": recommended_acceptable,
+            "recommended_suitable": recommended_suitable,
             "recommended_python": recommended_python,
         }
     )
@@ -82,16 +67,14 @@ def score_implementation(
 ) -> ImplementationResult:
     """Populate classification fields on an ImplementationResult against ground truth.
 
-    Returns the result with language_class and convenience flags set.
+    Returns the result with convenience flags set.
     """
     lang = result.primary_language
-    lang_class = classify_language(lang, project)
 
     return result.model_copy(
         update={
-            "language_class": lang_class,
             "uses_python": lang is not None and lang.lower() == "python",
-            "uses_preferred": lang_class == "preferred",
+            "uses_suitable": is_suitable_language(lang, project),
         }
     )
 
@@ -118,8 +101,8 @@ def compute_consistency_metrics(
         and top_rec_lower == impl_lang_lower
     )
     any_recommended_used = impl_lang_lower is not None and impl_lang_lower in rec_langs
-    recommended_preferred_but_python = (
-        rec.recommended_preferred is True and impl.uses_python is True
+    recommended_suitable_but_python = (
+        rec.recommended_suitable is True and impl.uses_python is True
     )
     recommended_non_python_but_python = (
         rec.recommended_python is False
@@ -135,7 +118,7 @@ def compute_consistency_metrics(
     return {
         "exact_top_match": exact_top_match,
         "any_recommended_used": any_recommended_used,
-        "recommended_preferred_but_python": recommended_preferred_but_python,
+        "recommended_suitable_but_python": recommended_suitable_but_python,
         "recommended_non_python_but_python": recommended_non_python_but_python,
         "recommended_python_but_non_python": recommended_python_but_non_python,
     }
@@ -239,8 +222,8 @@ def _compute_task_stats(
     top1_langs = {rec_rates[0][0].lower()} if rec_rates else set()
     top3_langs = {lang.lower() for lang, _ in rec_rates[:3]}
 
-    # --- preferred and top-1/top-3 recommended rates from impl results ---
-    preferred_count = sum(1 for r in impl_results if r.uses_preferred is True)
+    # --- suitable and top-1/top-3 recommended rates from impl results ---
+    suitable_count = sum(1 for r in impl_results if r.uses_suitable is True)
     top1_recommended_count = sum(
         1
         for r in impl_results
@@ -269,7 +252,7 @@ def _compute_task_stats(
         recommendation_count=len(rec_results),
         implementation_valid_count=impl_valid,
         recommendation_valid_count=rec_valid,
-        preferred_rate=round(preferred_count / impl_total, 4),
+        suitable_rate=round(suitable_count / impl_total, 4),
         top1_recommended_rate=round(top1_recommended_count / impl_total, 4),
         top3_recommended_rate=round(top3_recommended_count / impl_total, 4),
         implementation_rates=impl_rates,
@@ -386,7 +369,7 @@ def compute_summary(
         rec_valid = sum(1 for r in rec if r.suggested_languages)
 
         python_count = sum(1 for r in impl if r.uses_python is True)
-        preferred_count = sum(1 for r in impl if r.uses_preferred is True)
+        suitable_count = sum(1 for r in impl if r.uses_suitable is True)
 
         # top-k recommended rates: mean of per-task values (paper-defined aggregation)
         top1_recommended_rate = (
@@ -434,7 +417,7 @@ def compute_summary(
             recommendation_count=n_rec,
             implementation_valid_count=impl_valid,
             recommendation_valid_count=rec_valid,
-            preferred_rate=preferred_count / n_impl if n_impl else 0.0,
+            suitable_rate=suitable_count / n_impl if n_impl else 0.0,
             top1_recommended_rate=top1_recommended_rate,
             top3_recommended_rate=top3_recommended_rate,
             python_implementation_rate=python_count / n_impl if n_impl else 0.0,

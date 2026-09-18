@@ -16,9 +16,9 @@ def test_public_api_available() -> None:
         ImplementationResult,
         ProjectDefinition,
         RecommendationResult,
-        classify_language,
         evaluate_benchmark,
         evaluate_response,
+        is_suitable_language,
         load_implementation_split,
     )
 
@@ -30,9 +30,9 @@ def test_public_api_available() -> None:
             ImplementationResult,
             ProjectDefinition,
             RecommendationResult,
-            classify_language,
             evaluate_benchmark,
             evaluate_response,
+            is_suitable_language,
             load_implementation_split,
         ]
     )

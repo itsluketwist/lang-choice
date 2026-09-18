@@ -19,17 +19,15 @@ class ProjectDefinition(BaseModel):
     # control-area projects explain why it is a good one
     python_weakness_rationale: str = ""
     python_strength_rationale: str = ""
-    preferred_languages: list[str]
-    acceptable_languages: list[str]
-    suboptimal_languages: list[str]
+    suitable_languages: list[str]
     source: Literal["expanded"] = "expanded"
     notes: str | None = None
 
-    @field_validator("preferred_languages")
+    @field_validator("suitable_languages")
     @classmethod
-    def _preferred_not_empty(cls, v: list[str]) -> list[str]:
+    def _suitable_not_empty(cls, v: list[str]) -> list[str]:
         if len(v) == 0:
-            raise ValueError("preferred_languages must contain at least one language")
+            raise ValueError("suitable_languages must contain at least one language")
         return v
 
 
@@ -42,9 +40,7 @@ class BenchmarkPrompt(BaseModel):
     project_title: str
     prompt_variant: str  # e.g. "write", "create", "what_language"
     prompt: str  # the fully rendered prompt text
-    preferred_languages: list[str]
-    acceptable_languages: list[str]
-    suboptimal_languages: list[str]
+    suitable_languages: list[str]
 
 
 class ImplementationResult(BaseModel):
@@ -63,11 +59,9 @@ class ImplementationResult(BaseModel):
     confidence: str | None = None
     # true when multiple distinct main languages appear in code blocks
     mixed_language: bool | None = None
-    # classification against ground truth: "preferred", "acceptable", "suboptimal", "unknown"
-    language_class: str | None = None
     # convenience flags
     uses_python: bool | None = None
-    uses_preferred: bool | None = None
+    uses_suitable: bool | None = None
 
     # populated by experiment-side analysis (src/analysis/hallucination.py)
     anchor_label: str = "no_anchor"
@@ -86,11 +80,8 @@ class RecommendationResult(BaseModel):
     suggested_languages: list[str] | None = None
     # top-ranked recommendation (first normalised entry)
     top_recommendation: str | None = None
-    # classification of top recommendation: "preferred", "acceptable", "suboptimal", "unknown"
-    recommendation_class: str | None = None
     # convenience flags
-    recommended_preferred: bool | None = None
-    recommended_acceptable: bool | None = None
+    recommended_suitable: bool | None = None
     recommended_python: bool | None = None
 
     # populated by experiment-side analysis (src/analysis/hallucination.py)
@@ -114,8 +105,8 @@ class TaskStats(BaseModel):
     # number of responses where valid data was successfully extracted
     implementation_valid_count: int
     recommendation_valid_count: int
-    # fraction of implementation responses where the model used a ground-truth preferred language
-    preferred_rate: float
+    # fraction of implementation responses where the model used a ground-truth suitable language
+    suitable_rate: float
     # fraction of implementation responses where the primary language was the top-1 recommendation
     top1_recommended_rate: float
     # fraction of implementation responses where the primary language was in the top-3 recommendations
@@ -139,8 +130,8 @@ class AreaStats(BaseModel):
     # number of responses where valid data was successfully extracted
     implementation_valid_count: int
     recommendation_valid_count: int
-    # fraction of implementation results where model used a preferred language
-    preferred_rate: float
+    # fraction of implementation results where model used a suitable language
+    suitable_rate: float
     # fraction of implementation results where primary language was the top-1 recommendation
     top1_recommended_rate: float
     # fraction of implementation results where primary language was in the top-3 recommendations
