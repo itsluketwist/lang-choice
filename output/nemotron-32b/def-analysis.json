@@ -357,7 +357,7 @@
         "sample_index": 6,
         "source": "reasoning",
         "sentence": "- Flask for the backend (to serve the dashboard and handle requests)",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "frontend_browser_web_application__write",
@@ -483,7 +483,7 @@
         "sample_index": 6,
         "source": "reasoning",
         "sentence": "- We'll use Python with the Streamlit library for simplicity and real-time capabilities.",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "frontend_browser_web_application__create",
@@ -616,7 +616,7 @@
         "sample_index": 6,
         "source": "reasoning",
         "sentence": "We'll use the following technologies:\n- Python for the backend with Flask (web framework) and SocketIO (for real-time)\n- JavaScript for the frontend (with SockJS and Knockout.js for real-time updates and form handling)",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "frontend_browser_web_application__generate",
@@ -8131,7 +8131,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "mobile_native_android_app__write",
@@ -8331,7 +8331,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "mobile_native_android_app__create",
@@ -8531,7 +8531,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "mobile_native_android_app__generate",
@@ -9881,7 +9881,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "frontend_browser_web_application__write",
@@ -10081,7 +10081,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "frontend_browser_web_application__create",
@@ -10281,7 +10281,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "frontend_browser_web_application__generate",
@@ -11201,7 +11201,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "frontend_interactive_client_visualization__write",
@@ -11401,7 +11401,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "frontend_interactive_client_visualization__create",
@@ -11601,7 +11601,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "frontend_interactive_client_visualization__generate",

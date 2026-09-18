@@ -461,7 +461,7 @@
         "sample_index": 0,
         "source": "reasoning",
         "sentence": "So, the plan is to use an *XDP program* written in C along with a user-space control plane in C or Python.",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "low_latency_ultra_lowlatency_networking__write",
@@ -475,7 +475,7 @@
         "sample_index": 3,
         "source": "reasoning",
         "sentence": "My initial thought was to use DPDK, but for this specific example and for easy demonstration, XDP using C code and a Python controller is the clear winner.",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "low_latency_ultra_lowlatency_networking__write",
@@ -496,7 +496,7 @@
         "sample_index": 0,
         "source": "reasoning",
         "sentence": "The choice is clear: **eBPF/XDP in C** combined with a small Python script to load it.",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "low_latency_ultra_lowlatency_networking__generate",
@@ -510,14 +510,14 @@
         "sample_index": 3,
         "source": "reasoning",
         "sentence": "It’s elegant, runs at bare-metal speeds *before* the kernel’s `sk_buff` allocation, and we can make this incredibly easy with tools like the BCC Python library.",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "low_latency_ultra_lowlatency_networking__generate",
         "sample_index": 4,
         "source": "reasoning",
         "sentence": "**Prerequisites:** You'll need a Linux system (duh!), Python 3, and the BCC (BPF Compiler Collection) toolkit installed.",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "low_latency_ultra_lowlatency_networking__generate",
@@ -531,7 +531,7 @@
         "sample_index": 11,
         "source": "reasoning",
         "sentence": "We'll use a **C-based eBPF program** paired with a concise **Python script using the BCC library**.",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "low_latency_ultra_lowlatency_networking__generate",
@@ -552,7 +552,7 @@
         "sample_index": 18,
         "source": "reasoning",
         "sentence": "So, the plan is an XDP program written in C, loaded by a Python/BCC wrapper.",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "systems_highthroughput_parser__write",
@@ -3751,7 +3751,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "mobile_offline_first_mobile_app__write",
@@ -3951,7 +3951,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "mobile_offline_first_mobile_app__create",
@@ -4151,7 +4151,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "mobile_offline_first_mobile_app__generate",
@@ -9071,7 +9071,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__write",
@@ -9101,7 +9101,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__write",
@@ -9111,7 +9111,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__write",
@@ -9181,7 +9181,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__write",
@@ -9251,7 +9251,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__write",
@@ -9271,7 +9271,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__create",
@@ -9301,7 +9301,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__create",
@@ -9311,7 +9311,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__create",
@@ -9381,7 +9381,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__create",
@@ -9451,7 +9451,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__create",
@@ -9471,7 +9471,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__generate",
@@ -9501,7 +9501,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__generate",
@@ -9511,7 +9511,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__generate",
@@ -9581,7 +9581,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__generate",
@@ -9651,7 +9651,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_ultra_lowlatency_networking__generate",

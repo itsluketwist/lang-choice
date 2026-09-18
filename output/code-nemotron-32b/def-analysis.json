@@ -202,7 +202,7 @@
         "sample_index": 10,
         "source": "reasoning",
         "sentence": "- Flask for the web server (or a simple one if we are doing minimal)",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "frontend_browser_web_application__write",
@@ -10167,7 +10167,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "mobile_app_store_consumer_app__write",
@@ -10367,7 +10367,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "mobile_app_store_consumer_app__create",
@@ -10567,7 +10567,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "mobile_app_store_consumer_app__generate",

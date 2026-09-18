@@ -3177,14 +3177,14 @@
         "sample_index": 19,
         "source": "reasoning",
         "sentence": "The user didn't specify language or framework, but common choices are Python with Pygame, JavaScript with Canvas, or maybe C++ with SFML.",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "games_2d_game__create",
         "sample_index": 15,
         "source": "reasoning",
         "sentence": "Could be HTML5 Canvas/JavaScript, or Python with Pygame, or C# Unity?",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "games_2d_game__create",
@@ -16431,7 +16431,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__write",
@@ -16461,7 +16461,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__write",
@@ -16521,7 +16521,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__write",
@@ -16561,7 +16561,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__write",
@@ -16581,7 +16581,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__write",
@@ -16621,7 +16621,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__create",
@@ -16631,7 +16631,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__create",
@@ -16661,7 +16661,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__create",
@@ -16721,7 +16721,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__create",
@@ -16761,7 +16761,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__create",
@@ -16781,7 +16781,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__create",
@@ -16821,7 +16821,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__generate",
@@ -16831,7 +16831,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__generate",
@@ -16861,7 +16861,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__generate",
@@ -16921,7 +16921,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__generate",
@@ -16961,7 +16961,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__generate",
@@ -16981,7 +16981,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_2d_game__generate",
@@ -17021,7 +17021,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "games_realtime_rendering_demo__write",

@@ -1021,7 +1021,7 @@
         "sample_index": 7,
         "source": "reasoning",
         "sentence": "I'll write this in Python since it's good for system utilities and has good memory management tools.",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "systems_memory_constrained_utility__write",
@@ -1063,7 +1063,7 @@
         "sample_index": 7,
         "source": "reasoning",
         "sentence": "I'll implement this in Python with careful memory management, using standard library tools and implementing memory limiting.",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "systems_memory_constrained_utility__generate",
@@ -2813,7 +2813,7 @@
         "sample_index": 1,
         "source": "reasoning",
         "sentence": "I'll provide a comprehensive example using Python with async capabilities, which is a modern approach for handling concurrent requests.",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "enterprise_highconcurrency_backend__write",
@@ -2939,7 +2939,7 @@
         "sample_index": 19,
         "source": "reasoning",
         "sentence": "A basic async Python server using asyncio\n2.",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "enterprise_highconcurrency_backend__create",
@@ -2953,7 +2953,7 @@
         "sample_index": 1,
         "source": "reasoning",
         "sentence": "An async-based web server (using asyncio in Python or similar)\n2.",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "enterprise_highconcurrency_backend__create",
@@ -3079,7 +3079,7 @@
         "sample_index": 19,
         "source": "reasoning",
         "sentence": "Use async/await for concurrency (Python with asyncio is good, or Node.js, or Rust)\n2.",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "enterprise_highconcurrency_backend__generate",
@@ -3093,7 +3093,7 @@
         "sample_index": 1,
         "source": "reasoning",
         "sentence": "Python with asyncio (simple and readable)\n2.",
-        "uses_python": false
+        "uses_python": true
       },
       {
         "id": "enterprise_highconcurrency_backend__generate",
@@ -3219,7 +3219,7 @@
         "sample_index": 19,
         "source": "reasoning",
         "sentence": "A simple async Python server using asyncio\n2.",
-        "uses_python": false
+        "uses_python": true
       }
     ],
     "ambiguous_anchor": []
@@ -11103,23 +11103,13 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "systems_memory_constrained_utility__write",
-      "project_id": "systems_memory_constrained_utility",
-      "task_type": "implementation",
-      "sample_index": 8,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": true
     },
     {
       "id": "systems_memory_constrained_utility__write",
       "project_id": "systems_memory_constrained_utility",
       "task_type": "implementation",
-      "sample_index": 9,
+      "sample_index": 8,
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
@@ -11129,6 +11119,16 @@
       "id": "systems_memory_constrained_utility__write",
       "project_id": "systems_memory_constrained_utility",
       "task_type": "implementation",
+      "sample_index": 9,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": true
+    },
+    {
+      "id": "systems_memory_constrained_utility__write",
+      "project_id": "systems_memory_constrained_utility",
+      "task_type": "implementation",
       "sample_index": 10,
       "context_condition": "none",
       "anchor_label": "no_anchor",
@@ -11303,23 +11303,13 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "systems_memory_constrained_utility__create",
-      "project_id": "systems_memory_constrained_utility",
-      "task_type": "implementation",
-      "sample_index": 8,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": true
     },
     {
       "id": "systems_memory_constrained_utility__create",
       "project_id": "systems_memory_constrained_utility",
       "task_type": "implementation",
-      "sample_index": 9,
+      "sample_index": 8,
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
@@ -11329,6 +11319,16 @@
       "id": "systems_memory_constrained_utility__create",
       "project_id": "systems_memory_constrained_utility",
       "task_type": "implementation",
+      "sample_index": 9,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": true
+    },
+    {
+      "id": "systems_memory_constrained_utility__create",
+      "project_id": "systems_memory_constrained_utility",
+      "task_type": "implementation",
       "sample_index": 10,
       "context_condition": "none",
       "anchor_label": "no_anchor",
@@ -11503,23 +11503,13 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
-    },
-    {
-      "id": "systems_memory_constrained_utility__generate",
-      "project_id": "systems_memory_constrained_utility",
-      "task_type": "implementation",
-      "sample_index": 8,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": true
     },
     {
       "id": "systems_memory_constrained_utility__generate",
       "project_id": "systems_memory_constrained_utility",
       "task_type": "implementation",
-      "sample_index": 9,
+      "sample_index": 8,
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
@@ -11529,6 +11519,16 @@
       "id": "systems_memory_constrained_utility__generate",
       "project_id": "systems_memory_constrained_utility",
       "task_type": "implementation",
+      "sample_index": 9,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": true
+    },
+    {
+      "id": "systems_memory_constrained_utility__generate",
+      "project_id": "systems_memory_constrained_utility",
+      "task_type": "implementation",
       "sample_index": 10,
       "context_condition": "none",
       "anchor_label": "no_anchor",
@@ -19443,7 +19443,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "enterprise_highconcurrency_backend__write",
@@ -19623,7 +19623,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "enterprise_highconcurrency_backend__create",
@@ -19643,7 +19643,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "enterprise_highconcurrency_backend__create",
@@ -19823,7 +19823,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "enterprise_highconcurrency_backend__generate",
@@ -19843,7 +19843,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     },
     {
       "id": "enterprise_highconcurrency_backend__generate",
@@ -20023,7 +20023,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": false
+      "uses_python": true
     }
   ]
 }

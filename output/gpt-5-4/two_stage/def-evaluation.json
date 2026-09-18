@@ -6,15 +6,15 @@
       "recommendation_count": 420,
       "implementation_valid_count": 416,
       "recommendation_valid_count": 420,
-      "suitable_rate": 0.8071428571428572,
-      "top1_recommended_rate": 0.6523821428571429,
-      "top3_recommended_rate": 0.8428500000000001,
+      "suitable_rate": 0.8357142857142857,
+      "top1_recommended_rate": 0.66905,
+      "top3_recommended_rate": 0.8761857142857143,
       "python_implementation_rate": 0.01904761904761905,
       "python_any_recommendation_rate": 0.5952380952380952,
       "python_top3_recommendation_rate": 0.06190476190476191,
-      "rank_correlation": 0.4723,
-      "shannon_entropy": 1.6636,
-      "effective_diversity": 3.3632,
+      "rank_correlation": 0.518,
+      "shannon_entropy": 1.566,
+      "effective_diversity": 3.1598,
       "unique_languages": [
         "c",
         "c#",
@@ -276,13 +276,13 @@
           "recommendation_count": 15,
           "implementation_valid_count": 14,
           "recommendation_valid_count": 15,
-          "suitable_rate": 0.7333,
-          "top1_recommended_rate": 0.7333,
-          "top3_recommended_rate": 0.8,
+          "suitable_rate": 0.8,
+          "top1_recommended_rate": 0.8,
+          "top3_recommended_rate": 0.8667,
           "implementation_rates": [
             [
               "c#",
-              0.7333
+              0.8
             ],
             [
               "typescript",
@@ -290,10 +290,6 @@
             ],
             [
               "c",
-              0.0667
-            ],
-            [
-              "javascript",
               0.0667
             ]
           ],
@@ -339,7 +335,7 @@
               0.0067
             ]
           ],
-          "rank_correlation": 0.0463
+          "rank_correlation": 0.2611
         },
         {
           "project_id": "enterprise_highconcurrency_backend",
@@ -589,16 +585,16 @@
           "implementation_valid_count": 14,
           "recommendation_valid_count": 15,
           "suitable_rate": 0.9333,
-          "top1_recommended_rate": 0.2667,
+          "top1_recommended_rate": 0.4,
           "top3_recommended_rate": 0.9333,
           "implementation_rates": [
             [
               "javascript",
-              0.6667
+              0.5333
             ],
             [
               "typescript",
-              0.2667
+              0.4
             ]
           ],
           "recommendation_rates": [
@@ -641,20 +637,16 @@
           "recommendation_count": 15,
           "implementation_valid_count": 15,
           "recommendation_valid_count": 15,
-          "suitable_rate": 0.5333,
+          "suitable_rate": 0.9333,
           "top1_recommended_rate": 0.2667,
-          "top3_recommended_rate": 0.5333,
+          "top3_recommended_rate": 0.9333,
           "implementation_rates": [
             [
-              "c",
-              0.4
+              "javascript",
+              0.6667
             ],
             [
               "typescript",
-              0.2667
-            ],
-            [
-              "javascript",
               0.2667
             ],
             [
@@ -712,7 +704,7 @@
               0.0111
             ]
           ],
-          "rank_correlation": 0.158
+          "rank_correlation": 0.5691
         },
         {
           "project_id": "frontend_interactive_client_visualization",
@@ -722,21 +714,17 @@
           "recommendation_count": 15,
           "implementation_valid_count": 15,
           "recommendation_valid_count": 15,
-          "suitable_rate": 0.7333,
-          "top1_recommended_rate": 0.4,
-          "top3_recommended_rate": 0.7333,
+          "suitable_rate": 1.0,
+          "top1_recommended_rate": 0.4667,
+          "top3_recommended_rate": 1.0,
           "implementation_rates": [
             [
-              "typescript",
-              0.4
-            ],
-            [
               "javascript",
-              0.3333
+              0.5333
             ],
             [
-              "c",
-              0.2667
+              "typescript",
+              0.4667
             ]
           ],
           "recommendation_rates": [
@@ -777,7 +765,7 @@
               0.0083
             ]
           ],
-          "rank_correlation": 0.3952
+          "rank_correlation": 0.7075
         },
         {
           "project_id": "frontend_single_page_application",
@@ -787,21 +775,17 @@
           "recommendation_count": 15,
           "implementation_valid_count": 15,
           "recommendation_valid_count": 15,
-          "suitable_rate": 0.9333,
-          "top1_recommended_rate": 0.5333,
-          "top3_recommended_rate": 0.9333,
+          "suitable_rate": 1.0,
+          "top1_recommended_rate": 0.6,
+          "top3_recommended_rate": 1.0,
           "implementation_rates": [
             [
               "typescript",
-              0.5333
+              0.6
             ],
             [
               "javascript",
               0.4
-            ],
-            [
-              "c",
-              0.0667
             ]
           ],
           "recommendation_rates": [
@@ -850,7 +834,7 @@
               0.0179
             ]
           ],
-          "rank_correlation": 0.3488
+          "rank_correlation": 0.6742
         },
         {
           "project_id": "games_2d_game",
@@ -877,19 +861,15 @@
               0.1333
             ],
             [
+              "c",
+              0.1333
+            ],
+            [
               "c#",
               0.0667
             ],
             [
               "lua",
-              0.0667
-            ],
-            [
-              "go",
-              0.0667
-            ],
-            [
-              "c",
               0.0667
             ]
           ],
@@ -939,7 +919,7 @@
               0.0067
             ]
           ],
-          "rank_correlation": 0.3363
+          "rank_correlation": 0.3498
         },
         {
           "project_id": "games_game_engine_plugin",
@@ -1085,11 +1065,11 @@
             ],
             [
               "javascript",
-              0.2
+              0.2667
             ],
             [
               "c",
-              0.1333
+              0.0667
             ]
           ],
           "recommendation_rates": [
@@ -1437,16 +1417,16 @@
           "implementation_valid_count": 15,
           "recommendation_valid_count": 15,
           "suitable_rate": 0.0,
-          "top1_recommended_rate": 0.6667,
-          "top3_recommended_rate": 0.6667,
+          "top1_recommended_rate": 0.8,
+          "top3_recommended_rate": 0.8,
           "implementation_rates": [
             [
               "typescript",
-              0.6667
+              0.8
             ],
             [
               "javascript",
-              0.3333
+              0.2
             ]
           ],
           "recommendation_rates": [
@@ -2200,15 +2180,15 @@
         "recommendation_count": 60,
         "implementation_valid_count": 59,
         "recommendation_valid_count": 60,
-        "suitable_rate": 0.8666666666666667,
-        "top1_recommended_rate": 0.85,
-        "top3_recommended_rate": 0.883325,
+        "suitable_rate": 0.8833333333333333,
+        "top1_recommended_rate": 0.8666750000000001,
+        "top3_recommended_rate": 0.9,
         "python_implementation_rate": 0.0,
         "python_any_recommendation_rate": 0.6,
         "python_top3_recommendation_rate": 0.016666666666666666,
-        "rank_correlation": 0.1713,
-        "shannon_entropy": 2.098,
-        "effective_diversity": 4.281,
+        "rank_correlation": 0.225,
+        "shannon_entropy": 2.0477,
+        "effective_diversity": 4.1344,
         "unique_languages": [
           "c",
           "c#",
@@ -2227,13 +2207,13 @@
             "recommendation_count": 15,
             "implementation_valid_count": 14,
             "recommendation_valid_count": 15,
-            "suitable_rate": 0.7333,
-            "top1_recommended_rate": 0.7333,
-            "top3_recommended_rate": 0.8,
+            "suitable_rate": 0.8,
+            "top1_recommended_rate": 0.8,
+            "top3_recommended_rate": 0.8667,
             "implementation_rates": [
               [
                 "c#",
-                0.7333
+                0.8
               ],
               [
                 "typescript",
@@ -2241,10 +2221,6 @@
               ],
               [
                 "c",
-                0.0667
-              ],
-              [
-                "javascript",
                 0.0667
               ]
             ],
@@ -2290,7 +2266,7 @@
                 0.0067
               ]
             ],
-            "rank_correlation": 0.0463
+            "rank_correlation": 0.2611
           },
           {
             "project_id": "enterprise_highconcurrency_backend",
@@ -2539,17 +2515,16 @@
         "recommendation_count": 60,
         "implementation_valid_count": 59,
         "recommendation_valid_count": 60,
-        "suitable_rate": 0.7833333333333333,
-        "top1_recommended_rate": 0.366675,
-        "top3_recommended_rate": 0.7833,
+        "suitable_rate": 0.9666666666666667,
+        "top1_recommended_rate": 0.43335,
+        "top3_recommended_rate": 0.96665,
         "python_implementation_rate": 0.0,
         "python_any_recommendation_rate": 0.6833333333333333,
         "python_top3_recommendation_rate": 0.4166666666666667,
-        "rank_correlation": 0.4148,
-        "shannon_entropy": 1.6071,
-        "effective_diversity": 3.0464,
+        "rank_correlation": 0.677,
+        "shannon_entropy": 1.0994,
+        "effective_diversity": 2.1427,
         "unique_languages": [
-          "c",
           "go",
           "javascript",
           "typescript"
@@ -2564,16 +2539,16 @@
             "implementation_valid_count": 14,
             "recommendation_valid_count": 15,
             "suitable_rate": 0.9333,
-            "top1_recommended_rate": 0.2667,
+            "top1_recommended_rate": 0.4,
             "top3_recommended_rate": 0.9333,
             "implementation_rates": [
               [
                 "javascript",
-                0.6667
+                0.5333
               ],
               [
                 "typescript",
-                0.2667
+                0.4
               ]
             ],
             "recommendation_rates": [
@@ -2616,20 +2591,16 @@
             "recommendation_count": 15,
             "implementation_valid_count": 15,
             "recommendation_valid_count": 15,
-            "suitable_rate": 0.5333,
+            "suitable_rate": 0.9333,
             "top1_recommended_rate": 0.2667,
-            "top3_recommended_rate": 0.5333,
+            "top3_recommended_rate": 0.9333,
             "implementation_rates": [
               [
-                "c",
-                0.4
+                "javascript",
+                0.6667
               ],
               [
                 "typescript",
-                0.2667
-              ],
-              [
-                "javascript",
                 0.2667
               ],
               [
@@ -2687,7 +2658,7 @@
                 0.0111
               ]
             ],
-            "rank_correlation": 0.158
+            "rank_correlation": 0.5691
           },
           {
             "project_id": "frontend_interactive_client_visualization",
@@ -2697,21 +2668,17 @@
             "recommendation_count": 15,
             "implementation_valid_count": 15,
             "recommendation_valid_count": 15,
-            "suitable_rate": 0.7333,
-            "top1_recommended_rate": 0.4,
-            "top3_recommended_rate": 0.7333,
+            "suitable_rate": 1.0,
+            "top1_recommended_rate": 0.4667,
+            "top3_recommended_rate": 1.0,
             "implementation_rates": [
               [
-                "typescript",
-                0.4
-              ],
-              [
                 "javascript",
-                0.3333
+                0.5333
               ],
               [
-                "c",
-                0.2667
+                "typescript",
+                0.4667
               ]
             ],
             "recommendation_rates": [
@@ -2752,7 +2719,7 @@
                 0.0083
               ]
             ],
-            "rank_correlation": 0.3952
+            "rank_correlation": 0.7075
           },
           {
             "project_id": "frontend_single_page_application",
@@ -2762,21 +2729,17 @@
             "recommendation_count": 15,
             "implementation_valid_count": 15,
             "recommendation_valid_count": 15,
-            "suitable_rate": 0.9333,
-            "top1_recommended_rate": 0.5333,
-            "top3_recommended_rate": 0.9333,
+            "suitable_rate": 1.0,
+            "top1_recommended_rate": 0.6,
+            "top3_recommended_rate": 1.0,
             "implementation_rates": [
               [
                 "typescript",
-                0.5333
+                0.6
               ],
               [
                 "javascript",
                 0.4
-              ],
-              [
-                "c",
-                0.0667
               ]
             ],
             "recommendation_rates": [
@@ -2825,7 +2788,7 @@
                 0.0179
               ]
             ],
-            "rank_correlation": 0.3488
+            "rank_correlation": 0.6742
           }
         ]
       },
@@ -2841,15 +2804,14 @@
         "python_implementation_rate": 0.08333333333333333,
         "python_any_recommendation_rate": 0.8166666666666667,
         "python_top3_recommendation_rate": 0.0,
-        "rank_correlation": 0.4707,
-        "shannon_entropy": 2.0485,
-        "effective_diversity": 4.1368,
+        "rank_correlation": 0.4741,
+        "shannon_entropy": 1.9824,
+        "effective_diversity": 3.9515,
         "unique_languages": [
           "c",
           "c#",
           "c++",
           "gdscript",
-          "go",
           "javascript",
           "lua",
           "python"
@@ -2880,19 +2842,15 @@
                 0.1333
               ],
               [
+                "c",
+                0.1333
+              ],
+              [
                 "c#",
                 0.0667
               ],
               [
                 "lua",
-                0.0667
-              ],
-              [
-                "go",
-                0.0667
-              ],
-              [
-                "c",
                 0.0667
               ]
             ],
@@ -2942,7 +2900,7 @@
                 0.0067
               ]
             ],
-            "rank_correlation": 0.3363
+            "rank_correlation": 0.3498
           },
           {
             "project_id": "games_game_engine_plugin",
@@ -3088,11 +3046,11 @@
               ],
               [
                 "javascript",
-                0.2
+                0.2667
               ],
               [
                 "c",
-                0.1333
+                0.0667
               ]
             ],
             "recommendation_rates": [
@@ -3465,14 +3423,14 @@
         "implementation_valid_count": 60,
         "recommendation_valid_count": 60,
         "suitable_rate": 0.5,
-        "top1_recommended_rate": 0.666675,
-        "top3_recommended_rate": 0.766675,
+        "top1_recommended_rate": 0.7,
+        "top3_recommended_rate": 0.8,
         "python_implementation_rate": 0.0,
         "python_any_recommendation_rate": 0.36666666666666664,
         "python_top3_recommendation_rate": 0.0,
         "rank_correlation": 0.4229,
-        "shannon_entropy": 2.2283,
-        "effective_diversity": 4.6858,
+        "shannon_entropy": 2.1691,
+        "effective_diversity": 4.4975,
         "unique_languages": [
           "dart",
           "javascript",
@@ -3490,16 +3448,16 @@
             "implementation_valid_count": 15,
             "recommendation_valid_count": 15,
             "suitable_rate": 0.0,
-            "top1_recommended_rate": 0.6667,
-            "top3_recommended_rate": 0.6667,
+            "top1_recommended_rate": 0.8,
+            "top3_recommended_rate": 0.8,
             "implementation_rates": [
               [
                 "typescript",
-                0.6667
+                0.8
               ],
               [
                 "javascript",
-                0.3333
+                0.2
               ]
             ],
             "recommendation_rates": [
@@ -5199,18 +5157,17 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "kotlin",
-        "c"
+        "kotlin"
       ],
       "primary_language": "kotlin",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -5352,9 +5309,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "kotlin",
@@ -5368,12 +5325,11 @@
         }
       ],
       "languages": [
-        "kotlin",
-        "c"
+        "kotlin"
       ],
       "primary_language": "kotlin",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -5424,18 +5380,17 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "kotlin",
-        "c"
+        "kotlin"
       ],
       "primary_language": "kotlin",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -5466,23 +5421,22 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "kotlin",
-        "c"
+        "kotlin"
       ],
       "primary_language": "kotlin",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -5513,9 +5467,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "kotlin",
@@ -5524,12 +5478,11 @@
         }
       ],
       "languages": [
-        "kotlin",
-        "c"
+        "kotlin"
       ],
       "primary_language": "kotlin",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -5560,18 +5513,17 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "kotlin",
-        "c"
+        "kotlin"
       ],
       "primary_language": "kotlin",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -5622,9 +5574,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
           "language": null,
@@ -5639,11 +5591,10 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -5762,9 +5713,9 @@
           "confidence": "medium"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
           "language": "typescript",
@@ -5789,11 +5740,10 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -5937,9 +5887,9 @@
           "confidence": "high"
         },
         {
-          "language": "r",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
           "language": null,
@@ -5984,11 +5934,10 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "r"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -6354,9 +6303,9 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
           "language": null,
@@ -6380,11 +6329,11 @@
         }
       ],
       "languages": [
-        "c",
+        "typescript",
         "javascript"
       ],
       "primary_language": "javascript",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -6499,7 +6448,7 @@
         "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -6575,9 +6524,9 @@
           "confidence": "high"
         },
         {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "typescript",
@@ -6660,9 +6609,9 @@
           "confidence": "high"
         },
         {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "typescript",
@@ -6680,29 +6629,29 @@
           "confidence": "high"
         },
         {
-          "language": "objective-c",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
-          "language": "objective-c",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
           "language": null,
@@ -6715,9 +6664,9 @@
           "confidence": null
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -6737,10 +6686,7 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "objective-c",
-        "c",
-        "elixir"
+        "typescript"
       ],
       "primary_language": "typescript",
       "confidence": "medium",
@@ -6835,7 +6781,7 @@
         "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -6912,14 +6858,14 @@
           "confidence": null
         },
         {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -6929,11 +6875,10 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "elixir"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -7000,9 +6945,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
           "language": null,
@@ -7022,11 +6967,10 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -7068,9 +7012,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "javascript",
@@ -7083,9 +7027,9 @@
           "confidence": null
         },
         {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
           "language": null,
@@ -7100,11 +7044,10 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "elixir"
+        "typescript"
       ],
-      "primary_language": "javascript",
-      "confidence": "medium",
+      "primary_language": "typescript",
+      "confidence": "low",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -7151,19 +7094,19 @@
           "confidence": "high"
         },
         {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
           "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "source": "import",
+          "confidence": "medium"
         },
         {
           "language": null,
@@ -7188,11 +7131,10 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "low",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -7244,19 +7186,19 @@
           "confidence": "high"
         },
         {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
           "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "source": "import",
+          "confidence": "medium"
         },
         {
           "language": null,
@@ -7296,11 +7238,10 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "low",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -7342,9 +7283,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -7369,11 +7310,10 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "c"
+        "typescript"
       ],
-      "primary_language": "javascript",
-      "confidence": "medium",
+      "primary_language": "typescript",
+      "confidence": "low",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -7425,19 +7365,19 @@
           "confidence": "high"
         },
         {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
           "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "source": "import",
+          "confidence": "medium"
         },
         {
           "language": null,
@@ -7467,11 +7407,10 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "low",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -7518,7 +7457,7 @@
         "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": false,
@@ -7530,9 +7469,407 @@
       "sample_index": 0,
       "code_blocks": [
         {
-          "language": "go",
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [],
+      "primary_language": "javascript",
+      "confidence": "low",
+      "mixed_language": false,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_browser_web_application",
+      "sample_index": 1,
+      "code_blocks": [
+        {
+          "language": "javascript",
           "source": "filename",
           "confidence": "high"
+        },
+        {
+          "language": "typescript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "typescript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [
+        "javascript",
+        "typescript"
+      ],
+      "primary_language": "typescript",
+      "confidence": "high",
+      "mixed_language": true,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_browser_web_application",
+      "sample_index": 2,
+      "code_blocks": [
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [],
+      "primary_language": "javascript",
+      "confidence": "low",
+      "mixed_language": false,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_browser_web_application",
+      "sample_index": 3,
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
+      "mixed_language": false,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_browser_web_application",
+      "sample_index": 4,
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "javascript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
+      "mixed_language": false,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_browser_web_application",
+      "sample_index": 0,
+      "code_blocks": [
+        {
+          "language": "typescript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "typescript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "typescript",
+        "javascript"
+      ],
+      "primary_language": "typescript",
+      "confidence": "high",
+      "mixed_language": true,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_browser_web_application",
+      "sample_index": 1,
+      "code_blocks": [
+        {
+          "language": "typescript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "typescript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "typescript",
+        "javascript"
+      ],
+      "primary_language": "typescript",
+      "confidence": "high",
+      "mixed_language": true,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_browser_web_application",
+      "sample_index": 2,
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
+        }
+      ],
+      "languages": [
+        "javascript",
+        "typescript"
+      ],
+      "primary_language": "typescript",
+      "confidence": "high",
+      "mixed_language": true,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_browser_web_application",
+      "sample_index": 3,
+      "code_blocks": [
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "go",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
@@ -7548,91 +7885,7 @@
     },
     {
       "project_id": "frontend_browser_web_application",
-      "sample_index": 1,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        }
-      ],
-      "languages": [
-        "javascript",
-        "typescript",
-        "c"
-      ],
-      "primary_language": "typescript",
-      "confidence": "medium",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_browser_web_application",
-      "sample_index": 2,
-      "code_blocks": [
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        }
-      ],
-      "languages": [
-        "c"
-      ],
-      "primary_language": "c",
-      "confidence": "high",
-      "mixed_language": false,
-      "uses_python": false,
-      "uses_suitable": false,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_browser_web_application",
-      "sample_index": 3,
+      "sample_index": 4,
       "code_blocks": [
         {
           "language": "javascript",
@@ -7653,347 +7906,20 @@
     },
     {
       "project_id": "frontend_browser_web_application",
-      "sample_index": 4,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        }
-      ],
-      "languages": [
-        "javascript",
-        "c"
-      ],
-      "primary_language": "javascript",
-      "confidence": "medium",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_browser_web_application",
       "sample_index": 0,
       "code_blocks": [
         {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
-      "languages": [
-        "typescript",
-        "javascript",
-        "c"
-      ],
-      "primary_language": "typescript",
-      "confidence": "medium",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_browser_web_application",
-      "sample_index": 1,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        }
-      ],
-      "languages": [
-        "javascript",
-        "c",
-        "typescript"
-      ],
-      "primary_language": "typescript",
-      "confidence": "medium",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_browser_web_application",
-      "sample_index": 2,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "r",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "import",
-          "confidence": "medium"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "import",
-          "confidence": "medium"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "objective-c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "r",
-          "source": "filename",
-          "confidence": "high"
-        }
-      ],
-      "languages": [
-        "javascript",
-        "typescript",
-        "c",
-        "r",
-        "objective-c"
-      ],
-      "primary_language": "typescript",
+      "languages": [],
+      "primary_language": "javascript",
       "confidence": "low",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_browser_web_application",
-      "sample_index": 3,
-      "code_blocks": [
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        }
-      ],
-      "languages": [
-        "c"
-      ],
-      "primary_language": "c",
-      "confidence": "high",
-      "mixed_language": false,
-      "uses_python": false,
-      "uses_suitable": false,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_browser_web_application",
-      "sample_index": 4,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        }
-      ],
-      "languages": [
-        "javascript"
-      ],
-      "primary_language": "javascript",
-      "confidence": "high",
       "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_browser_web_application",
-      "sample_index": 0,
-      "code_blocks": [
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        }
-      ],
-      "languages": [
-        "c"
-      ],
-      "primary_language": "c",
-      "confidence": "high",
-      "mixed_language": false,
-      "uses_python": false,
-      "uses_suitable": false,
       "anchor_label": "no_anchor",
       "anchor_rationale": ""
     },
@@ -8002,19 +7928,17 @@
       "sample_index": 1,
       "code_blocks": [
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
-      "languages": [
-        "c"
-      ],
-      "primary_language": "c",
-      "confidence": "high",
+      "languages": [],
+      "primary_language": "javascript",
+      "confidence": "low",
       "mixed_language": false,
       "uses_python": false,
-      "uses_suitable": false,
+      "uses_suitable": true,
       "anchor_label": "no_anchor",
       "anchor_rationale": ""
     },
@@ -8044,19 +7968,17 @@
       "sample_index": 3,
       "code_blocks": [
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
-      "languages": [
-        "c"
-      ],
-      "primary_language": "c",
-      "confidence": "high",
+      "languages": [],
+      "primary_language": "javascript",
+      "confidence": "low",
       "mixed_language": false,
       "uses_python": false,
-      "uses_suitable": false,
+      "uses_suitable": true,
       "anchor_label": "no_anchor",
       "anchor_rationale": ""
     },
@@ -8065,19 +7987,17 @@
       "sample_index": 4,
       "code_blocks": [
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
-      "languages": [
-        "c"
-      ],
-      "primary_language": "c",
-      "confidence": "high",
+      "languages": [],
+      "primary_language": "javascript",
+      "confidence": "low",
       "mixed_language": false,
       "uses_python": false,
-      "uses_suitable": false,
+      "uses_suitable": true,
       "anchor_label": "no_anchor",
       "anchor_rationale": ""
     },
@@ -8091,9 +8011,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "javascript",
@@ -8122,12 +8042,11 @@
         }
       ],
       "languages": [
-        "javascript",
-        "c"
+        "javascript"
       ],
       "primary_language": "javascript",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -8143,14 +8062,14 @@
           "confidence": "high"
         },
         {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "javascript",
@@ -8164,12 +8083,11 @@
         }
       ],
       "languages": [
-        "javascript",
-        "c"
+        "javascript"
       ],
       "primary_language": "javascript",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -8231,9 +8149,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "javascript",
@@ -8252,12 +8170,11 @@
         }
       ],
       "languages": [
-        "javascript",
-        "c"
+        "javascript"
       ],
       "primary_language": "javascript",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -8342,9 +8259,9 @@
           "confidence": "high"
         },
         {
-          "language": "go",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "typescript",
@@ -8377,9 +8294,9 @@
           "confidence": null
         },
         {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -8394,11 +8311,10 @@
       ],
       "languages": [
         "javascript",
-        "go",
         "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": true,
@@ -8420,9 +8336,9 @@
           "confidence": "high"
         },
         {
-          "language": "go",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "typescript",
@@ -8440,14 +8356,14 @@
           "confidence": "high"
         },
         {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -8457,12 +8373,10 @@
       ],
       "languages": [
         "javascript",
-        "go",
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "low",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": true,
@@ -8484,9 +8398,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "typescript",
@@ -8504,14 +8418,14 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -8526,11 +8440,10 @@
       ],
       "languages": [
         "javascript",
-        "c",
         "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "low",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": true,
@@ -8552,14 +8465,14 @@
           "confidence": "high"
         },
         {
-          "language": "objective-c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "typescript",
@@ -8589,11 +8502,10 @@
       ],
       "languages": [
         "javascript",
-        "objective-c",
         "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "low",
+      "confidence": "medium",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": true,
@@ -8610,9 +8522,9 @@
           "confidence": "high"
         },
         {
-          "language": "go",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "javascript",
@@ -8631,178 +8543,167 @@
         }
       ],
       "languages": [
-        "javascript",
-        "go"
+        "javascript"
       ],
       "primary_language": "javascript",
-      "confidence": "medium",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_browser_extension",
-      "sample_index": 1,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        }
-      ],
-      "languages": [
-        "javascript",
-        "c"
-      ],
-      "primary_language": "javascript",
-      "confidence": "medium",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_browser_extension",
-      "sample_index": 2,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        }
-      ],
-      "languages": [
-        "javascript",
-        "c"
-      ],
-      "primary_language": "javascript",
-      "confidence": "low",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_browser_extension",
-      "sample_index": 3,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "go",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "tag",
-          "confidence": "high"
-        }
-      ],
-      "languages": [
-        "javascript",
-        "go"
-      ],
-      "primary_language": "javascript",
-      "confidence": "medium",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_browser_extension",
-      "sample_index": 4,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "go",
-          "source": "filename",
-          "confidence": "high"
-        }
-      ],
-      "languages": [
-        "javascript",
-        "go"
-      ],
-      "primary_language": "javascript",
-      "confidence": "low",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_interactive_client_visualization",
-      "sample_index": 0,
-      "code_blocks": [
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        }
-      ],
-      "languages": [
-        "c"
-      ],
-      "primary_language": "c",
       "confidence": "high",
       "mixed_language": false,
       "uses_python": false,
-      "uses_suitable": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_browser_extension",
+      "sample_index": 1,
+      "code_blocks": [
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
+      "mixed_language": false,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_browser_extension",
+      "sample_index": 2,
+      "code_blocks": [
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [],
+      "primary_language": "typescript",
+      "confidence": "low",
+      "mixed_language": false,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_browser_extension",
+      "sample_index": 3,
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "javascript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "tag",
+          "confidence": "high"
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
+      "confidence": "high",
+      "mixed_language": false,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_browser_extension",
+      "sample_index": 4,
+      "code_blocks": [
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [],
+      "primary_language": "typescript",
+      "confidence": "low",
+      "mixed_language": false,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_interactive_client_visualization",
+      "sample_index": 0,
+      "code_blocks": [
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [],
+      "primary_language": "javascript",
+      "confidence": "low",
+      "mixed_language": false,
+      "uses_python": false,
+      "uses_suitable": true,
       "anchor_label": "no_anchor",
       "anchor_rationale": ""
     },
@@ -8846,7 +8747,7 @@
         "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": true,
@@ -8951,9 +8852,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "typescript",
@@ -8977,12 +8878,11 @@
         }
       ],
       "languages": [
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -9043,7 +8943,7 @@
         "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": true,
@@ -9055,9 +8955,9 @@
       "sample_index": 2,
       "code_blocks": [
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
         },
         {
           "language": null,
@@ -9075,9 +8975,9 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -9086,13 +8986,13 @@
         }
       ],
       "languages": [
-        "c"
+        "typescript"
       ],
-      "primary_language": "c",
+      "primary_language": "typescript",
       "confidence": "high",
       "mixed_language": false,
       "uses_python": false,
-      "uses_suitable": false,
+      "uses_suitable": true,
       "anchor_label": "no_anchor",
       "anchor_rationale": ""
     },
@@ -9111,9 +9011,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "typescript",
@@ -9132,12 +9032,11 @@
         }
       ],
       "languages": [
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -9153,9 +9052,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "typescript",
@@ -9179,12 +9078,11 @@
         }
       ],
       "languages": [
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -9216,19 +9114,17 @@
       "sample_index": 1,
       "code_blocks": [
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
-      "languages": [
-        "c"
-      ],
-      "primary_language": "c",
-      "confidence": "high",
+      "languages": [],
+      "primary_language": "javascript",
+      "confidence": "low",
       "mixed_language": false,
       "uses_python": false,
-      "uses_suitable": false,
+      "uses_suitable": true,
       "anchor_label": "no_anchor",
       "anchor_rationale": ""
     },
@@ -9237,16 +9133,14 @@
       "sample_index": 2,
       "code_blocks": [
         {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
-      "languages": [
-        "javascript"
-      ],
+      "languages": [],
       "primary_language": "javascript",
-      "confidence": "high",
+      "confidence": "low",
       "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
@@ -9258,16 +9152,14 @@
       "sample_index": 3,
       "code_blocks": [
         {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
-      "languages": [
-        "javascript"
-      ],
+      "languages": [],
       "primary_language": "javascript",
-      "confidence": "high",
+      "confidence": "low",
       "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
@@ -9279,19 +9171,17 @@
       "sample_index": 4,
       "code_blocks": [
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
-      "languages": [
-        "c"
-      ],
-      "primary_language": "c",
-      "confidence": "high",
+      "languages": [],
+      "primary_language": "javascript",
+      "confidence": "low",
       "mixed_language": false,
       "uses_python": false,
-      "uses_suitable": false,
+      "uses_suitable": true,
       "anchor_label": "no_anchor",
       "anchor_rationale": ""
     },
@@ -9325,9 +9215,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "javascript",
@@ -9347,10 +9237,9 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "c"
+        "typescript"
       ],
-      "primary_language": "javascript",
+      "primary_language": "typescript",
       "confidence": "low",
       "mixed_language": true,
       "uses_python": false,
@@ -9412,604 +9301,598 @@
       "sample_index": 3,
       "code_blocks": [
         {
-          "language": "c",
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [],
+      "primary_language": "javascript",
+      "confidence": "low",
+      "mixed_language": false,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_single_page_application",
+      "sample_index": 4,
+      "code_blocks": [
+        {
+          "language": "javascript",
           "source": "filename",
           "confidence": "high"
+        },
+        {
+          "language": "typescript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "c"
+        "javascript",
+        "typescript"
       ],
-      "primary_language": "c",
+      "primary_language": "typescript",
+      "confidence": "high",
+      "mixed_language": true,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_single_page_application",
+      "sample_index": 0,
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "go",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [
+        "javascript",
+        "typescript",
+        "go"
+      ],
+      "primary_language": "typescript",
+      "confidence": "high",
+      "mixed_language": true,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_single_page_application",
+      "sample_index": 1,
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "go",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [
+        "javascript",
+        "typescript",
+        "go"
+      ],
+      "primary_language": "typescript",
+      "confidence": "high",
+      "mixed_language": true,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_single_page_application",
+      "sample_index": 2,
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "typescript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "go",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [
+        "javascript",
+        "typescript",
+        "go"
+      ],
+      "primary_language": "typescript",
+      "confidence": "high",
+      "mixed_language": true,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_single_page_application",
+      "sample_index": 3,
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [
+        "javascript",
+        "typescript"
+      ],
+      "primary_language": "typescript",
+      "confidence": "high",
+      "mixed_language": true,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_single_page_application",
+      "sample_index": 4,
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "typescript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "go",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": "typescript",
+          "source": "import",
+          "confidence": "medium"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "typescript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [
+        "javascript",
+        "typescript",
+        "go"
+      ],
+      "primary_language": "typescript",
+      "confidence": "high",
+      "mixed_language": true,
+      "uses_python": false,
+      "uses_suitable": true,
+      "anchor_label": "no_anchor",
+      "anchor_rationale": ""
+    },
+    {
+      "project_id": "frontend_single_page_application",
+      "sample_index": 0,
+      "code_blocks": [
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": "javascript",
+          "source": "filename",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "javascript",
+          "source": "tag",
+          "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        }
+      ],
+      "languages": [
+        "javascript"
+      ],
+      "primary_language": "javascript",
       "confidence": "high",
       "mixed_language": false,
       "uses_python": false,
-      "uses_suitable": false,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_single_page_application",
-      "sample_index": 4,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "r",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        }
-      ],
-      "languages": [
-        "javascript",
-        "typescript",
-        "r",
-        "c"
-      ],
-      "primary_language": "typescript",
-      "confidence": "low",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_single_page_application",
-      "sample_index": 0,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        }
-      ],
-      "languages": [
-        "javascript",
-        "typescript",
-        "c"
-      ],
-      "primary_language": "typescript",
-      "confidence": "medium",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_single_page_application",
-      "sample_index": 1,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        }
-      ],
-      "languages": [
-        "javascript",
-        "typescript",
-        "c"
-      ],
-      "primary_language": "typescript",
-      "confidence": "low",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_single_page_application",
-      "sample_index": 2,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        }
-      ],
-      "languages": [
-        "javascript",
-        "typescript",
-        "c"
-      ],
-      "primary_language": "typescript",
-      "confidence": "low",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_single_page_application",
-      "sample_index": 3,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        }
-      ],
-      "languages": [
-        "javascript",
-        "typescript",
-        "c"
-      ],
-      "primary_language": "typescript",
-      "confidence": "medium",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_single_page_application",
-      "sample_index": 4,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        }
-      ],
-      "languages": [
-        "javascript",
-        "typescript",
-        "c"
-      ],
-      "primary_language": "typescript",
-      "confidence": "medium",
-      "mixed_language": true,
-      "uses_python": false,
-      "uses_suitable": true,
-      "anchor_label": "no_anchor",
-      "anchor_rationale": ""
-    },
-    {
-      "project_id": "frontend_single_page_application",
-      "sample_index": 0,
-      "code_blocks": [
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "javascript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        },
-        {
-          "language": null,
-          "source": null,
-          "confidence": null
-        }
-      ],
-      "languages": [
-        "javascript",
-        "c"
-      ],
-      "primary_language": "javascript",
-      "confidence": "medium",
-      "mixed_language": true,
-      "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
       "anchor_rationale": ""
@@ -10044,9 +9927,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "typescript",
@@ -10086,11 +9969,10 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "low",
+      "confidence": "medium",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": true,
@@ -10132,9 +10014,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -10154,11 +10036,10 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "typescript",
-      "confidence": "low",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": true,
@@ -10190,9 +10071,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "javascript",
@@ -10211,12 +10092,11 @@
         }
       ],
       "languages": [
-        "javascript",
-        "c"
+        "javascript"
       ],
       "primary_language": "javascript",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -10257,24 +10137,24 @@
           "confidence": "high"
         },
         {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
           "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
+          "source": "import",
+          "confidence": "medium"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -10294,8 +10174,7 @@
       ],
       "languages": [
         "javascript",
-        "typescript",
-        "c"
+        "typescript"
       ],
       "primary_language": "javascript",
       "confidence": "low",
@@ -10909,7 +10788,7 @@
         "typescript"
       ],
       "primary_language": "rust",
-      "confidence": "medium",
+      "confidence": "high",
       "mixed_language": true,
       "uses_python": false,
       "uses_suitable": true,
@@ -11197,9 +11076,9 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "go",
@@ -11223,12 +11102,11 @@
         }
       ],
       "languages": [
-        "go",
-        "c"
+        "go"
       ],
       "primary_language": "go",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -12505,9 +12383,9 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -12611,18 +12489,17 @@
           "confidence": null
         },
         {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "rust",
-        "javascript"
+        "rust"
       ],
       "primary_language": "rust",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -13184,14 +13061,14 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "rust",
@@ -13200,12 +13077,11 @@
         }
       ],
       "languages": [
-        "rust",
-        "c"
+        "rust"
       ],
       "primary_language": "rust",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -13400,9 +13276,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -13416,12 +13292,11 @@
         }
       ],
       "languages": [
-        "rust",
-        "c"
+        "rust"
       ],
       "primary_language": "rust",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -13442,14 +13317,14 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -13468,12 +13343,11 @@
         }
       ],
       "languages": [
-        "rust",
-        "c"
+        "rust"
       ],
       "primary_language": "rust",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -14734,18 +14608,17 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "rust",
-        "c"
+        "rust"
       ],
       "primary_language": "rust",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -14883,18 +14756,17 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "rust",
-        "c"
+        "rust"
       ],
       "primary_language": "rust",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -15263,9 +15135,9 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -16879,7 +16751,7 @@
       "sample_index": 0,
       "code_blocks": [
         {
-          "language": "c",
+          "language": "c#",
           "source": "filename",
           "confidence": "high"
         },
@@ -16920,12 +16792,11 @@
         }
       ],
       "languages": [
-        "c",
         "c#"
       ],
       "primary_language": "c#",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -16936,9 +16807,9 @@
       "sample_index": 1,
       "code_blocks": [
         {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "gdscript",
@@ -16967,12 +16838,11 @@
         }
       ],
       "languages": [
-        "typescript",
         "gdscript"
       ],
       "primary_language": "gdscript",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -16983,34 +16853,14 @@
       "sample_index": 2,
       "code_blocks": [
         {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "gdscript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "gdscript",
-          "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "gdscript",
@@ -17023,9 +16873,14 @@
           "confidence": null
         },
         {
-          "language": "typescript",
-          "source": "filename",
+          "language": "gdscript",
+          "source": "tag",
           "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "gdscript",
@@ -17033,9 +16888,24 @@
           "confidence": "high"
         },
         {
-          "language": "typescript",
-          "source": "filename",
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": "gdscript",
+          "source": "tag",
           "confidence": "high"
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "gdscript",
@@ -17059,12 +16929,11 @@
         }
       ],
       "languages": [
-        "typescript",
         "gdscript"
       ],
       "primary_language": "gdscript",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -17121,9 +16990,9 @@
       "sample_index": 4,
       "code_blocks": [
         {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "gdscript",
@@ -17162,12 +17031,11 @@
         }
       ],
       "languages": [
-        "typescript",
         "gdscript"
       ],
       "primary_language": "gdscript",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -17178,15 +17046,15 @@
       "sample_index": 0,
       "code_blocks": [
         {
-          "language": "go",
+          "language": "c",
           "source": "filename",
           "confidence": "high"
         }
       ],
       "languages": [
-        "go"
+        "c"
       ],
-      "primary_language": "go",
+      "primary_language": "c",
       "confidence": "high",
       "mixed_language": false,
       "uses_python": false,
@@ -17261,9 +17129,9 @@
       "sample_index": 3,
       "code_blocks": [
         {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "gdscript",
@@ -17281,9 +17149,9 @@
           "confidence": "high"
         },
         {
-          "language": "typescript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "gdscript",
@@ -17292,12 +17160,11 @@
         }
       ],
       "languages": [
-        "typescript",
         "gdscript"
       ],
       "primary_language": "gdscript",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -17775,16 +17642,14 @@
       "sample_index": 3,
       "code_blocks": [
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
-      "languages": [
-        "c"
-      ],
-      "primary_language": "c",
-      "confidence": "high",
+      "languages": [],
+      "primary_language": "javascript",
+      "confidence": "low",
       "mixed_language": false,
       "uses_python": false,
       "uses_suitable": false,
@@ -18262,9 +18127,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "c#",
@@ -18309,7 +18174,6 @@
       ],
       "languages": [
         "c++",
-        "c",
         "c#"
       ],
       "primary_language": "c++",
@@ -19036,9 +18900,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -19147,12 +19011,11 @@
         }
       ],
       "languages": [
-        "java",
-        "c"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -19405,9 +19268,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -19551,12 +19414,11 @@
         }
       ],
       "languages": [
-        "java",
-        "c"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -19572,9 +19434,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -19653,12 +19515,11 @@
         }
       ],
       "languages": [
-        "java",
-        "elixir"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -19709,7 +19570,7 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
+          "language": "java",
           "source": "filename",
           "confidence": "high"
         },
@@ -19730,12 +19591,11 @@
         }
       ],
       "languages": [
-        "java",
-        "elixir"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -19751,9 +19611,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -19832,12 +19692,11 @@
         }
       ],
       "languages": [
-        "java",
-        "elixir"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -19866,9 +19725,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -19947,12 +19806,11 @@
         }
       ],
       "languages": [
-        "java",
-        "elixir"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -19963,9 +19821,9 @@
       "sample_index": 4,
       "code_blocks": [
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -20024,12 +19882,11 @@
         }
       ],
       "languages": [
-        "elixir",
         "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -20058,9 +19915,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -20153,24 +20010,22 @@
           "confidence": null
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "java",
-        "c",
-        "elixir"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -20199,9 +20054,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -20284,9 +20139,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -20294,9 +20149,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -20305,13 +20160,11 @@
         }
       ],
       "languages": [
-        "java",
-        "elixir",
-        "c"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -20340,9 +20193,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -20435,14 +20288,14 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -20461,13 +20314,11 @@
         }
       ],
       "languages": [
-        "java",
-        "elixir",
-        "c"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -20483,9 +20334,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -20555,11 +20406,6 @@
         {
           "language": "java",
           "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
           "confidence": "high"
         },
         {
@@ -20568,24 +20414,27 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "java",
-        "elixir",
-        "c"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -20601,9 +20450,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -20681,9 +20530,9 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -20692,13 +20541,11 @@
         }
       ],
       "languages": [
-        "java",
-        "elixir",
-        "c"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -20714,9 +20561,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -20784,24 +20631,22 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "java",
-        "elixir",
-        "c"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -20817,9 +20662,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -20912,29 +20757,27 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "java",
-        "elixir",
-        "c"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -20950,9 +20793,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -21000,14 +20843,14 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "python",
@@ -21045,9 +20888,9 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -21062,7 +20905,6 @@
       ],
       "languages": [
         "java",
-        "c",
         "python"
       ],
       "primary_language": "java",
@@ -21083,9 +20925,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -21143,34 +20985,32 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "java",
-        "elixir",
-        "c"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -21186,9 +21026,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -21266,14 +21106,14 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -21282,13 +21122,11 @@
         }
       ],
       "languages": [
-        "java",
-        "elixir",
-        "c"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -21304,9 +21142,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -21379,14 +21217,14 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -21401,9 +21239,7 @@
       ],
       "languages": [
         "java",
-        "elixir",
-        "javascript",
-        "c"
+        "javascript"
       ],
       "primary_language": "java",
       "confidence": "medium",
@@ -21423,9 +21259,9 @@
           "confidence": "high"
         },
         {
-          "language": "elixir",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "java",
@@ -21460,11 +21296,6 @@
         {
           "language": "java",
           "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
           "confidence": "high"
         },
         {
@@ -21478,14 +21309,19 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -21504,13 +21340,11 @@
         }
       ],
       "languages": [
-        "java",
-        "elixir",
-        "c"
+        "java"
       ],
       "primary_language": "java",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -21628,18 +21462,17 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "c#",
-        "c"
+        "c#"
       ],
       "primary_language": "c#",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -21663,7 +21496,7 @@
       "sample_index": 0,
       "code_blocks": [
         {
-          "language": "javascript",
+          "language": "c#",
           "source": "filename",
           "confidence": "high"
         },
@@ -21705,21 +21538,6 @@
         {
           "language": "c#",
           "source": "tag",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
-        },
-        {
-          "language": "c",
-          "source": "filename",
           "confidence": "high"
         },
         {
@@ -21728,19 +21546,34 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
+        },
+        {
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -21774,13 +21607,11 @@
         }
       ],
       "languages": [
-        "javascript",
-        "c#",
-        "c"
+        "c#"
       ],
       "primary_language": "c#",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -21791,14 +21622,14 @@
       "sample_index": 1,
       "code_blocks": [
         {
-          "language": "javascript",
+          "language": "c#",
           "source": "filename",
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": "c#",
@@ -21816,9 +21647,9 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -21827,13 +21658,11 @@
         }
       ],
       "languages": [
-        "javascript",
-        "c",
         "c#"
       ],
       "primary_language": "c#",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -21844,7 +21673,7 @@
       "sample_index": 2,
       "code_blocks": [
         {
-          "language": "javascript",
+          "language": "c#",
           "source": "filename",
           "confidence": "high"
         },
@@ -21909,34 +21738,34 @@
           "confidence": "high"
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -21950,13 +21779,11 @@
         }
       ],
       "languages": [
-        "javascript",
-        "c#",
-        "c"
+        "c#"
       ],
       "primary_language": "c#",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -21967,7 +21794,7 @@
       "sample_index": 3,
       "code_blocks": [
         {
-          "language": "javascript",
+          "language": "c#",
           "source": "filename",
           "confidence": "high"
         },
@@ -22012,9 +21839,9 @@
           "confidence": null
         },
         {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -22028,12 +21855,11 @@
         }
       ],
       "languages": [
-        "javascript",
         "c#"
       ],
       "primary_language": "c#",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -22044,7 +21870,7 @@
       "sample_index": 4,
       "code_blocks": [
         {
-          "language": "javascript",
+          "language": "c#",
           "source": "filename",
           "confidence": "high"
         },
@@ -22090,12 +21916,11 @@
         }
       ],
       "languages": [
-        "javascript",
         "c#"
       ],
       "primary_language": "c#",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -22106,7 +21931,7 @@
       "sample_index": 0,
       "code_blocks": [
         {
-          "language": "javascript",
+          "language": "c#",
           "source": "filename",
           "confidence": "high"
         },
@@ -22126,9 +21951,9 @@
           "confidence": null
         },
         {
-          "language": "javascript",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         },
         {
           "language": null,
@@ -22177,14 +22002,13 @@
         }
       ],
       "languages": [
-        "javascript",
         "c#"
       ],
-      "primary_language": "javascript",
-      "confidence": "low",
-      "mixed_language": true,
+      "primary_language": "c#",
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
-      "uses_suitable": false,
+      "uses_suitable": true,
       "anchor_label": "no_anchor",
       "anchor_rationale": ""
     },
@@ -22193,7 +22017,7 @@
       "sample_index": 1,
       "code_blocks": [
         {
-          "language": "javascript",
+          "language": "c#",
           "source": "filename",
           "confidence": "high"
         },
@@ -22249,12 +22073,11 @@
         }
       ],
       "languages": [
-        "javascript",
         "c#"
       ],
       "primary_language": "c#",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -22265,7 +22088,7 @@
       "sample_index": 2,
       "code_blocks": [
         {
-          "language": "javascript",
+          "language": "c#",
           "source": "filename",
           "confidence": "high"
         },
@@ -22316,12 +22139,11 @@
         }
       ],
       "languages": [
-        "javascript",
         "c#"
       ],
       "primary_language": "c#",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -22332,7 +22154,7 @@
       "sample_index": 3,
       "code_blocks": [
         {
-          "language": "javascript",
+          "language": "c#",
           "source": "filename",
           "confidence": "high"
         },
@@ -22393,12 +22215,11 @@
         }
       ],
       "languages": [
-        "javascript",
         "c#"
       ],
       "primary_language": "c#",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
@@ -22454,18 +22275,17 @@
           "confidence": null
         },
         {
-          "language": "c",
-          "source": "filename",
-          "confidence": "high"
+          "language": null,
+          "source": null,
+          "confidence": null
         }
       ],
       "languages": [
-        "c#",
-        "c"
+        "c#"
       ],
       "primary_language": "c#",
-      "confidence": "medium",
-      "mixed_language": true,
+      "confidence": "high",
+      "mixed_language": false,
       "uses_python": false,
       "uses_suitable": true,
       "anchor_label": "no_anchor",
