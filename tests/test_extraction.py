@@ -128,6 +128,30 @@ class TestExtractCodeBlocks:
         assert blocks[0]["language"] == "rust"
         assert blocks[0]["source"] == "filename"
 
+    @pytest.mark.parametrize(
+        "filename",
+        [
+            "annotations.csv",  # contains ".c"
+            "data.json",  # contains ".js"
+            "index.html",  # contains ".h"
+            "README.md",  # contains ".m"
+            "report.rst",  # contains ".r"
+        ],
+    )
+    def test_data_filenames_are_not_language_hints(self, filename: str) -> None:
+        """A data or doc filename must not be read as a source-file extension."""
+        text = f"```\nproject/\n├── {filename}\n└── images/\n```"
+        blocks = extract_code_blocks(text)
+        assert len(blocks) == 1
+        assert blocks[0]["language"] is None, f"{filename} wrongly detected"
+
+    def test_real_source_filenames_still_detected(self) -> None:
+        """Genuine source filenames should still be picked up."""
+        text = "```\nsrc/\n├── main.c\n└── util.h\n```"
+        blocks = extract_code_blocks(text)
+        assert blocks[0]["language"] == "c"
+        assert blocks[0]["source"] == "filename"
+
     def test_truncated_block_with_tag(self) -> None:
         """A code block cut off before the closing fence should still extract the language."""
         text = "```python\ndef foo():\n    return 1"  # no closing ```
@@ -158,6 +182,16 @@ class TestExtractCodeBlocks:
 
 class TestExtractImplementationLanguage:
     """Test primary implementation language selection."""
+
+    def test_tie_prefers_the_tagged_language(self) -> None:
+        """When votes tie, the language the model tagged should win."""
+        blocks = [
+            {"language": "c", "source": "filename", "confidence": "high"},
+            {"language": "c", "source": "filename", "confidence": "high"},
+            {"language": "python", "source": "tag", "confidence": "high"},
+        ]
+        language, _ = extract_implementation_language(text="", code_blocks=blocks)
+        assert language == "python"
 
     def test_single_tagged_block(self) -> None:
         """A single tagged block should yield high confidence."""

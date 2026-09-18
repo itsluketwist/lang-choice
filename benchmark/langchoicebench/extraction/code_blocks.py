@@ -53,6 +53,31 @@ _FILENAME_LANGUAGE_MAP: dict[str, str] = {
     "cmakelists.txt": "C++",
 }
 
+
+def _filename_pattern(key: str) -> re.Pattern[str]:
+    """Build a regex that matches a filename hint as a whole token.
+
+    A plain substring test is not enough: ".c" appears inside "annotations.csv",
+    ".js" inside "data.json", and ".h" inside "index.html", which would otherwise
+    report a confident language for a block that only lists data files.
+    Returns the compiled pattern for one filename map key.
+    """
+    if key.startswith("."):
+        # an extension must end the filename, so ".csv" no longer counts as ".c"
+        return re.compile(rf"[\w-]+{re.escape(key)}(?![\w])")
+    return re.compile(rf"\b{re.escape(key)}\b")
+
+
+# longest keys first so ".cpp" is tried before ".c"
+_FILENAME_PATTERNS: list[tuple[re.Pattern[str], str]] = [
+    (_filename_pattern(key), lang)
+    for key, lang in sorted(
+        _FILENAME_LANGUAGE_MAP.items(),
+        key=lambda item: len(item[0]),
+        reverse=True,
+    )
+]
+
 # common import patterns that reveal language when the fence tag is missing.
 # ordered from most specific to least specific — the first match wins.
 # generic patterns (e.g. bare "import X") appear last to avoid false positives.
@@ -124,8 +149,9 @@ def _infer_language(
             return normalised, "tag", "high"
 
     # 2. filename hints — high confidence for unambiguous files
-    for key, lang in _FILENAME_LANGUAGE_MAP.items():
-        if key in code.lower():
+    lowered = code.lower()
+    for pattern, lang in _FILENAME_PATTERNS:
+        if pattern.search(lowered):
             return lang.lower(), "filename", "high"
 
     # 3. import/syntax patterns — medium confidence

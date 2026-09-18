@@ -130,6 +130,8 @@ def extract_implementation_language(
 ) -> tuple[str | None, str]:
     """Identify the primary language from code blocks in an implementation response.
 
+    Blocks with an explicit fence tag take precedence; filename and import hints
+    are only consulted when no block is tagged.
     Returns (primary_language, confidence): confidence is "high", "medium", "low", or "none".
     """
     if not code_blocks:
@@ -137,9 +139,19 @@ def extract_implementation_language(
         lang = _scan_text_for_language(text)
         return lang, "low" if lang else "none"
 
+    # an explicit fence tag is the model stating the language itself, so when any
+    # block carries one the untagged blocks are ignored entirely. without this a
+    # directory listing or sample output could outvote the actual code.
+    tagged_blocks = [
+        block
+        for block in code_blocks
+        if block.get("source") == "tag" and block.get("language")
+    ]
+    voting_blocks = tagged_blocks or code_blocks
+
     # count languages across blocks, weighting tag-sourced blocks more heavily
     language_votes: dict[str, int] = {}
-    for block in code_blocks:
+    for block in voting_blocks:
         lang = block.get("language")
         if not lang:
             continue
@@ -151,7 +163,10 @@ def extract_implementation_language(
         lang = _scan_text_for_language(text)
         return lang, "low" if lang else "none"
 
-    primary = max(language_votes, key=lambda k: language_votes[k])
+    # on a tie, prefer a language the model tagged explicitly over one inferred
+    # from a filename or import pattern
+    tagged = {block["language"] for block in tagged_blocks}
+    primary = max(language_votes, key=lambda k: (language_votes[k], k in tagged))
     unique_languages = len(
         {lang for lang in language_votes if language_votes[lang] > 0}
     )

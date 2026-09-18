@@ -92,6 +92,13 @@ Extracted signals from a single code-generation response.
 | `source` | `"tag"`, `"filename"`, `"import"`, `None` | How the language was detected |
 | `confidence` | `"high"`, `"medium"`, `None` | Tag/filename → high; import pattern → medium |
 
+**How `primary_language` is chosen:** an explicit fence tag is the model declaring the
+language itself, so when *any* block in a response is tagged, only tagged blocks are
+counted. Filename and import hints decide the language only when no block carries a tag.
+This stops scaffolding blocks — a directory listing, sample data, example console output —
+from outvoting the actual code. Filename hints also match whole filename tokens, so
+`annotations.csv` is not read as a `.c` file.
+
 ### `RecommendationResult`
 
 Extracted signals from a single language-recommendation response.
