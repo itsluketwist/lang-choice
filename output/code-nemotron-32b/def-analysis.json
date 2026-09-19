@@ -5998,7 +5998,7 @@
         "sample_index": 18,
         "source": "reasoning",
         "sentence": "We can do: \"What are the methods to handle missing data in Python?\"",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "games_game_engine_plugin__write",
@@ -6124,7 +6124,7 @@
         "sample_index": 18,
         "source": "reasoning",
         "sentence": "Let's use Python for simplicity and to avoid compilation, but note that in a real commercial engine, C++ might be preferred.",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "games_game_engine_plugin__create",
@@ -8198,7 +8198,7 @@
         "sample_index": 18,
         "source": "reasoning",
         "sentence": "So we can proceed as in the earlier example with Q5 ending with 'd'.",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "games_game_engine_plugin__create",
@@ -21647,7 +21647,7 @@
       "context_condition": "none",
       "anchor_label": "ambiguous_anchor",
       "anchor_rationale": "[reasoning] \"So we can proceed as in the earlier example with Q5 ending with 'd'.\" references prior context (terms: ['earlier example']) but without a co-occurring Python-specific language cue (prior assistant turns exist: False).",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "games_game_engine_plugin__write",
@@ -21847,7 +21847,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "games_game_engine_plugin__create",
@@ -22047,7 +22047,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "games_game_engine_plugin__generate",

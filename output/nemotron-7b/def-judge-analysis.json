@@ -1,14 +1,14 @@
 {
   "summary": {
     "total": 1680,
-    "python_responses": 1118,
-    "judged": 1118,
+    "python_responses": 1119,
+    "judged": 1119,
     "phantom_python_evidence": 78,
     "language_mismatch": 39,
     "python_for_ease": 49,
-    "automatic_python": 952,
+    "automatic_python": 953,
     "unclear_other": 0,
-    "phantom_rate": 0.06976744186046512
+    "phantom_rate": 0.06970509383378017
   },
   "examples": {
     "phantom_python_evidence": [
@@ -16891,6 +16891,23 @@
         ],
         "confidence": "high",
         "rationale": "The trace never makes a cross-language decision; it simply proceeds with Python-specific modules and implementation details, so Python was assumed rather than chosen for a stated reason."
+      }
+    },
+    {
+      "model": "nemotron-7b",
+      "id": "mobile_app_store_consumer_app__write",
+      "project_id": "mobile_app_store_consumer_app",
+      "sample_index": 17,
+      "judge_model": "gpt-5.4-mini",
+      "verdict": {
+        "label": "automatic_python",
+        "evidence_quotes": [
+          "We'll use:",
+          "- Python with the `flask` framework for the backend.",
+          "We'll use `flask_socketio` to handle the websockets."
+        ],
+        "confidence": "high",
+        "rationale": "The trace explicitly picks Python as the implementation language without any cross-language comparison or ease-based justification, so this is an automatic Python choice."
       }
     }
   ]

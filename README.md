@@ -100,6 +100,12 @@ run --model deepseek-pro \
 
 One-off analysis code is in Jupyter notebooks under [`notebooks/`](notebooks/).
 
+The Spearman correlation between PyIR and SLR across models, quoted in the paper, uses the same per-model averages as the results table:
+
+```shell
+python -m src.analysis.correlation
+```
+
 ## *ablations*
 
 Three follow-up experiments run on a subset of models, submitted together by
@@ -155,7 +161,8 @@ src/                 — experiment infrastructure (not published)
   run.py             — experiment pipeline
   cli.py             — CLI entry point
   generation/        — model prompting and response collection
-  analysis/          — legacy regex-based anchor/hallucination detection
+  analysis/          — legacy regex-based anchor/hallucination detection, and the
+                       PyIR vs SLR Spearman correlation reported in the paper
   utils/             — config, logging, I/O
 judge/               — LLM-judge phantom-evidence classification (see [`judge/README.md`](judge/README.md))
 config/              — model and inference configs

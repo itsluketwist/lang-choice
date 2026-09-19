@@ -4936,7 +4936,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_latency_trading_platform__write",
@@ -5136,7 +5136,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_latency_trading_platform__create",
@@ -5336,7 +5336,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "low_latency_latency_trading_platform__generate",

@@ -2918,7 +2918,7 @@
         "sample_index": 0,
         "source": "reasoning",
         "sentence": "The user likely expects a complete code example, possibly in a commonly used language like Python with a physics engine (e.g., PyBullet, Box2D, or simple custom implementation).",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "games_physics_simulation__write",
@@ -3051,14 +3051,14 @@
         "sample_index": 19,
         "source": "reasoning",
         "sentence": "The user didn't specify language, but typical choices are C++ (with OpenGL, etc.) or Python (with pygame, pymunk, etc.).",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "games_physics_simulation__create",
         "sample_index": 0,
         "source": "reasoning",
         "sentence": "Since it's \"initial implementation\", I'll provide a simple but functional simulation in Python using Pygame or similar?",
-        "uses_python": true
+        "uses_python": false
       },
       {
         "id": "games_physics_simulation__create",
@@ -7547,33 +7547,13 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
-    },
-    {
-      "id": "frontend_interactive_client_visualization__write",
-      "project_id": "frontend_interactive_client_visualization",
-      "task_type": "implementation",
-      "sample_index": 8,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": false
     },
     {
       "id": "frontend_interactive_client_visualization__write",
       "project_id": "frontend_interactive_client_visualization",
       "task_type": "implementation",
-      "sample_index": 9,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
-    },
-    {
-      "id": "frontend_interactive_client_visualization__write",
-      "project_id": "frontend_interactive_client_visualization",
-      "task_type": "implementation",
-      "sample_index": 10,
+      "sample_index": 8,
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
@@ -7583,6 +7563,26 @@
       "id": "frontend_interactive_client_visualization__write",
       "project_id": "frontend_interactive_client_visualization",
       "task_type": "implementation",
+      "sample_index": 9,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "frontend_interactive_client_visualization__write",
+      "project_id": "frontend_interactive_client_visualization",
+      "task_type": "implementation",
+      "sample_index": 10,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "frontend_interactive_client_visualization__write",
+      "project_id": "frontend_interactive_client_visualization",
+      "task_type": "implementation",
       "sample_index": 11,
       "context_condition": "none",
       "anchor_label": "no_anchor",
@@ -7747,33 +7747,13 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
-    },
-    {
-      "id": "frontend_interactive_client_visualization__create",
-      "project_id": "frontend_interactive_client_visualization",
-      "task_type": "implementation",
-      "sample_index": 8,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": false
     },
     {
       "id": "frontend_interactive_client_visualization__create",
       "project_id": "frontend_interactive_client_visualization",
       "task_type": "implementation",
-      "sample_index": 9,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
-    },
-    {
-      "id": "frontend_interactive_client_visualization__create",
-      "project_id": "frontend_interactive_client_visualization",
-      "task_type": "implementation",
-      "sample_index": 10,
+      "sample_index": 8,
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
@@ -7783,6 +7763,26 @@
       "id": "frontend_interactive_client_visualization__create",
       "project_id": "frontend_interactive_client_visualization",
       "task_type": "implementation",
+      "sample_index": 9,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "frontend_interactive_client_visualization__create",
+      "project_id": "frontend_interactive_client_visualization",
+      "task_type": "implementation",
+      "sample_index": 10,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "frontend_interactive_client_visualization__create",
+      "project_id": "frontend_interactive_client_visualization",
+      "task_type": "implementation",
       "sample_index": 11,
       "context_condition": "none",
       "anchor_label": "no_anchor",
@@ -7947,33 +7947,13 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
-    },
-    {
-      "id": "frontend_interactive_client_visualization__generate",
-      "project_id": "frontend_interactive_client_visualization",
-      "task_type": "implementation",
-      "sample_index": 8,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
       "uses_python": false
     },
     {
       "id": "frontend_interactive_client_visualization__generate",
       "project_id": "frontend_interactive_client_visualization",
       "task_type": "implementation",
-      "sample_index": 9,
-      "context_condition": "none",
-      "anchor_label": "no_anchor",
-      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
-    },
-    {
-      "id": "frontend_interactive_client_visualization__generate",
-      "project_id": "frontend_interactive_client_visualization",
-      "task_type": "implementation",
-      "sample_index": 10,
+      "sample_index": 8,
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
@@ -7983,6 +7963,26 @@
       "id": "frontend_interactive_client_visualization__generate",
       "project_id": "frontend_interactive_client_visualization",
       "task_type": "implementation",
+      "sample_index": 9,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "frontend_interactive_client_visualization__generate",
+      "project_id": "frontend_interactive_client_visualization",
+      "task_type": "implementation",
+      "sample_index": 10,
+      "context_condition": "none",
+      "anchor_label": "no_anchor",
+      "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
+      "uses_python": false
+    },
+    {
+      "id": "frontend_interactive_client_visualization__generate",
+      "project_id": "frontend_interactive_client_visualization",
+      "task_type": "implementation",
       "sample_index": 11,
       "context_condition": "none",
       "anchor_label": "no_anchor",
@@ -17677,7 +17677,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "games_physics_simulation__write",
@@ -17867,7 +17867,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "games_physics_simulation__create",
@@ -17877,7 +17877,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "games_physics_simulation__create",
@@ -18067,7 +18067,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "games_physics_simulation__generate",
@@ -18077,7 +18077,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "games_physics_simulation__generate",
@@ -18267,7 +18267,7 @@
       "context_condition": "none",
       "anchor_label": "no_anchor",
       "anchor_rationale": "No prior-context reference phrases found in reasoning or response.",
-      "uses_python": true
+      "uses_python": false
     },
     {
       "id": "enterprise_strongly_typed_service__write",
