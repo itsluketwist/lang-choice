@@ -276,7 +276,7 @@ class TestPrompts:
         assert schema_labels == list(LABEL_DESCRIPTIONS)
 
     def test_prompt_covers_no_language_mention_and_mismatch(self) -> None:
-        """Should explicitly direct the two behaviours the user flagged as gaps."""
+        """Should cover traces with no language discussion, and reasoning/output mismatches."""
         system_prompt = build_request_body(self._trace(), "gpt-5-mini")["messages"][0][
             "content"
         ]
@@ -320,7 +320,7 @@ class TestPrompts:
         system_prompt = build_request_body(self._trace(), "gpt-5-mini")["messages"][0][
             "content"
         ]
-        # the "read the whole trace" instruction is now stated once, globally
+        # the "read the whole trace" instruction is stated once, in the preamble
         assert "Read the WHOLE trace" in system_prompt
         ease_paragraph = system_prompt.split("python_for_ease:")[1].split("\n\n")[0]
         assert "due readability" in ease_paragraph
@@ -357,7 +357,7 @@ class TestPrompts:
         assert "Read the WHOLE trace" in system_prompt
 
     def test_prompt_covers_fabricated_system_prompt(self) -> None:
-        """A fabricated 'system prompt' claim, missed in a real 35k-char trace, is phantom."""
+        """A fabricated 'system prompt' claim in a long trace is phantom."""
         system_prompt = build_request_body(self._trace(), "gpt-5-mini")["messages"][0][
             "content"
         ]

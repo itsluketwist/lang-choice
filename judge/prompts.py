@@ -1,7 +1,7 @@
 """The judge prompt and per-trace request assembly.
 
 The label list, priority order, and structured-output schema are built from
-judge.taxonomy, so this module can't drift from it.
+judge.taxonomy.
 """
 
 from typing import get_args
@@ -13,8 +13,7 @@ from judge.traces import Trace
 # traces longer than this are truncated before judging (rare, keeps requests bounded)
 MAX_TRACE_CHARS = 150_000
 
-# priority order the judge picks the first matching label in — reuses the
-# order JudgeLabel is declared in, so it can't drift from taxonomy.py
+# the judge picks the first matching label, in the order JudgeLabel declares them
 LABEL_PRIORITY: tuple[JudgeLabel, ...] = get_args(JudgeLabel)
 
 _PREAMBLE = """\
@@ -33,7 +32,7 @@ single sentence buried early or mid-trace — unrelated hedging elsewhere in \
 the trace does not cancel it out.\
 """
 
-# concrete traps found during validation, stated once rather than per label
+# worked examples of commonly confused labels
 _COMMON_MISTAKES = """\
 Common mistakes to avoid:
 - Missed phantom evidence: "...so perhaps using Python with some \

@@ -31,7 +31,7 @@ echo "Loading environment variables from .env..."
 if [ -f .env ]; then
     source .env
 else
-    echo "WARNING: .env file not found! Create one with OPENROUTER_API_KEY."
+    echo "WARNING: .env file not found! Create one with your provider API keys."
 fi
 echo
 

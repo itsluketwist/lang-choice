@@ -73,10 +73,9 @@ Each record is a JSON object containing:
 | `systems` | 4 | C, C++, Rust |
 | `python_control` | 4 | Python |
 
-`python_control` is the control area: tasks where Python is genuinely the right tool
-(model training, model evaluation, image dataset preparation, web scraping). The library scores it
-like any other area but keeps it out of the headline statistics, reporting it under
-`summary.control` instead.
+`python_control` is the control area: tasks where Python is the right tool (model training,
+model evaluation, image dataset preparation, web scraping). The library scores it like any
+other area, but reports it under `summary.control`, outside the headline statistics.
 
 ### *prompt variants*
 

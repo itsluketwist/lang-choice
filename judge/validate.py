@@ -169,8 +169,7 @@ def main() -> None:
     """Score all judge pilots against the gold labels and save the report.
 
     Scored separately for the "selection" split (pick a winning judge) and
-    the "validation" split (held-out check on that winner) — see
-    judge/README.md for what each split is for.
+    the "validation" split (held-out check on that winner).
     """
     all_gold_records = load_jsonl(GOLD_LABELLED_PATH)
     judgement_paths = sorted(DATA_DIR.glob("gold_judgements_*.jsonl"))

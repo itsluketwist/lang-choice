@@ -57,13 +57,11 @@ _FILENAME_LANGUAGE_MAP: dict[str, str] = {
 def _filename_pattern(key: str) -> re.Pattern[str]:
     """Build a regex that matches a filename hint as a whole token.
 
-    A plain substring test is not enough: ".c" appears inside "annotations.csv",
-    ".js" inside "data.json", and ".h" inside "index.html", which would otherwise
-    report a confident language for a block that only lists data files.
+    For example, ".c" matches "main.c" but not "annotations.csv".
     Returns the compiled pattern for one filename map key.
     """
     if key.startswith("."):
-        # an extension must end the filename, so ".csv" no longer counts as ".c"
+        # an extension must end the filename
         return re.compile(rf"[\w-]+{re.escape(key)}(?![\w])")
     return re.compile(rf"\b{re.escape(key)}\b")
 
@@ -159,8 +157,8 @@ def _infer_language(
         if normalised:
             return normalised, "tag", "high"
 
-    # 2. a single-file html app is written in javascript. deliberately not a "tag"
-    # source, so a block tagged with a real language still takes precedence.
+    # 2. a single-file html app counts as javascript. its source is "script", not
+    # "tag", so a block tagged with a real language still takes precedence.
     if _is_html_with_script(tag=tag, code=code):
         return "javascript", "script", "medium"
 

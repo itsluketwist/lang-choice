@@ -138,8 +138,7 @@ def save_scope_manifest(
 ) -> Path:
     """Record which traces are in the judge scope, without their text.
 
-    Committed alongside the verdicts, so a change to the evaluation logic
-    shows up in the git diff as traces entering or leaving the scope.
+    Committed alongside the verdicts, so scope changes show up in the git diff.
     Returns the manifest path.
     """
     path = output_dir / model / "def-judge-scope.jsonl"

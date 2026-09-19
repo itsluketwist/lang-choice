@@ -1,18 +1,18 @@
 # Why-Python judge
 
 An LLM judge that classifies **why models choose Python**.
-Benchmark prompts never specify a language and are strictly single-turn (no prior conversation, no existing code), yet models default to Python constantly.
 For every reasoning trace whose final response used Python, the judge reads the trace and assigns one label explaining why.
+Benchmark prompts never specify a language and are single-turn, with no prior conversation or existing code.
 
 
 ## Label taxonomy
 
-Defined in [`taxonomy.py`](taxonomy.py), the single source of truth - `prompts.py` builds the judge's system prompt and output schema directly from it, so they can't drift apart.
+Defined in [`taxonomy.py`](taxonomy.py); `prompts.py` builds the judge's system prompt and output schema from it.
 Priority order (the judge picks the first label that applies):
 
 | Label | Meaning |
 | --- | --- |
-| `phantom_python_evidence` | Justifies Python with fabricated context: a prior conversation/existing code, or an invented instruction in the current prompt (e.g. "the problem says to use Python"). Every experiment is single-turn with no real prior context, so any such claim is fabricated by construction. |
+| `phantom_python_evidence` | Justifies Python with fabricated context: a prior conversation/existing code, or an invented instruction in the current prompt (e.g. "the problem says to use Python"). |
 | `language_mismatch` | The trace settles on a different language and never revisits that decision, but the final response is Python anyway. |
 | `python_for_ease` | Python itself — not a specific library — is chosen for being easy, simple, readable, familiar, or quick to prototype, and that's the deciding reason, even if another language was briefly considered. |
 | `automatic_python` | Python is assumed with no real language decision: no language ever discussed, no reason given, or only a library-level justification within an already-assumed Python. |
@@ -21,7 +21,8 @@ Priority order (the judge picks the first label that applies):
 
 ## Scope
 
-Every implementation sample whose final response was Python and which has a complete, raw, reasoning trace.
+Every implementation sample whose final response was Python and which has a complete, raw reasoning trace.
+The control area is excluded, as are models whose traces are summarised (`EXCLUDED_REASONING_MODELS` in [`traces.py`](traces.py)).
 
 
 ## Process
@@ -29,9 +30,8 @@ Every implementation sample whose final response was Python and which has a comp
 Run from the repository root with the virtual environment active.
 
 ```shell
-# 1. build the frozen gold sample (20 traces/model, deterministic), split
-#    into a 10-trace "selection" set (compare judges, pick a winner) and a
-#    10-trace "validation" set (held out, final check on the winner)
+# 1. sample the gold set: 20 traces per model, split into 10 "selection"
+#    (pick the best judge) and 10 "validation" (held-out check on that judge)
 #    -> judge/data/gold_unlabelled.jsonl
 python -m judge.build_gold
 
@@ -61,8 +61,8 @@ python -m judge.summarise
 Requests use the OpenAI Batch API, and every step is resumable: `run` skips already-judged traces and picks up in-flight batches.
 
 Whenever the evaluation logic changes, re-run steps 5-7.
-The scope is recomputed from `def-evaluation.json`, so responses newly classified as Python get judged, verdicts for responses no longer classified as Python are removed, and every other verdict is kept.
-The gold set is frozen and is not rebuilt.
+Responses newly classified as Python get judged, verdicts for responses no longer classified as Python are removed, and all other verdicts are kept.
+The gold set is not rebuilt.
 
 
 ## Files

@@ -78,8 +78,8 @@ def _parse_args() -> argparse.Namespace:
         "--include-control",
         action="store_true",
         help=(
-            "Include the python control area, where python is the right choice. "
-            "Off by default, so a run covers the original benchmark only."
+            "Include the python control area, where python is the right choice "
+            "(off by default)."
         ),
     )
     parser.add_argument(

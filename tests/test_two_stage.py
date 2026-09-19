@@ -89,7 +89,7 @@ class TestVariantPairing:
             assert impl_by_id[mapped].project_id == rec.project_id
 
     def test_follow_up_names_the_project(self) -> None:
-        """The follow-up must name the project, or models ask what to build."""
+        """The follow-up should be the lead-in plus the paired implementation prompt."""
         impl_by_id = {p.id: p for p in load_implementation_split()}
         for rec in load_recommendation_split():
             impl = impl_by_id[implementation_id(rec.id)]

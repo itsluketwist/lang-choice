@@ -7,8 +7,8 @@ echo ">>> Submitting ablation jobs to slurm >>>"
 #                              experiment configuration                        #
 ###############################################################################
 
-# models used for the reviewer ablations (keys from config/models.yaml).
-# the qwen3 and other small open-weight models are run from a separate repo.
+# api models used for the ablations (keys from config/models.yaml).
+# open-weight models are generated separately.
 ablation_models=(
     # openai
     "gpt-5-4"
@@ -21,14 +21,12 @@ ablation_models=(
     "codestral"
 )
 
-# 1. python control area — tops up each existing default run with the 12 new
-#    control prompts. the control tasks are opt-in, so this is the only block
-#    that passes --include-control; everything else covers the original benchmark.
+# 1. python control area — adds the 12 control prompts to each existing
+#    default run. this is the only block that passes --include-control.
 run_control="true"
 
 # 2. decoding sensitivity — the temperature presets to run for each model.
-#    every model already covers one point of the sweep through its existing
-#    def-* run, so only the remaining two are listed here.
+#    each model's existing def-* run covers the third point of the sweep.
 run_temperatures="true"
 temperature_runs=(
     "gpt-5-4 temp-0.3 temp-0.6"

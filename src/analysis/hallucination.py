@@ -222,9 +222,8 @@ def analyse_responses(
                 )
             )
 
-            # record the first reasoning sentence that mentions python at all, as a
-            # broader signal of whether the model was thinking about python regardless
-            # of whether an anchor phrase was present
+            # also keep the first reasoning sentence that mentions python,
+            # whether or not it contains an anchor phrase
             if reasoning:
                 for sentence in _split_sentences(reasoning):
                     if any(t in sentence.lower() for t in _PYTHON_TERMS):
@@ -364,10 +363,7 @@ def _detect_context_anchor(
     Returns an _AnchorDetection, additionally including the anchor sentence and
     its source (when one was found) for use in example collection.
     """
-    # only search the reasoning trace, sentence by sentence — prior-context
-    # references in the response itself are almost always generic phrasing
-    # (e.g. "see the existing code below") and not claims about conversation
-    # history, so they're not useful signal here.
+    # search the reasoning trace (not the response) sentence by sentence
     anchor_sentences: list[_AnchorSentence] = []
     if reasoning:
         for sentence in _split_sentences(reasoning):

@@ -5,6 +5,8 @@
 # model_path is the native API model identifier for that provider.
 # enable_reasoning: true captures the chain-of-thought trace where supported.
 # defaults hold per-model sampling params used when inference config sets null values.
+# open-weight models (provider "huggingface") are generated separately on HPC, and
+# only evaluated by this repository.
 
 # =============================================================================
 # DeepSeek V4 — closed-weight frontier model; reasoning trace exposed natively
@@ -71,8 +73,7 @@ codestral:
 
 
 # =============================================================================
-# OpenAI — GPT-5.4 (large, general) + o4-mini (cost, reasoning)
-# reasoning on o4-mini is internal; trace not exposed via API
+# OpenAI — GPT-5.4 (large) + GPT-5.4 Mini (cost); reasoning trace not exposed
 # =============================================================================
 
 gpt-5-4-mini:
@@ -92,8 +93,7 @@ gpt-5-4:
     max_tokens: 8192
 
 # =============================================================================
-# Anthropic — Claude Sonnet 4.6 (large, adaptive thinking) +
-# Haiku 4.5 (cost, extended thinking)
+# Anthropic — Claude Sonnet 5 (large) + Haiku 4.5 (cost)
 # =============================================================================
 
 claude-sonnet:
@@ -200,8 +200,7 @@ code-nemotron-32b:
     max_tokens: 8192
 
 # ==============================================================================
-# Qwen (Alibaba Cloud API) - Qwen3.5 open-weight (dense + MoE) and
-# Qwen3.5 Flash/Plus (closed, dated snapshots); all support thinking mode
+# Qwen3 - open-weight dense reasoning models in 8B, 14B and 32B sizes
 # ==============================================================================
 
 qwen3-8b:

@@ -24,9 +24,8 @@ default:
   seed: 42
   max_workers: 10
 
-# decoding sensitivity sweep: same sample counts as "default" so the existing
-# def-* results can stand in for whichever temperature matches a model's default.
-# top_p stays null so that temperature is the only thing that varies.
+# decoding sensitivity sweep: same settings as "default", except temperature.
+# each preset sets its own file prefix, as they share the first 3 characters.
 
 temp-0.3:
   name: temp-0.3

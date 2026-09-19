@@ -1,7 +1,7 @@
 """Language extraction and normalisation for recommendation and implementation responses.
 
-Recommendation extraction uses <language>...</language> tags as the primary signal
-(prompts instruct models to use this format) with regex-based fallback patterns.
+Recommendation extraction reads the <language>...</language> tags that the prompts
+ask models to use.
 """
 
 import re
@@ -140,9 +140,7 @@ def extract_implementation_language(
         lang = _scan_text_for_language(text)
         return lang, "low" if lang else "none"
 
-    # an explicit fence tag is the model stating the language itself, so when any
-    # block carries one the untagged blocks are ignored entirely. without this a
-    # directory listing or sample output could outvote the actual code.
+    # when any block has an explicit fence tag, only the tagged blocks vote
     tagged_blocks = [
         block
         for block in code_blocks
@@ -160,9 +158,8 @@ def extract_implementation_language(
         weight = 2 if block.get("source") == "tag" else 1
         language_votes[lang] = language_votes.get(lang, 0) + weight
 
-    # the response has code, but no block names a counted language (e.g. a single
-    # html block). scanning the text here would match stray tokens such as a
-    # variable named `py`, so report no language instead.
+    # the response has code, but no block has a detectable language (e.g. a single
+    # json block), so report no language rather than scanning the text
     if not language_votes:
         return None, "none"
 
