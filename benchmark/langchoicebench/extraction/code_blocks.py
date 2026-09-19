@@ -78,6 +78,16 @@ _FILENAME_PATTERNS: list[tuple[re.Pattern[str], str]] = [
     )
 ]
 
+# html documents: their program logic lives in inline <script> elements, unless
+# the page runs python in the browser (pyscript, brython, pyodide)
+_HTML_TAGS = {"html", "htm", "xhtml"}
+_SCRIPT_RE = re.compile(r"<script\b", re.IGNORECASE)
+_BROWSER_PYTHON_RE = re.compile(
+    r"py-script|pyscript|brython|pyodide"
+    r"|type=[\"'](?:text/)?(?:x-)?(?:python|py|mpy)[\"']",
+    re.IGNORECASE,
+)
+
 # common import patterns that reveal language when the fence tag is missing.
 # ordered from most specific to least specific — the first match wins.
 # generic patterns (e.g. bare "import X") appear last to avoid false positives.
@@ -138,7 +148,8 @@ def _infer_language(
     Returns (language, source, confidence) where source indicates how the
     language was detected and confidence indicates reliability.
 
-    Priority: explicit fence tag > filename hints > import/syntax patterns.
+    Priority: explicit fence tag > html with inline script > filename hints >
+    import/syntax patterns.
     """
     from langchoicebench.extraction.languages import normalise_language
 
@@ -148,15 +159,40 @@ def _infer_language(
         if normalised:
             return normalised, "tag", "high"
 
-    # 2. filename hints — high confidence for unambiguous files
+    # 2. a single-file html app is written in javascript. deliberately not a "tag"
+    # source, so a block tagged with a real language still takes precedence.
+    if _is_html_with_script(tag=tag, code=code):
+        return "javascript", "script", "medium"
+
+    # 3. filename hints — high confidence for unambiguous files
     lowered = code.lower()
     for pattern, lang in _FILENAME_PATTERNS:
         if pattern.search(lowered):
             return lang.lower(), "filename", "high"
 
-    # 3. import/syntax patterns — medium confidence
+    # 4. import/syntax patterns — medium confidence
     for pattern, lang in _IMPORT_LANGUAGE_PATTERNS:
         if pattern.search(code):
             return lang.lower(), "import", "medium"
 
     return None, None, None
+
+
+def _is_html_with_script(
+    tag: str,
+    code: str,
+) -> bool:
+    """Check whether a block is an html document that runs javascript.
+
+    The block must be tagged as html, or start like an html document, and
+    contain a <script> element that is not running python in the browser.
+    Returns True when the block's code should count as javascript.
+    """
+    is_html = tag.lower() in _HTML_TAGS or (
+        not tag and code.lstrip().lower().startswith(("<!doctype html", "<html"))
+    )
+    return (
+        is_html
+        and _SCRIPT_RE.search(code) is not None
+        and _BROWSER_PYTHON_RE.search(code) is None
+    )

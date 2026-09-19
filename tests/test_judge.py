@@ -7,7 +7,13 @@ from judge.build_gold import sample_gold_traces
 from judge.prompts import MAX_TRACE_CHARS, build_request_body, parse_verdict
 from judge.summarise import summarise_model
 from judge.taxonomy import LABEL_DESCRIPTIONS
-from judge.traces import Trace, list_reasoning_models, load_python_response_traces
+from judge.traces import (
+    Trace,
+    list_reasoning_models,
+    load_python_response_traces,
+    prune_out_of_scope_verdicts,
+    save_scope_manifest,
+)
 from judge.validate import binary_scores, cohens_kappa, score_against_gold
 
 
@@ -107,6 +113,65 @@ class TestTraces:
         _make_output_dir(tmp_path, "without", [_impl_record("p__write", [None])])
         _make_output_dir(tmp_path, "debug", [_impl_record("p__write", ["r"])])
         assert list_reasoning_models(output_dir=tmp_path) == ["with-reasoning"]
+
+    def test_scope_manifest_lists_keys_only(self, tmp_path: Path) -> None:
+        """Should record exactly the in-scope traces, without trace text."""
+        output_dir = _make_output_dir(
+            tmp_path,
+            "model-a",
+            [
+                _impl_record(
+                    "proj__write",
+                    reasoning=["thinking", "thinking"],
+                    uses_python=[True, False],
+                )
+            ],
+        )
+        traces = load_python_response_traces("model-a", output_dir=output_dir)
+        path = save_scope_manifest("model-a", traces, output_dir=output_dir)
+
+        records = [json.loads(line) for line in path.read_text().splitlines()]
+        assert records == [
+            {
+                "model": "model-a",
+                "id": "proj__write",
+                "project_id": "proj",
+                "sample_index": 0,
+            }
+        ]
+
+    def test_prunes_out_of_scope_verdicts(self, tmp_path: Path) -> None:
+        """Should drop verdicts for samples no longer python, and be idempotent."""
+        output_dir = _make_output_dir(
+            tmp_path,
+            "model-a",
+            [
+                _impl_record(
+                    "proj__write",
+                    reasoning=["thinking", "thinking"],
+                    uses_python=[True, False],
+                )
+            ],
+        )
+        results_path = output_dir / "model-a" / "def-judge-results.jsonl"
+        # sample 1 was judged under an older evaluation that called it python
+        _write_jsonl(
+            results_path,
+            [
+                {"model": "model-a", "id": "proj__write", "sample_index": 0},
+                {"model": "model-a", "id": "proj__write", "sample_index": 1},
+            ],
+        )
+        traces = load_python_response_traces("model-a", output_dir=output_dir)
+
+        assert (
+            prune_out_of_scope_verdicts("model-a", traces, output_dir=output_dir) == 1
+        )
+        remaining = [json.loads(line) for line in results_path.read_text().splitlines()]
+        assert [r["sample_index"] for r in remaining] == [0]
+        assert (
+            prune_out_of_scope_verdicts("model-a", traces, output_dir=output_dir) == 0
+        )
 
 
 class TestGoldSampling:

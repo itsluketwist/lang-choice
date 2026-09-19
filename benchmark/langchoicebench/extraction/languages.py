@@ -131,7 +131,8 @@ def extract_implementation_language(
     """Identify the primary language from code blocks in an implementation response.
 
     Blocks with an explicit fence tag take precedence; filename and import hints
-    are only consulted when no block is tagged.
+    are only consulted when no block is tagged. The response text is only
+    scanned when there are no code blocks at all.
     Returns (primary_language, confidence): confidence is "high", "medium", "low", or "none".
     """
     if not code_blocks:
@@ -159,9 +160,11 @@ def extract_implementation_language(
         weight = 2 if block.get("source") == "tag" else 1
         language_votes[lang] = language_votes.get(lang, 0) + weight
 
+    # the response has code, but no block names a counted language (e.g. a single
+    # html block). scanning the text here would match stray tokens such as a
+    # variable named `py`, so report no language instead.
     if not language_votes:
-        lang = _scan_text_for_language(text)
-        return lang, "low" if lang else "none"
+        return None, "none"
 
     # on a tie, prefer a language the model tagged explicitly over one inferred
     # from a filename or import pattern

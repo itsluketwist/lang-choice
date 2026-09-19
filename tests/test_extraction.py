@@ -179,6 +179,31 @@ class TestExtractCodeBlocks:
         assert "python" in langs
         assert "rust" in langs
 
+    @pytest.mark.parametrize(
+        "text",
+        [
+            "```html\n<body>\n<script>\nlet x = 1;\n</script>\n</body>\n```",
+            "```\n<!DOCTYPE html>\n<html>\n<script>let x = 1;</script>\n</html>\n```",
+        ],
+    )
+    def test_html_with_script_is_javascript(self, text: str) -> None:
+        """A single-file html app should count as javascript."""
+        blocks = extract_code_blocks(text)
+        assert blocks[0]["language"] == "javascript"
+        assert blocks[0]["source"] == "script"
+
+    @pytest.mark.parametrize(
+        "text",
+        [
+            "```html\n<body>\n<h1>Hello</h1>\n</body>\n```",  # no script at all
+            '```html\n<script type="py">\nprint("hi")\n</script>\n```',  # pyscript
+        ],
+    )
+    def test_html_without_javascript_has_no_language(self, text: str) -> None:
+        """Plain markup, or html running python in the browser, is not javascript."""
+        blocks = extract_code_blocks(text)
+        assert blocks[0]["language"] is None
+
 
 class TestExtractImplementationLanguage:
     """Test primary implementation language selection."""
@@ -220,3 +245,26 @@ class TestExtractImplementationLanguage:
         """When text contains no language mention, confidence should be 'none'."""
         lang, confidence = extract_implementation_language("Here is my solution.", [])
         assert confidence == "none"
+
+    def test_unlabelled_blocks_do_not_scan_text(self) -> None:
+        """Code with no detectable language should not borrow one from stray text tokens."""
+        # json is not a counted language, and the `py` key must not be read as python
+        text = '```json\n{"px": 0, "py": 0}\n```'
+        lang, confidence = extract_implementation_language(
+            text=text,
+            code_blocks=extract_code_blocks(text),
+        )
+        assert lang is None
+        assert confidence == "none"
+
+    def test_html_script_does_not_outvote_a_tagged_language(self) -> None:
+        """A tagged block should still win over an html page's inline script."""
+        text = (
+            "```python\nfrom flask import Flask\n```\n"
+            "```html\n<script>let x = 1;</script>\n```"
+        )
+        lang, _ = extract_implementation_language(
+            text=text,
+            code_blocks=extract_code_blocks(text),
+        )
+        assert lang == "python"
